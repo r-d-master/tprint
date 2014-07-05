@@ -1,0 +1,216 @@
+<?php
+// remove description from user login form text fields
+function printOcompare_form_alter(&$form, &$form_state, $form_id) {
+dpm($form);
+dpm($form_id);
+print $form_id;
+
+  $form['actions']['submit']['#attributes']['class'][] = 'submit-btn button';
+  $form['#attributes']['class'][] = 'default-form';
+  if ($form_id == 'user_login'){
+  $form['name']['#attributes']['placeholder'] = t('Username');
+  $form['name']['#title'] = NULL;
+  $form['pass'] = array('#type'  => 'password',
+                        '#title' => NULL,
+                        '#description' => t(''),
+                        '#required' => TRUE,
+                       );
+	$form['pass']['#attributes']['placeholder'] = t('Password');
+	$form['actions']['submit']['#attributes']['class'][] = 'submit-btn button';
+
+				}
+	if ($form_id == 'user_register_form'){
+		$form['account']['mail']['#description'] = t('');
+		$form['account']['mail']['#title'] = NULL;
+		$form['account']['mail']['#attributes']['placeholder'] = t('E-Mail');
+		 $form['account']['name']['#description'] = t('');
+		 $form['account']['name']['#title'] = NULL;
+		 $form['account']['name']['#attributes']['placeholder'] = t('Username');
+		 $form['actions']['submit']['#attributes']['class'][] = t('submit-btn button');
+		 $form['field_company_name'][LANGUAGE_NONE][0]['value']['#attributes']['placeholder'] = t('Company Name');
+		 $form['field_company_name'][LANGUAGE_NONE][0]['value']['#title'] = NULL;
+	}
+
+	if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'print_search'){
+		$form['#attributes']['class'][] = 'default-form';
+
+		$form['field_delivery_value']['#prefix'] = '<span class="select-box" title="Delivery" style="max-width:150px;">';
+		$form['field_delivery_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_delivery_value']['#empty_option'] = t('Delivery');
+
+		$form['submit']['#prefix'] = '<span class="header-add-offer">';
+		$form['submit']['#suffix'] = '</span ><!-- span -->';
+		$form['submit']['#attributes']['class'][] = 'submit-btn button srch-button';
+	}
+	if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'print_search' && $form['#id'] == 'views-exposed-form-print-search-page'){
+
+		$form['field_quantity_value']['#prefix'] = '<span class="select-box" title="Quantity">';
+		$form['field_quantity_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_quantity_value']['#empty_option'] = t('Quantity');
+		$form['field_paper_weight_value']['#prefix'] = '<span class="select-box" title="Paper Weight">';
+		$form['field_paper_weight_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_paper_weight_value']['#empty_option'] = t('Weight');
+		$form['field_side_value']['#prefix'] = '<span class="select-box" title="Side" style="max-width:136px;">';
+		$form['field_side_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_side_value']['#empty_option'] = t('Side');
+		$form['field_paper_stock_value']['#prefix'] = '<span class="select-box" title="Paper Stock" style="max-width:148px;">';
+		$form['field_paper_stock_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_paper_stock_value']['#empty_option'] = t('Paper Stock');
+		$form['field_uv_coating_value']['#prefix'] = '<span class="select-box" title="Colour Options">';
+		$form['field_uv_coating_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_uv_coating_value']['#empty_option'] = t('UV');
+		//$form['field_bsize_value']['#prefix'] = '<span class="select-box" title="Size Options" style="max-width:153px;">';
+		//$form['field_bsize_value']['#suffix'] = '</span ><!-- span -->';
+		//array_unshift($form['#validate'], 'printOcompare_print_form_validate');
+
+
+	}
+	if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'print_search' && $form['#id'] == 'views-exposed-form-print-search-page-1'){
+		$form['field_quantity_value']['#prefix'] = '<span class="select-box" title="Quantity">';
+		$form['field_quantity_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_quantity_value']['#empty_option'] = t('Quantity');
+		$form['field_side_value']['#prefix'] = '<span class="select-box" title="Side">';
+		$form['field_side_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_side_value']['#empty_option'] = t('Side');
+		$form['field_flyers_paper_weight_value']['#prefix'] = '<span class="select-box" title="Paper Weight">';
+		$form['field_flyers_paper_weight_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_flyers_paper_weight_value']['#empty_option'] = t('Weight');
+		$form['field_flyers_paper_stock_value']['#prefix'] = '<span class="select-box" title="Finish">';
+		$form['field_flyers_paper_stock_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_flyers_paper_stock_value']['#empty_option'] = t('Finish');
+	}
+	if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'print_search' && $form['#id'] == 'views-exposed-form-print-search-page-2'){
+		$form['field_l_paperstock_value']['#prefix'] = '<span class="select-box" title="Side" style="max-width:136px;">';
+		$form['field_l_paperstock_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_l_paperstock_value']['#empty_option'] = t('Paper Stock');
+		$form['field_letterheads_paper_weight_value']['#prefix'] = '<span class="select-box" title="Paper Weight">';
+		$form['field_letterheads_paper_weight_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_letterheads_paper_weight_value']['#empty_option'] = t('Weight');
+		$form['field_quantity_value']['#prefix'] = '<span class="select-box" title="Quantity">';
+		$form['field_quantity_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_quantity_value']['#empty_option'] = t('Quantity');
+		$form['field_l_size_value']['#prefix'] = '<span class="select-box" title="Size Options" style="max-width:175px;">';
+		$form['field_l_size_value']['#suffix'] = '</span ><!-- span -->';
+		}
+		if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'print_search' && $form['#id'] == 'views-exposed-form-print-search-page-3'){
+		$form['field_l_paperstock_value']['#prefix'] = '<span class="select-box" title="Side" style="max-width:136px;">';
+		$form['field_l_paperstock_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_l_paperstock_value']['#empty_option'] = t('Paper Stock');
+		$form['field_letterheads_paper_weight_value']['#prefix'] = '<span class="select-box" title="Paper Weight">';
+		$form['field_letterheads_paper_weight_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_letterheads_paper_weight_value']['#empty_option'] = t('Weight');
+		$form['field_c_quantity_value']['#prefix'] = '<span class="select-box" title="Quantity">';
+		$form['field_c_quantity_value']['#suffix'] = '</span ><!-- span -->';
+		//$form['field_c_quantity_value']['#empty_option'] = t('Quantity');
+		$form['field_c_size_value']['#prefix'] = '<span class="select-box" title="Size Options" style="max-width:175px;">';
+		$form['field_c_size_value']['#suffix'] = '</span ><!-- span -->';
+		}
+		if ($form_id == 'product_image_node_form'){
+			//hide($form['field_product_check[und]']);
+			 $node = $form_state['node'];
+    if (!isset($node->nid) || isset($node->is_new)) {
+			$node_object = node_load(1);
+	$product_detail = $node_object->field_product['und'][0]['value'];
+			$form['field_product_check[und]']['#disabled'] = TRUE;
+			//$form['title']['#disabled'] = TRUE;
+			//$form['title']['#access'] = FALSE;
+			//$form['title']'#value'] = 'Gauri';
+			$form['title']['#default_value'] = $product_detail;
+			$form['field_product_check']['#access'] = FALSE;
+			$form['field_product_node']['#access'] = FALSE;
+			}
+		}
+
+
+}
+
+//function printOcompare_node_form_alter(&$form, &$form_state, $form_id) {
+	 // you can access the type:
+ // $type = $form['#node']->type;
+  // Then
+ // if ($type == 'product_image') {
+  //	dpm('Gauri');
+//	$form['field_product_check[und]']['#disabled'] = TRUE;
+//			$form['title']= array(
+//			'#disabled' =>TRUE,
+//			);
+//			}
+
+//}
+
+function printOcompare_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+$form['#attributes']['class'][] = 'default-form';
+	$form['actions']['submit']['#attributes']['class'][] = 'submit-btn button';
+	$form['name']['#attributes']['placeholder'] = t('Name');
+ 	$form['name']['#title'] = NULL;
+ 	$form['name']['#prefix'] ='<div class="col-sm-6">';
+ 	$form['name']['#suffix'] ='</div>';
+ 	$form['mail']['#attributes']['placeholder'] = t('Email');
+ 	$form['mail']['#title'] = NULL;
+ 	$form['mail']['#prefix'] ='<div class="col-sm-6">';
+ 	$form['mail']['#suffix'] ='</div>';
+ 	$form['subject']['#attributes']['placeholder'] = t('Subject');
+ 	$form['subject']['#title'] = NULL;
+ 	$form['subject']['#prefix'] ='<div class="col-sm-12">';
+ 	$form['subject']['#suffix'] ='</div>';
+ 	$form['cid']['#attributes']['placeholder'] = t('Category');
+ 	$form['cid']['#title'] = NULL;
+ 	$form['cid']['#prefix'] ='<div class="col-sm-12"><span class="select-box" title="Category">';
+ 	$form['cid']['#suffix'] ='</span></div>';
+	$form['message']['#weight'] = 2;
+	$form['message']['#attributes']['placeholder'] = t('Message');
+	$form['message']['#prefix'] ='<div class="col-sm-12">';
+ 	$form['message']['#suffix'] ='</div>';
+ 	$form['message']['#title'] = NULL;
+        $form['copy']['#weight']    = 3;
+        $form['phone'] = array(
+            '#type' => 'textfield',
+            '#title' => NULL,
+            '#required' => TRUE,
+            '#prefix' => '<div class="col-sm-6">',
+            '#suffix' => '</div>',
+            '#attributes' => array(
+	        'placeholder' => t('Phone'),
+	    ),
+            '#weight' => 0
+       	 );
+        $form['company'] = array(
+            '#type' => 'textfield',
+            '#title' => NULL,
+            '#required' => TRUE,
+            '#prefix' => '<div class="col-sm-6">',
+            '#suffix' => '</div>',
+            '#attributes' => array(
+	        'placeholder' => t('Company'),
+	    ),
+            '#weight' => 0
+      	 );
+		}
+
+		/*Basic Cart Hook
+		function basic_cart_node_presave($node) {
+  // If we don't have a node ID, there's no point to this.
+  if (empty($node->nid)) {
+    return;
+  }
+  // Check if the current user has access to basic cart.
+  if (user_access('use basic cart')) {
+    // Getting node types.
+    $node_types = basic_cart_product_types();
+    if (!is_array($node_types) || empty($node_types)) {
+      return;
+    }
+    // The node is of type product.
+    if (!empty($node_types[$node->type]) &&  in_array($node->type, $node_types)) {
+      // Setting the right add to cart link.
+      $node->add_to_cart[$node->language][0]['value'] = 'cart/add/' . $node->nid; // This is useless.
+      $node->add_to_cart[LANGUAGE_NONE][0]['value'] = 'cart/add/' . $node->nid; // This "works".
+    }
+  }
+}*/
+//function printOcompare_print_form_validate($form, &$form_state) {
+//	if (user_is_logged_in()) {
+  //drupal_goto('user');
+//  dpm("Gauri");
+// }
+//}

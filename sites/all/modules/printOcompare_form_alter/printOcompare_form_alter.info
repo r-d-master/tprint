@@ -1,0 +1,4 @@
+name = printOcompare Form Alter
+description = Alter the user login form
+core = 7.x
+files[] = printOcompare_form_alter.module

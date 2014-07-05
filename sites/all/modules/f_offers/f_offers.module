@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Offers feature.
+ */
+
+include_once 'f_offers.features.inc';
