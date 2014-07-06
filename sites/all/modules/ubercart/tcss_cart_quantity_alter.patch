@@ -1,0 +1,54 @@
+diff --git a/sites/all/modules/ubercart/uc_cart/uc_cart_checkout_pane.inc b/sites/all/modules/ubercart/uc_cart/uc_cart_checkout_pane.inc
+index f9130b1..66c2fc3 100644
+--- a/sites/all/modules/ubercart/uc_cart/uc_cart_checkout_pane.inc
++++ b/sites/all/modules/ubercart/uc_cart/uc_cart_checkout_pane.inc
+@@ -486,11 +486,11 @@ function theme_uc_cart_review_table($variables) {
+   if (!empty($display_items['uc_order_product'])) {
+     foreach (element_children($display_items['uc_order_product']) as $key) {
+       $display_item = $display_items['uc_order_product'][$key];
+-      $subtotal += $display_item['total']['#price'];
++      $subtotal += $display_item['price']['#price'];
+       $rows[] = array(
+         array('data' => $display_item['qty'], 'class' => array('qty')),
+         array('data' => $display_item['product'], 'class' => array('products')),
+-        array('data' => $display_item['total'], 'class' => array('price')),
++        array('data' => $display_item['price'], 'class' => array('price')),
+       );
+     }
+   }
+diff --git a/sites/all/modules/ubercart/uc_order/uc_order.module b/sites/all/modules/ubercart/uc_order/uc_order.module
+index dea1487..0e17560 100644
+--- a/sites/all/modules/ubercart/uc_order/uc_order.module
++++ b/sites/all/modules/ubercart/uc_order/uc_order.module
+@@ -1626,8 +1626,8 @@ function uc_order_get_total($order, $products_only = FALSE) {
+ 
+   if (is_array($order->products)) {
+     foreach ($order->products as $product) {
+-      $qty = $product->qty ? $product->qty : 1;
+-      $total += $product->price * $qty;
++      //$qty = $product->qty ? $product->qty : 1;
++      $total += $product->price;
+     }
+   }
+ 
+@@ -1644,7 +1644,6 @@ function uc_order_get_total($order, $products_only = FALSE) {
+       $total += $value;
+     }
+   }
+-
+   return $total;
+ }
+ 
+diff --git a/sites/all/modules/ubercart/uc_product/uc_product.module b/sites/all/modules/ubercart/uc_product/uc_product.module
+index 581de41..a0f217f 100644
+--- a/sites/all/modules/ubercart/uc_product/uc_product.module
++++ b/sites/all/modules/ubercart/uc_product/uc_product.module
+@@ -1046,7 +1046,7 @@ function uc_product_uc_cart_display($item) {
+     '#markup' => node_access('view', $node) ? l($item->title, 'node/' . $node->nid) : check_plain($item->title),
+   );
+ 
+-  $element['#total'] = $item->price * $item->qty;
++  $element['#total'] = $item->price;
+   $element['#suffixes'] = array();
+   $element['data'] = array('#type' => 'hidden', '#value' => serialize($item->data));
+   $element['qty'] = array(

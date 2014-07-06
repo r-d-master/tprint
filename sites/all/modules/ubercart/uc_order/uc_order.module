@@ -1626,8 +1626,8 @@ function uc_order_get_total($order, $products_only = FALSE) {
 
   if (is_array($order->products)) {
     foreach ($order->products as $product) {
-      $qty = $product->qty ? $product->qty : 1;
-      $total += $product->price * $qty;
+      //$qty = $product->qty ? $product->qty : 1;
+      $total += $product->price;
     }
   }
 
@@ -1644,7 +1644,6 @@ function uc_order_get_total($order, $products_only = FALSE) {
       $total += $value;
     }
   }
-
   return $total;
 }
 

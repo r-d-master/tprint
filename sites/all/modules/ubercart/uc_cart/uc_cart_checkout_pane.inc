@@ -486,11 +486,11 @@ function theme_uc_cart_review_table($variables) {
   if (!empty($display_items['uc_order_product'])) {
     foreach (element_children($display_items['uc_order_product']) as $key) {
       $display_item = $display_items['uc_order_product'][$key];
-      $subtotal += $display_item['total']['#price'];
+      $subtotal += $display_item['price']['#price'];
       $rows[] = array(
         array('data' => $display_item['qty'], 'class' => array('qty')),
         array('data' => $display_item['product'], 'class' => array('products')),
-        array('data' => $display_item['total'], 'class' => array('price')),
+        array('data' => $display_item['price'], 'class' => array('price')),
       );
     }
   }

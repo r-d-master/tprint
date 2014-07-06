@@ -1046,7 +1046,7 @@ function uc_product_uc_cart_display($item) {
     '#markup' => node_access('view', $node) ? l($item->title, 'node/' . $node->nid) : check_plain($item->title),
   );
 
-  $element['#total'] = $item->price * $item->qty;
+  $element['#total'] = $item->price;
   $element['#suffixes'] = array();
   $element['data'] = array('#type' => 'hidden', '#value' => serialize($item->data));
   $element['qty'] = array(
