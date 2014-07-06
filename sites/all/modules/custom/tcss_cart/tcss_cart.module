@@ -1,16 +1,76 @@
 <?php
 
 /**
-  * Implments hook_theme
-  */
+ * Implments hook_theme
+ */
 function tcss_cart_theme() {
  return array(
     'abc_thumb_upload' => array(
         'render element' => 'element',
-));
+  ));
 }
 
+/**
+ * Implments hook_menu
+ */
+function tcss_cart_menu() {
+  $items = array();
+
+  $items['artwork'] = array(
+    'title' => 'Your Artwork',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('upload_customer_artwork'),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Form for uploading customer design
+ */
+function upload_customer_artwork($form, &$form_state) {
+  if (!isset($_SESSION['customer_artwork_pid'])) {
+   drupal_set_message(t('Your session has expired, so please again add the product to cart.'), 'error');
+   return '';
+  }
+
+  $form['customer_artwork'] = array(
+    '#title' => t('Upload Artwork'),
+    '#type' => 'managed_file',
+    '#description' => t('Upload you design for product'),
+    '#upload_location' => 'public://',
+    '#theme' => 'abc_thumb_upload',
+  );
+
+  $form['customer_artwork_submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+  );
+  return $form;
+}
+
+/**
+ * Submit handler for upload_customer_artwork form
+ */
+function upload_customer_artwork_submit($form, &$form_state) {
+  // Set product and image information to session, used in storing customer's artwork
+  if (isset($_SESSION['customer_artwork_pid'])) {
+    $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']] = $form_state['values']['customer_artwork'];
+    $form_state['redirect'] = 'cart';
+    unset($_SESSION['customer_artwork_pid']);
+  }
+}
+
+/**
+ * Implments hook_form_alter
+ */
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
+  // Set product information to session, used in storing customer's artwork
+  if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
+    $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
+  }
+
   switch ($form_id) {
     case 'uc_cart_view_form':
     // Disable quanitity field in cart view form
@@ -30,43 +90,6 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
       # code...
       break;
   }
-  if ($form_id == 'offers_node_form') {
-       $offer_type = arg(3);
-    $price = arg(4);
-    if ($offer_type == 'starterpack' || $offer_type == 'buisnesspack') {
-      $images_field = 2;
-    }
-
-    if (isset($_SESSION['image_field'])) {
-      $images_field = $_SESSION['image_field'];
-    }
-    else {
-      $_SESSION['image_field'] = $images_field;
-    }
-    for ($i=0; $i < $images_field; $i++) {
-      $form['field_offers_image_' . $i] = array(
-      '#title' => t('Upload image'),
-      '#type' => 'managed_file',
-      '#description' => t('The uploaded image will be displayed on this page using the image style choosen below.'),
-      '#upload_location' => 'public://',
-      '#theme' => 'abc_thumb_upload',
-      '#default_value' => $form['field_offers_image']['und'][0]['#default_value']['fid'],
-      );
-     }
-    $form['images_field'] = array('#type' => 'hidden', '#value' => $images_field);
-    $form['field_offers_price']['und'][0]['value']['#value'] = $price;
-    $form['field_offers_price']['#disabled'] = TRUE;
-    $form['field_offers_image']['#access'] = FALSE;
-    array_unshift($form['actions']['submit']['#submit'], 'offers_image_submit');
-    }
-}
-
-function offers_image_submit($form, &$form_state) {
-  unset($_SESSION['image_field']);
-  $images_field = $form_state['values']['images_field'];
-   for ($i=0; $i < $images_field; $i++) {
-      $form_state['values']['field_offers_image']['und'][$i]['fid'] = $form_state['values']['field_offers_image_' . $i];
-     }
 }
 
 function theme_abc_thumb_upload($variables) {
@@ -94,7 +117,36 @@ function tcss_cart_uc_add_to_cart_data($form_values) {
  * Implements hook_uc_product_alter
  */
 function tcss_cart_uc_product_alter(&$node){
-  //dpm($node);
   // Update product quantity when user add product to his cart
   $node->default_qty = $node->pkg_qty;
 }
+
+function tcss_cart_uc_order($op, $order, $arg2) {
+  //dpm($op);
+  //dpm($order);
+  //dpm($arg2);
+}
+
+/**
+ * Implements hook_uc_cart_checkout_start
+ * Need to be changed, should be saved in hook_uc_order
+ */
+function tcss_cart_uc_cart_checkout_start($order) {
+
+  // Save Product image to database
+  if (isset($_SESSION['customer_artwork_fpid'])) {
+    foreach ($order->products as $id => $product) {
+      $order_id = $order->order_id;
+      $product_image = new stdClass();
+      $product_image->type = 'product_image';
+      node_object_prepare($product_image);
+      $image = (array) file_load($_SESSION['customer_artwork_fpid'][$product->nid]);
+      $product_image->language = LANGUAGE_NONE;
+      $product_image->field_order_id['und'][0]['value'] = $order_id;
+      $product_image->field_order_product_id['und'][0]['target_id'] = $product->nid;
+      $product_image->field_order_prodcut_image['und'][0] = $image;
+      node_save($product_image);
+    }
+    unset($_SESSION['customer_artwork_fpid']);
+  }
+ }
