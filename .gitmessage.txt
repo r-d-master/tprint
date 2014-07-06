@@ -1,5 +1,3 @@
-- NCNS-
-    
 - Description:
 - Steps:
 
