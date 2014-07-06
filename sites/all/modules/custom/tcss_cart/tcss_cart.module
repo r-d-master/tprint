@@ -11,10 +11,19 @@ function tcss_cart_theme() {
 }
 
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
-dpm($form);
   switch ($form_id) {
     case 'uc_cart_view_form':
-
+    // Disable quanitity field in cart view form
+      $i = 0;
+      while (TRUE) {
+        if (isset($form['items'][$i]['qty'])) {
+          $form['items'][$i]['qty']['#disabled'] = TRUE;
+          $i++;
+        }
+        else {
+          break;
+        }
+      }
       break;
 
     default:
@@ -74,11 +83,18 @@ function theme_abc_thumb_upload($variables) {
     }
 }
 
-
+/**
+ * Implments hook_uc_add_to_cart
+ */
 function tcss_cart_uc_add_to_cart_data($form_values) {
-  dpm($form_values);
+  //dpm($form_values);
 }
 
+/**
+ * Implements hook_uc_product_alter
+ */
 function tcss_cart_uc_product_alter(&$node){
-  $node->default_qty = 100;
+  //dpm($node);
+  // Update product quantity when user add product to his cart
+  $node->default_qty = $node->pkg_qty;
 }
