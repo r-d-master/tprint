@@ -1,0 +1,9 @@
+name = Development
+core = 7.x
+package = Features
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = module_filter
+dependencies[] = update
+dependencies[] = views_ui
+features[features_api][] = api:2

@@ -1,3 +1,4 @@
-name = Print General
-description = Create Form For Quote
+name = TCSS Cart Module
+description = Alter work flow of Ubercart according to rquirement.
 core = 7.x
+package= TCSS

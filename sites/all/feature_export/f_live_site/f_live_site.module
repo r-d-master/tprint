@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Live Site feature.
+ */
+
+include_once 'f_live_site.features.inc';
