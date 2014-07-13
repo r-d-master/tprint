@@ -385,5 +385,12 @@ function f_tcss_cart_strongarm() {
   $strongarm->value = '1';
   $export['uc_payment_method_paypal_wps_weight'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_product_shippable_business_card';
+  $strongarm->value = 1;
+  $export['uc_product_shippable_business_card'] = $strongarm;
+
   return $export;
 }
