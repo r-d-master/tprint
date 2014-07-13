@@ -125,6 +125,7 @@ function tcss_cart_uc_product_alter(&$node){
   $node->default_qty = $node->pkg_qty;
 }
 
+
 /**
  * Implements hook_uc_order_product_presave
  */
@@ -226,4 +227,18 @@ function _tcss_cart_get_exposed_filter_form($view_name, $view_display){
   $view->init_handlers();
   $exposed_form = $view->display_handler->get_plugin('exposed_form');
   return $exposed_form->render_exposed_form();
+}
+
+/**
+ * Filter product by seller id
+ */
+function tcss_cart_get_product_by_sellerid($products) {
+  global $user;
+  foreach ($products as $product_id => $product) {
+    if ($product->field_op_seller_id['und'][0]['target_id'] != $user->uid) {
+      unset($products[$product_id]);
+    }
+  }
+  return $products;
+
 }
