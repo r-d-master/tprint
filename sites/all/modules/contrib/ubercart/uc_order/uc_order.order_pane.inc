@@ -1109,7 +1109,6 @@ function uc_op_products_view_table($order) {
     'weight' => 5,
   );
 
-  $order->products = tcss_cart_get_product_by_sellerid($order->products);
   if (!empty($order->products)) {
     $build = uc_order_product_view_multiple($order->products);
     $table['#rows'] = $build['uc_order_product'];
@@ -1120,7 +1119,6 @@ function uc_op_products_view_table($order) {
       '#cell_attributes' => array('colspan' => 'full'),
     );
   }
-
   return $table;
 }
 

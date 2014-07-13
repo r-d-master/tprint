@@ -147,11 +147,14 @@ function tcss_cart_uc_cart_checkout_start($order) {
       $product_image->type = 'product_image';
       node_object_prepare($product_image);
       $image = (array) file_load($_SESSION['customer_artwork_fpid'][$product->nid]);
-      $product_image->language = LANGUAGE_NONE;
-      $product_image->field_order_id['und'][0]['value'] = $order_id;
-      $product_image->field_order_product_id['und'][0]['target_id'] = $product->nid;
-      $product_image->field_order_prodcut_image['und'][0] = $image;
-      node_save($product_image);
+      if (isset($image['fid'])) {
+        $product_image->language = LANGUAGE_NONE;
+        $product_image->field_order_id['und'][0]['value'] = $order_id;
+        $product_image->field_order_product_id['und'][0]['target_id'] = $product->nid;
+        $product_image->field_order_prodcut_image['und'][0] = $image;
+        node_save($product_image);
+      }
+
     }
     unset($_SESSION['customer_artwork_fpid']);
   }
@@ -227,16 +230,26 @@ function _tcss_cart_get_exposed_filter_form($view_name, $view_display){
 /**
  * Filter product by seller id
  */
-function tcss_cart_get_product_by_sellerid($products) {
+function tcss_cart_get_product_by_sellerid(&$order) {
   global $user;
   if (isUserSeller()) {
-    foreach ($products as $product_id => $product) {
+    $new_order_total = 0.0;
+    $result = array();
+    foreach ($order->products as $product_id => $product) {
       if ($product->field_op_seller_id['und'][0]['target_id'] != $user->uid) {
-        unset($products[$product_id]);
+        unset($order->products[$product_id]);
+      }
+      else {
+        $new_order_total += $product->price;
       }
     }
+
+    if (count($order->products) == 0) {
+      drupal_goto();
+    }
+    $order->order_total = $new_order_total;
+    $order->line_items[0]['amount'] = $new_order_total;
   }
-  return $products;
 }
 
 /**
@@ -270,4 +283,14 @@ function isUserSeller($user = NULL) {
 function tcss_cart_calculate_item_price($item) {
   $new_price = ($item->qty / $item->default_qty) * ($item->sell_price);
   return $new_price;
+}
+
+function tcss_cart_views_pre_render(&$view) {
+  if ($view->name == 'seller_order_history') {
+    foreach ($view->result as $order_view) {
+      $order = uc_order_load($order_view->order_id);
+      tcss_cart_get_product_by_sellerid($order);
+      $order_view->uc_orders_order_total = $order->order_total;
+    }
+  }
 }
