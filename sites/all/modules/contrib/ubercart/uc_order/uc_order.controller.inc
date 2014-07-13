@@ -98,7 +98,7 @@ class UcOrderProductController extends EntityAPIController {
     );
     $content['total'] = array(
       '#theme' => 'uc_price',
-      '#price' => $product->price * $product->qty,
+      '#price' => $product->price,
       '#suffixes' => array(),
       '#cell_attributes' => array('class' => array('total')),
     );

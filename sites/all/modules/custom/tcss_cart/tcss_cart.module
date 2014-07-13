@@ -66,9 +66,19 @@ function upload_customer_artwork_submit($form, &$form_state) {
  * Implments hook_form_alter
  */
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
+
   // Set product information to session, used in storing customer's artwork
   if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
     $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
+  }
+
+  if ($form_id == 'compliment_slips_node_form' || $form_id == 'business-card_node_form' || $form_id == 'flyers_node_form' || $form_id == 'letterheads_node_form') {
+      $form['base']['prices']['list_price']['#access'] = FALSE;
+      $form['base']['prices']['cost']['#access'] = FALSE;
+      $form['base']['dimensions']['#access'] = FALSE;
+      $form['base']['weight']['#access'] = FALSE;
+      $form['base']['shippable']['#access'] = FALSE;
+      $form['base']['ordering']['#access'] = FALSE;
   }
 
   switch ($form_id) {
@@ -106,12 +116,6 @@ function theme_abc_thumb_upload($variables) {
     }
 }
 
-/**
- * Implments hook_uc_add_to_cart
- */
-function tcss_cart_uc_add_to_cart_data($form_values) {
-  //dpm($form_values);
-}
 
 /**
  * Implements hook_uc_product_alter
@@ -121,6 +125,12 @@ function tcss_cart_uc_product_alter(&$node){
   $node->default_qty = $node->pkg_qty;
 }
 
+/**
+ * Implements hook_uc_order_product_presave
+ */
+function tcss_cart_uc_order_product_presave($order_product) {
+  $order_product->field_op_seller_id['und'][0]['target_id'] = $order_product->uid;
+}
 function tcss_cart_uc_order($op, $order, $arg2) {
   //dpm($op);
   //dpm($order);
