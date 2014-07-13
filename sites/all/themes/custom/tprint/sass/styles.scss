@@ -1,0 +1,127 @@
+// customize bootstrap variables here:
+@import "variables";
+@import "bootstrap";
+
+//@extend-elements
+//original selectors
+//.tabs-left > .nav-tabs > li > a,  .tabs-right > .nav-tabs > li > a
+%extend_1 {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+
+.tabs-below > .nav-tabs {
+  border-bottom: 0;
+  border-top: 1px solid $table-border-color;
+  > {
+    li {
+      margin-top: -1px;
+      margin-bottom: 0;
+      > a {
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0 0 4px 4px;
+        &:hover {
+          border-top-color: $table-border-color;
+          border-bottom-color: transparent;
+        }
+        &:focus {
+          border-top-color: $table-border-color;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+    .active > a {
+      border-color: transparent $table-border-color $table-border-color $table-border-color;
+      &:hover {
+        border-color: transparent $table-border-color $table-border-color $table-border-color;
+      }
+      &:focus {
+        border-color: transparent $table-border-color $table-border-color $table-border-color;
+      }
+    }
+  }
+}
+.tabs-right > .nav-tabs {
+  border-bottom: 0;
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid $table-border-color;
+  > li {
+    float: none;
+    > a {
+      @extend %extend_1;
+      margin-left: -1px;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0 4px 4px 0;
+      &:hover {
+        border-color: $gray-lighter $gray-lighter $gray-lighter $table-border-color;
+      }
+      &:focus {
+        border-color: $gray-lighter $gray-lighter $gray-lighter $table-border-color;
+      }
+    }
+  }
+  .active > a {
+    border-color: $table-border-color $table-border-color $table-border-color transparent;
+    *border-left-color: $white;
+    &:hover {
+      border-color: $table-border-color $table-border-color $table-border-color transparent;
+      *border-left-color: $white;
+    }
+    &:focus {
+      border-color: $table-border-color $table-border-color $table-border-color transparent;
+      *border-left-color: $white;
+    }
+  }
+}
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid $table-border-color;
+  > li {
+    float: none;
+    > a {
+      @extend %extend_1;
+      margin-right: -1px;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 4px 0 0 4px;
+      &:hover {
+        border-color: $gray-lighter $table-border-color $gray-lighter $gray-lighter;
+      }
+      &:focus {
+        border-color: $gray-lighter $table-border-color $gray-lighter $gray-lighter;
+      }
+    }
+  }
+  .active > a {
+    border-color: $table-border-color transparent $table-border-color $table-border-color;
+    *border-right-color: $white;
+    &:hover {
+      border-color: $table-border-color transparent $table-border-color $table-border-color;
+      *border-right-color: $white;
+    }
+    &:focus {
+      border-color: $table-border-color transparent $table-border-color $table-border-color;
+      *border-right-color: $white;
+    }
+  }
+}
+.tab-content > {
+  .tab-pane {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+}
+.pill-content > {
+  .pill-pane {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+}
