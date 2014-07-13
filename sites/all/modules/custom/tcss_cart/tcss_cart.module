@@ -131,11 +131,7 @@ function tcss_cart_uc_product_alter(&$node){
 function tcss_cart_uc_order_product_presave($order_product) {
   $order_product->field_op_seller_id['und'][0]['target_id'] = $order_product->uid;
 }
-function tcss_cart_uc_order($op, $order, $arg2) {
-  //dpm($op);
-  //dpm($order);
-  //dpm($arg2);
-}
+
 
 /**
  * Implements hook_uc_cart_checkout_start
@@ -266,4 +262,12 @@ function isUserSeller($user = NULL) {
     }
   }
   return FALSE;
+}
+
+/**
+ * Alter items price
+ */
+function tcss_cart_calculate_item_price($item) {
+  $new_price = ($item->qty / $item->default_qty) * ($item->sell_price);
+  return $new_price;
 }

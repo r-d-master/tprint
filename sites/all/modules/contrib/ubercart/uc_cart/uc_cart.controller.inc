@@ -17,7 +17,10 @@ class UcCartItemController extends EntityAPIController {
         $item->$key = $value;
       }
       $item->module = $item->data['module'];
+      // Alter the price if customer already have this in his cart
+      $item->price = tcss_cart_calculate_item_price($item);
     }
+
     parent::attachLoad($items, $revision_id);
   }
 
@@ -49,7 +52,6 @@ class UcCartItemController extends EntityAPIController {
         '#value' => isset($product->cart_item_id) ? $product->cart_item_id : 0,
       );
     }
-
     return parent::buildContent($product, $view_mode, $langcode, $content);
   }
 }
