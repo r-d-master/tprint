@@ -95,6 +95,12 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
       }
       break;
 
+    case 'uc_order_view_update_form':
+      if (isUserSeller()) {
+        $form['admin_comment_field']['#access'] = FALSE;
+      }
+    break;
+
     default:
       # code...
       break;
