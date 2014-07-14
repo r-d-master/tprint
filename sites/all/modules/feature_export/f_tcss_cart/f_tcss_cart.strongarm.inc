@@ -392,5 +392,26 @@ function f_tcss_cart_strongarm() {
   $strongarm->value = 1;
   $export['uc_product_shippable_business_card'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_product_shippable_compliment_slips';
+  $strongarm->value = 1;
+  $export['uc_product_shippable_compliment_slips'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_product_shippable_flyers';
+  $strongarm->value = 1;
+  $export['uc_product_shippable_flyers'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uc_product_shippable_letterheads';
+  $strongarm->value = 1;
+  $export['uc_product_shippable_letterheads'] = $strongarm;
+
   return $export;
 }

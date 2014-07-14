@@ -27,6 +27,7 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     6 => '6',
+    5 => '5',
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -620,12 +621,6 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['label'] = 'Printer Name';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_product']['id'] = 'field_product';
-  $handler->display->display_options['fields']['field_product']['table'] = 'field_data_field_product';
-  $handler->display->display_options['fields']['field_product']['field'] = 'field_product';
-  $handler->display->display_options['fields']['field_product']['label'] = 'Complimentary Slips ';
-  $handler->display->display_options['fields']['field_product']['element_label_colon'] = FALSE;
   /* Field: Content: Paper Stock */
   $handler->display->display_options['fields']['field_cs_paper_stock']['id'] = 'field_cs_paper_stock';
   $handler->display->display_options['fields']['field_cs_paper_stock']['table'] = 'field_data_field_cs_paper_stock';
@@ -1028,6 +1023,123 @@ function f_tcss_cart_views_default_views() {
   $export['print_search'] = $view;
 
   $view = new view();
+  $view->name = 'product_list';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Product List';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Product List';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = 'Design';
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'image_style' => 'uc_product',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
+  /* Field: Product: Sell price */
+  $handler->display->display_options['fields']['sell_price']['id'] = 'sell_price';
+  $handler->display->display_options['fields']['sell_price']['table'] = 'uc_products';
+  $handler->display->display_options['fields']['sell_price']['field'] = 'sell_price';
+  $handler->display->display_options['fields']['sell_price']['precision'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'business_card' => 'business_card',
+    'compliment_slips' => 'compliment_slips',
+    'flyers' => 'flyers',
+    'letterheads' => 'letterheads',
+  );
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'product';
+  $handler->display->display_options['filters']['type']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+
+  /* Display: Product List */
+  $handler = $view->new_display('page', 'Product List', 'page');
+  $handler->display->display_options['path'] = 'product-list';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Product List';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['product_list'] = $view;
+
+  $view = new view();
   $view->name = 'seller_order_history';
   $view->description = '';
   $view->tag = 'Ubercart';
@@ -1416,7 +1528,7 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Image */
