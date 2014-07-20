@@ -13,6 +13,7 @@ dependencies[] = menu
 dependencies[] = number
 dependencies[] = php
 dependencies[] = strongarm
+dependencies[] = tcss_cart
 dependencies[] = uc_cart
 dependencies[] = uc_credit
 dependencies[] = uc_order
