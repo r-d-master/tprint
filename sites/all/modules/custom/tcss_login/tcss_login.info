@@ -1,0 +1,4 @@
+name = TCSS Login
+description = Show login in drop down menu.
+core = 7.x
+package= TCSS
