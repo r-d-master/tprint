@@ -53,7 +53,7 @@ scripts[] = 'javascripts/bootstrap/tooltip.js'
 scripts[] = 'javascripts/bootstrap/tab.js'
 ; scripts[] = 'javascripts/bootstrap/transition.js'
 ;
-
+scripts[] = 'javascripts/custom/product_search_tab.js'
 ; ; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
 settings[bootstrap_cdn] = ''
 

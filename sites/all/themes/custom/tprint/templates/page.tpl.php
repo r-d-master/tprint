@@ -115,7 +115,7 @@
 </header>
 
  <!-- Header banner -->
-<div class="header-banner container-fluid">
+<div class="header-banner container">
 <header role="banner" id="page-header">
     <?php if (!empty($page['header'])): ?>
       <?php print render($page['header']); ?>

@@ -6578,14 +6578,14 @@ button.close {
 }
 /* Begin Style for header */
 .navbar-default {
-  background: black;
+  background: #423338;
 }
 
 .logo img {
   width: 30%;
 }
 
-.main-container {
+.header-banner {
   margin-top: 9%;
 }
 
@@ -6593,7 +6593,52 @@ button.close {
   display: inline-block;
 }
 
+.header-menu-items {
+  color: #f1155a !important;
+  background-color: #423338 !important;
+  font-size: 18px !important;
+}
+.header-menu-items:hover {
+  color: white !important;
+  background-color: #423338 !important;
+}
+
+.glyphicon-info-sign:before,
+.glyphicon-envelope:before,
+.glyphicon-home:before,
+.glyphicon-off:before,
+.glyphicon-plus-sign:before {
+  padding-right: 5px;
+}
+
 /* End Style for header */
+#quicktabs-print_search_tabbed_menu li a {
+  background: #423338;
+  display: block;
+  padding: 0 1em;
+  border: solid 1px #423338;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 2.5em;
+  margin: 0 2px;
+}
+#quicktabs-print_search_tabbed_menu .active a {
+  background: #f1155a;
+  border: solid 1px #f1155a;
+}
+
+#quicktabs-container-print_search_tabbed_menu {
+  background: rgba(39, 39, 39, 0.84);
+  padding: 3em;
+  border-top-width: 3px;
+  border-radius: 0 0 7px 7px;
+  border-color: #423338;
+  border-top-color: #f1155a;
+}
+#quicktabs-container-print_search_tabbed_menu label {
+  color: white;
+}
+
 .tabs-right > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a {
   min-width: 74px;
   margin-right: 0;

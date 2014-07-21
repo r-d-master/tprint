@@ -166,72 +166,6 @@ function tcss_cart_uc_cart_checkout_start($order) {
   }
  }
 
-/**
- * Implements hook_block_info()
-**/
-function tcss_cart_block_info(){
-  $blocks = array();
-  $blocks['bc_exposed_filter_form'] = array(
-    'info' => t('Business Cards filter form'),
-    'cache' => DRUPAL_NO_CACHE,
-  );
-  $blocks['lh_exposed_filter_form'] = array(
-    'info' => t('Letterheads filter form'),
-    'cache' => DRUPAL_NO_CACHE,
-  );
-  $blocks['cs_exposed_filter_form'] = array(
-    'info' => t('Complimentary Slips filter form'),
-    'cache' => DRUPAL_NO_CACHE,
-  );
-  $blocks['flyers_exposed_filter_form'] = array(
-    'info' => t('Flyers filter form'),
-    'cache' => DRUPAL_NO_CACHE,
-  );
-  return $blocks;
-}
-
-/**
- * Implements hook_block_view()
- **/
-function tcss_cart_block_view($delta = ''){
-  $block = array();
-  switch($delta){
-    case 'bc_exposed_filter_form':
-      $block['subject'] = t('');
-      $block['content'] = _tcss_cart_get_exposed_filter_form('print_search', 'business_card');
-    break;
-
-    case 'lh_exposed_filter_form':
-      $block['subject'] = t('');
-      $block['content'] = _tcss_cart_get_exposed_filter_form('print_search', 'letterheads');
-    break;
-
-    case 'cs_exposed_filter_form':
-      $block['subject'] = t('');
-      $block['content'] = _tcss_cart_get_exposed_filter_form('print_search', 'complimentary_slips');
-    break;
-
-    case 'flyers_exposed_filter_form':
-      $block['subject'] = t('');
-      $block['content'] = _tcss_cart_get_exposed_filter_form('print_search', 'flyers');
-    break;
-  }
-  return $block;
-}
-
-/**
- * Function to get the Exposed filter form
- */
-function _tcss_cart_get_exposed_filter_form($view_name, $view_display){
-  // Get a view from the database or from default views . "test" is the view name.
-  $view = views_get_view($view_name);
-  // Set the display as current.
-  $view->set_display($view_display);
-  // Acquire and attach all of the handlers to the view.
-  $view->init_handlers();
-  $exposed_form = $view->display_handler->get_plugin('exposed_form');
-  return $exposed_form->render_exposed_form();
-}
 
 /**
  * Filter product by seller id
@@ -298,5 +232,27 @@ function tcss_cart_views_pre_render(&$view) {
       tcss_cart_get_product_by_sellerid($order);
       $order_view->uc_orders_order_total = $order->order_total;
     }
+  }
+}
+
+function tcss_cart_quicktabs_alter(&$quicktabs) {
+  if ($quicktabs->machine_name == 'print_search_tabbed_menu') {
+    switch (arg(0)) {
+      case 'letterheads':
+        $default_tab = 1;
+        break;
+
+      case 'complimentary-slips':
+        $default_tab = 2;
+        break;
+
+      case 'flyers':
+        $default_tab = 3;
+        break;
+
+      default:
+        $default_tab = 0;
+    }
+    $quicktabs->default_tab = $default_tab;
   }
 }

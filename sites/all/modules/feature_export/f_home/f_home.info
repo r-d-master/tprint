@@ -1,0 +1,8 @@
+name = f_home
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = quicktabs
+features[ctools][] = quicktabs:quicktabs:1
+features[features_api][] = api:2
+features[quicktabs][] = print_search_tabbed_menu

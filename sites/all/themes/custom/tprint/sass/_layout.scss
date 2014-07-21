@@ -1,14 +1,14 @@
 /* Begin Style for header */
 
 .navbar-default {
-  background:$header-color;
+  background:$brown-dark;
 }
 
 .logo img {
   width:30%;
 }
 
-.main-container {
+.header-banner {
   margin-top:9%;
 }
 
@@ -17,4 +17,55 @@
     display:inline-block;
   }
 }
+
+.header-menu-items {
+  color:$pink !important;
+  background-color: $brown-dark !important;
+  font-size: $font-size-large !important;
+  &:hover {
+    color:$text-link-color-hover !important;
+    background-color: $brown-dark !important;
+  }
+}
+
+.glyphicon-info-sign,
+.glyphicon-envelope,
+.glyphicon-home,
+.glyphicon-off,
+.glyphicon-plus-sign {
+  &:before {
+    padding-right: 5px;
+  }
+}
+
 /* End Style for header */
+
+#quicktabs-print_search_tabbed_menu {
+  li a {
+    background: $brown-dark;
+    display: block;
+    padding: 0 1em;
+    border: solid 1px $brown-dark;
+    border-radius: 5px;
+    font-size: $font-size-large;
+    line-height: 2.5em;
+    margin: 0 2px;
+  }
+  .active a {
+    background: $pink;
+    border: solid 1px $pink;
+  }
+}
+
+#quicktabs-container-print_search_tabbed_menu {
+  background: rgba(39, 39, 39, 0.84);
+  padding: 3em;
+  border-top-width: 3px;
+  border-radius: 0 0 7px 7px;
+  border-color: $brown-dark;
+  border-top-color: $pink;
+
+  label {
+    color:$white;
+  }
+}
