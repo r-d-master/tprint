@@ -66,6 +66,20 @@ function upload_customer_artwork_submit($form, &$form_state) {
  * Implments hook_form_alter
  */
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == "views_exposed_form" && ($form['#id'] == "views-exposed-form-print-search-business-card" || $form['#id'] == "views-exposed-form-print-search-letterheads" || $form['#id'] == "views-exposed-form-print-search-complimentary-slips" || $form['#id'] == "views-exposed-form-print-search-flyers")) {
+    $form['pkg_qty']['#type'] = "select";
+    $form['pkg_qty']['#size'] = null;
+    $form['pkg_qty']['#options'] = array(
+      '' => t('ALL'),
+      '100' => t('100'),
+      '200' => t('200'),
+      '500' => t('500'),
+      '2000' => t('2000'),
+      '5000' => t('5000'),
+      '10000' => t('10000'),
+    );
+  }
   // Set product information to session, used in storing customer's artwork
   if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
     $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
