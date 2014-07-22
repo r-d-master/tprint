@@ -23,16 +23,18 @@ function f_tcss_cart_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Product Search';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
+    1 => '1',
     6 => '6',
     5 => '5',
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -176,6 +178,7 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -331,8 +334,7 @@ function f_tcss_cart_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  $handler->display->display_options['path'] = 'print-search/business-cards';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['path'] = 'business-cards';
   $handler->display->display_options['menu']['title'] = 'Business Cards';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
@@ -344,6 +346,7 @@ function f_tcss_cart_views_default_views() {
   $handler = $view->new_display('page', 'Flyers', 'flyers');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Flyers';
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -463,8 +466,7 @@ function f_tcss_cart_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  $handler->display->display_options['path'] = 'print-search/flyers';
-  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['path'] = 'flyers';
   $handler->display->display_options['menu']['title'] = 'Flyers';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['context'] = 0;
@@ -475,6 +477,7 @@ function f_tcss_cart_views_default_views() {
   $handler = $view->new_display('page', 'Letterheads', 'letterheads');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Letterheads';
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -603,8 +606,7 @@ function f_tcss_cart_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  $handler->display->display_options['path'] = 'print-search/letterheads';
-  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['path'] = 'letterheads';
   $handler->display->display_options['menu']['title'] = 'Letterheads';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['context'] = 0;
@@ -614,6 +616,7 @@ function f_tcss_cart_views_default_views() {
   $handler = $view->new_display('page', 'Complimentary Slips', 'complimentary_slips');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Complimentary Slips';
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -741,285 +744,11 @@ function f_tcss_cart_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  $handler->display->display_options['path'] = 'print-search/complimentary-slips';
-  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['path'] = 'complimentary-slips';
   $handler->display->display_options['menu']['title'] = 'Complimentary Slips';
   $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Cards */
-  $handler = $view->new_display('page', 'Cards', 'page_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Business Card';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'nid' => 'nid',
-    'title_1' => 'title_1',
-    'field_product' => 'field_product',
-    'field_quantity' => 'field_quantity',
-    'field_paper_stock' => 'field_paper_stock',
-    'field_paper_weight' => 'field_paper_weight',
-    'field_side' => 'field_side',
-    'field_colour_options' => 'field_colour_options',
-    'field_delivery' => 'field_delivery',
-    'field_price' => 'field_price',
-    'php' => 'php',
-    'add_to_cart' => 'add_to_cart',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title_1' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_product' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_quantity' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_paper_stock' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_paper_weight' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_side' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_colour_options' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_delivery' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_price' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'add_to_cart' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['label'] = 'Product';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  /* Field: Product: Package quantity */
-  $handler->display->display_options['fields']['pkg_qty']['id'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['pkg_qty']['field'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['label'] = 'Quantity';
-  /* Field: Content: Paper Stock */
-  $handler->display->display_options['fields']['field_bc_paper_stock']['id'] = 'field_bc_paper_stock';
-  $handler->display->display_options['fields']['field_bc_paper_stock']['table'] = 'field_data_field_bc_paper_stock';
-  $handler->display->display_options['fields']['field_bc_paper_stock']['field'] = 'field_bc_paper_stock';
-  /* Field: Content: Paper Weight */
-  $handler->display->display_options['fields']['field_bc_paper_weight']['id'] = 'field_bc_paper_weight';
-  $handler->display->display_options['fields']['field_bc_paper_weight']['table'] = 'field_data_field_bc_paper_weight';
-  $handler->display->display_options['fields']['field_bc_paper_weight']['field'] = 'field_bc_paper_weight';
-  /* Field: Content: Color Option */
-  $handler->display->display_options['fields']['field_bc_color_option']['id'] = 'field_bc_color_option';
-  $handler->display->display_options['fields']['field_bc_color_option']['table'] = 'field_data_field_bc_color_option';
-  $handler->display->display_options['fields']['field_bc_color_option']['field'] = 'field_bc_color_option';
-  /* Field: Content: Side */
-  $handler->display->display_options['fields']['field_bc_sides']['id'] = 'field_bc_sides';
-  $handler->display->display_options['fields']['field_bc_sides']['table'] = 'field_data_field_bc_sides';
-  $handler->display->display_options['fields']['field_bc_sides']['field'] = 'field_bc_sides';
-  /* Field: Content: Delivery */
-  $handler->display->display_options['fields']['field_uc_delivery']['id'] = 'field_uc_delivery';
-  $handler->display->display_options['fields']['field_uc_delivery']['table'] = 'field_data_field_uc_delivery';
-  $handler->display->display_options['fields']['field_uc_delivery']['field'] = 'field_uc_delivery';
-  /* Field: Product: Display price */
-  $handler->display->display_options['fields']['display_price']['id'] = 'display_price';
-  $handler->display->display_options['fields']['display_price']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['display_price']['field'] = 'display_price';
-  /* Field: Product: Add to cart form */
-  $handler->display->display_options['fields']['addtocartlink']['id'] = 'addtocartlink';
-  $handler->display->display_options['fields']['addtocartlink']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['addtocartlink']['field'] = 'addtocartlink';
-  $handler->display->display_options['fields']['addtocartlink']['label'] = 'Add to cart';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'business_card' => 'business_card',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Product: Package quantity */
-  $handler->display->display_options['filters']['pkg_qty']['id'] = 'pkg_qty';
-  $handler->display->display_options['filters']['pkg_qty']['table'] = 'uc_products';
-  $handler->display->display_options['filters']['pkg_qty']['field'] = 'pkg_qty';
-  $handler->display->display_options['filters']['pkg_qty']['group'] = 1;
-  $handler->display->display_options['filters']['pkg_qty']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['pkg_qty']['expose']['operator_id'] = 'pkg_qty_op';
-  $handler->display->display_options['filters']['pkg_qty']['expose']['label'] = 'Quantity';
-  $handler->display->display_options['filters']['pkg_qty']['expose']['operator'] = 'pkg_qty_op';
-  $handler->display->display_options['filters']['pkg_qty']['expose']['identifier'] = 'pkg_qty';
-  $handler->display->display_options['filters']['pkg_qty']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Side (field_bc_sides) */
-  $handler->display->display_options['filters']['field_bc_sides_value']['id'] = 'field_bc_sides_value';
-  $handler->display->display_options['filters']['field_bc_sides_value']['table'] = 'field_data_field_bc_sides';
-  $handler->display->display_options['filters']['field_bc_sides_value']['field'] = 'field_bc_sides_value';
-  $handler->display->display_options['filters']['field_bc_sides_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_bc_sides_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_bc_sides_value']['expose']['operator_id'] = 'field_bc_sides_value_op';
-  $handler->display->display_options['filters']['field_bc_sides_value']['expose']['label'] = 'Side';
-  $handler->display->display_options['filters']['field_bc_sides_value']['expose']['operator'] = 'field_bc_sides_value_op';
-  $handler->display->display_options['filters']['field_bc_sides_value']['expose']['identifier'] = 'field_bc_sides_value';
-  $handler->display->display_options['filters']['field_bc_sides_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Paper Stock (field_bc_paper_stock) */
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['id'] = 'field_bc_paper_stock_value';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['table'] = 'field_data_field_bc_paper_stock';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['field'] = 'field_bc_paper_stock_value';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['expose']['operator_id'] = 'field_bc_paper_stock_value_op';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['expose']['label'] = 'Paper Stock';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['expose']['operator'] = 'field_bc_paper_stock_value_op';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['expose']['identifier'] = 'field_bc_paper_stock_value';
-  $handler->display->display_options['filters']['field_bc_paper_stock_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Paper Weight (field_bc_paper_weight) */
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['id'] = 'field_bc_paper_weight_value';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['table'] = 'field_data_field_bc_paper_weight';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['field'] = 'field_bc_paper_weight_value';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['expose']['operator_id'] = 'field_bc_paper_weight_value_op';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['expose']['label'] = 'Paper Weight';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['expose']['operator'] = 'field_bc_paper_weight_value_op';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['expose']['identifier'] = 'field_bc_paper_weight_value';
-  $handler->display->display_options['filters']['field_bc_paper_weight_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: UV Coating (field_bc_uv_coating) */
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['id'] = 'field_bc_uv_coating_value';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['table'] = 'field_data_field_bc_uv_coating';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['field'] = 'field_bc_uv_coating_value';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['expose']['operator_id'] = 'field_bc_uv_coating_value_op';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['expose']['label'] = 'UV Coating';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['expose']['operator'] = 'field_bc_uv_coating_value_op';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['expose']['identifier'] = 'field_bc_uv_coating_value';
-  $handler->display->display_options['filters']['field_bc_uv_coating_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Delivery (field_uc_delivery) */
-  $handler->display->display_options['filters']['field_uc_delivery_value']['id'] = 'field_uc_delivery_value';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['table'] = 'field_data_field_uc_delivery';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['field'] = 'field_uc_delivery_value';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_uc_delivery_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_uc_delivery_value']['expose']['operator_id'] = 'field_uc_delivery_value_op';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['expose']['label'] = 'Delivery';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['expose']['operator'] = 'field_uc_delivery_value_op';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['expose']['identifier'] = 'field_uc_delivery_value';
-  $handler->display->display_options['filters']['field_uc_delivery_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['path'] = 'print-search';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Print Search';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['title'] = 'Buisness Cards';
-  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['print_search'] = $view;
 
   $view = new view();

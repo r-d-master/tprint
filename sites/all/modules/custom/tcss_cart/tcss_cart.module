@@ -71,7 +71,7 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
     $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
   }
 
-  if ($form_id == 'compliment_slips_node_form' || $form_id == 'business-card_node_form' || $form_id == 'flyers_node_form' || $form_id == 'letterheads_node_form') {
+  if ($form_id == 'compliment_slips_node_form' || $form_id == 'business_card_node_form' || $form_id == 'flyers_node_form' || $form_id == 'letterheads_node_form') {
       $form['base']['prices']['list_price']['#access'] = FALSE;
       $form['base']['prices']['cost']['#access'] = FALSE;
       $form['base']['dimensions']['#access'] = FALSE;
