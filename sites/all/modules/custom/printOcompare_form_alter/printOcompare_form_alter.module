@@ -1,9 +1,7 @@
 <?php
 // remove description from user login form text fields
 function printOcompare_form_alter(&$form, &$form_state, $form_id) {
-dpm($form);
-dpm($form_id);
-print $form_id;
+
 
   $form['actions']['submit']['#attributes']['class'][] = 'submit-btn button';
   $form['#attributes']['class'][] = 'default-form';

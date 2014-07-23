@@ -5,9 +5,9 @@
  */
 function tcss_cart_theme() {
  return array(
-    'abc_thumb_upload' => array(
-        'render element' => 'element',
-  ));
+  'tcss_cart_image_upload' => array(
+    'render element' => 'element',
+    ));
 }
 
 /**
@@ -21,9 +21,33 @@ function tcss_cart_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('upload_customer_artwork'),
     'access callback' => TRUE,
-  );
-
+    );
+  $items['admin/config/search-slider'] = array(
+    'title' => 'Search Slider',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('tcss_cart_search_slider_form'),
+    'access callback' => TRUE,
+    );
   return $items;
+}
+
+/**
+ * Used for configuring background image in serach form
+ */
+function tcss_cart_search_slider_form() {
+  $form = array();
+  $product_classes = uc_product_class_load();
+  foreach ($product_classes as $key => $value) {
+    $form['slider_image_' . $key] = array(
+      '#title' => t('Image for ' . $value->name),
+      '#type' => 'managed_file',
+      '#description' => t('The uploaded image will be shown as background in search form on front page'),
+      '#default_value' => variable_get('slider_image_' . $key, ''),
+      '#upload_location' => 'public://slider/',
+      '#theme' => 'tcss_cart_image_upload',
+      );
+  }
+  return system_settings_form($form);
 }
 
 /**
@@ -33,21 +57,21 @@ function upload_customer_artwork($form, &$form_state) {
   if (!isset($_SESSION['customer_artwork_pid'])) {
    drupal_set_message(t('Your session has expired, so please again add the product to cart.'), 'error');
    return '';
-  }
+ }
 
-  $form['customer_artwork'] = array(
-    '#title' => t('Upload Artwork'),
-    '#type' => 'managed_file',
-    '#description' => t('Upload you design for product'),
-    '#upload_location' => 'public://',
-    '#theme' => 'abc_thumb_upload',
+ $form['customer_artwork'] = array(
+  '#title' => t('Upload Artwork'),
+  '#type' => 'managed_file',
+  '#description' => t('Upload you design for product'),
+  '#upload_location' => 'public://',
+  '#theme' => 'tcss_cart_image_upload',
   );
 
-  $form['customer_artwork_submit'] = array(
-    '#type' => 'submit',
-    '#value' => 'Submit',
+ $form['customer_artwork_submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'Submit',
   );
-  return $form;
+ return $form;
 }
 
 /**
@@ -78,7 +102,7 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
       '2000' => t('2000'),
       '5000' => t('5000'),
       '10000' => t('10000'),
-    );
+      );
   }
   // Set product information to session, used in storing customer's artwork
   if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
@@ -86,53 +110,50 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'compliment_slips_node_form' || $form_id == 'business_card_node_form' || $form_id == 'flyers_node_form' || $form_id == 'letterheads_node_form') {
-      $form['base']['prices']['list_price']['#access'] = FALSE;
-      $form['base']['prices']['cost']['#access'] = FALSE;
-      $form['base']['dimensions']['#access'] = FALSE;
-      $form['base']['weight']['#access'] = FALSE;
-      $form['base']['shippable']['#access'] = FALSE;
-      $form['base']['ordering']['#access'] = FALSE;
+    $form['base']['prices']['list_price']['#access'] = FALSE;
+    $form['base']['prices']['cost']['#access'] = FALSE;
+    $form['base']['dimensions']['#access'] = FALSE;
+    $form['base']['weight']['#access'] = FALSE;
+    $form['base']['shippable']['#access'] = FALSE;
+    $form['base']['ordering']['#access'] = FALSE;
   }
 
   switch ($form_id) {
     case 'uc_cart_view_form':
     // Disable quanitity field in cart view form
-      $i = 0;
-      while (TRUE) {
-        if (isset($form['items'][$i]['qty'])) {
-          $form['items'][$i]['qty']['#disabled'] = TRUE;
-          $i++;
-        }
-        else {
-          break;
-        }
+    $i = 0;
+    while (TRUE) {
+      if (isset($form['items'][$i]['qty'])) {
+        $form['items'][$i]['qty']['#disabled'] = TRUE;
+        $i++;
       }
-      break;
+      else {
+        break;
+      }
+    }
+    break;
 
     case 'uc_order_view_update_form':
-      if (isUserSeller()) {
-        $form['admin_comment_field']['#access'] = FALSE;
-      }
+    if (isUserSeller()) {
+      $form['admin_comment_field']['#access'] = FALSE;
+    }
     break;
 
     default:
       # code...
-      break;
+    break;
   }
 }
 
-function theme_abc_thumb_upload($variables) {
-
-    $element = $variables['element'];
-
-    if (isset($element['#file']->uri)) {
-        $output = '<div id="edit-logo-ajax-wrapper"><div class="form-item form-type-managed-file form-item-logo"><span class="file">';
-        $output .= '<img height="50px" src="' . file_create_url($element['#file']->uri) . '" />';
-        $output .= '</span><input type="submit" id="edit-' . $element['#name'] . '-remove-button" name="' . $element['#name'] . '_remove_button" value="Remove" class="form-submit ajax-processed">';
-        $output .= '<input type="hidden" name="' . $element['#name'] . '[fid]" value="' . $element['#file']->fid . '">';
-
-        return $output;
-    }
+function theme_tcss_cart_image_upload($variables) {
+  $element = $variables['element'];
+  if (isset($element['#file']->uri)) {
+    $output = '<div id="edit-logo-ajax-wrapper"><div class="form-item form-type-managed-file form-item-logo"><span class="file">';
+    $output .= '<img height="50px" src="' . file_create_url($element['#file']->uri) . '" />';
+    $output .= '</span><input type="submit" id="edit-' . $element['#name'] . '-remove-button" name="' . $element['#name'] . '_remove_button" value="Remove" class="form-submit ajax-processed">';
+    $output .= '<input type="hidden" name="' . $element['#name'] . '[fid]" value="' . $element['#file']->fid . '">';
+    return $output;
+  }
 }
 
 
@@ -178,7 +199,7 @@ function tcss_cart_uc_cart_checkout_start($order) {
     }
     unset($_SESSION['customer_artwork_fpid']);
   }
- }
+}
 
 
 /**
@@ -253,19 +274,19 @@ function tcss_cart_quicktabs_alter(&$quicktabs) {
   if ($quicktabs->machine_name == 'print_search_tabbed_menu') {
     switch (arg(0)) {
       case 'letterheads':
-        $default_tab = 1;
-        break;
+      $default_tab = 1;
+      break;
 
       case 'complimentary-slips':
-        $default_tab = 2;
-        break;
+      $default_tab = 2;
+      break;
 
       case 'flyers':
-        $default_tab = 3;
-        break;
+      $default_tab = 3;
+      break;
 
       default:
-        $default_tab = 0;
+      $default_tab = 0;
     }
     $quicktabs->default_tab = $default_tab;
   }
