@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the f_theme_layout feature.
+ */
+
+include_once 'f_theme_layout.features.inc';
