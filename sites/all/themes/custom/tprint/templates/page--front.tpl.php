@@ -182,6 +182,6 @@
 
   </div>
 </div>
-<footer class="footer container">
+<footer class="footer container-fluid">
   <?php print render($page['footer']); ?>
 </footer>

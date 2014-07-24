@@ -40,6 +40,7 @@
 
 /* End Style for header */
 
+/* Begin Style for Tabbed menu */
 #quicktabs-print_search_tabbed_menu {
   li a {
     background: $brown-dark;
@@ -68,4 +69,63 @@
   label {
     color:$white;
   }
+}
+
+/* End Style for Tabbed menu */
+
+/* Begin Style for footer */
+.footer {
+  padding: 0;
+  #block-panels-mini-footer-1 {
+    background-color: $brown-dark;
+  }
+
+  #block-panels-mini-footer-2 {
+    background-color: $footer ;
+  }
+
+  .pane-title,
+  .widget-title,
+  .pane-content {
+    color: $white;
+  }
+
+
+  .tprint-footer-1 {
+    margin: 0;
+    a:hover{
+      text-decoration: underline;
+      background-color: $brown-dark !important;
+    }
+  }
+}
+
+table {
+  th {
+    background-color: $pink;
+    color:white;
+    font-size: $font-size-large;
+    font-weight: normal;
+  }
+  td {
+    font-size: $font-size-large;
+  }
+}
+
+ a {
+    color:$pink;
+    font-size: $font-size-medium;
+    &:hover {
+      color:$pink;
+    }
+  }
+
+.form-control {
+  width: auto;
+  display: inline;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"],
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+  margin-left: 0px;
 }

@@ -25,7 +25,8 @@ $brand-primary:         #4156A1; // This is 'bio-indio' as picked from here - ht
 // $brand-info:            #5bc0de
 // $brand-warning:         #f0ad4e
 // $brand-danger:          #d9534f
-$brown-dark:              #423338;
+$brown-dark:                #423338;
+$footer:                    #241c1f;
 $page-top-border:           #F7CE3C;
 $saffron:                   #F7CE3C;
 $william:                   #3B5F66;
@@ -63,6 +64,7 @@ $font-family-base:        $font-family-sans-serif;
 $font-size-base:          14px;
 $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+$font-size-medium:         ceil(($font-size-base * 1.14)); // ~12px
 
 $font-size-h1:            floor(($font-size-base * 2.6)); // ~36px
 $font-size-h2:            floor(($font-size-base * 2.15)); // ~30px
@@ -153,9 +155,9 @@ $component-active-bg:       $saffron;
 
 // $btn-font-weight:                normal
 
-// $btn-default-color:              #333
-// $btn-default-bg:                 #fff
-// $btn-default-border:             #ccc
+ $btn-default-color:              $white;
+ $btn-default-bg:                 $pink;
+ $btn-default-border:             $pink;
 
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;

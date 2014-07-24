@@ -1,0 +1,39 @@
+.subtotal .uc-price {
+  font-size: $font-size-h3;
+  color: $pink;
+}
+
+.tprint-cart-pane {
+  margin: auto;
+  padding:0;
+
+  .panel-body {
+    padding:$padding-large-vertical;
+  }
+  .tprint-cart-pane-left {
+    margin-right:1em;
+  }
+
+  .tprint-cart-pane-left,
+  .tprint-cart-pane-right {
+    padding: 0;
+  }
+}
+
+.uc-store-address-field .form-item label {
+  text-align: left;
+}
+
+.col-sm-5 {
+  @media (min-width: $screen-sm) {
+    width:49%;
+  }
+}
+
+.form-item-panes-delivery-select-address,
+.form-item-panes-billing-select-address {
+  label {
+    width:15em;
+    color: $pink;
+  }
+}

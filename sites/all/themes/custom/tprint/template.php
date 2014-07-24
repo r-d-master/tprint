@@ -25,3 +25,25 @@ function tprint_preprocess_page(&$variables) {
     }
   }
 }
+
+/**
+ * Make checkout form responsive.
+ */
+function tprint_uc_cart_checkout_form($variables) {
+  $variables['form']['panes']['cart']['#prefix'] = '<div class="row tprint-cart-pane">';
+  $variables['form']['panes']['customer']['#suffix'] = '</div>';
+  $variables['form']['panes']['cart']['#attributes']['class'] = array('col-sm-5', 'tprint-cart-pane-left');
+  $variables['form']['panes']['customer']['#attributes']['class'] = array('col-sm-5', 'tprint-cart-pane-right');
+
+  $variables['form']['panes']['delivery']['#prefix'] = '<div class="row tprint-cart-pane">';
+  $variables['form']['panes']['billing']['#suffix'] = '</div>';
+  $variables['form']['panes']['delivery']['#attributes']['class'] = array('col-sm-5', 'tprint-cart-pane-left');
+  $variables['form']['panes']['billing']['#attributes']['class'] = array('col-sm-5', 'tprint-cart-pane-right');
+
+  $variables['form']['panes']['payment']['#prefix'] = '<div class="row tprint-cart-pane">';
+  $variables['form']['panes']['comments']['#suffix'] = '</div>';
+  $variables['form']['panes']['payment']['#attributes']['class'] = array('col-sm-5', 'tprint-cart-pane-left');
+  $variables['form']['panes']['comments']['#attributes']['class'] = array('col-sm-5', 'tprint-cart-pane-right');
+
+  return drupal_render_children($variables['form']);
+}
