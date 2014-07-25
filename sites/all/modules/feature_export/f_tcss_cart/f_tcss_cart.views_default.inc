@@ -75,20 +75,18 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Business Card';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
     'title_1' => 'title_1',
-    'field_product' => 'field_product',
-    'field_quantity' => 'field_quantity',
-    'field_paper_stock' => 'field_paper_stock',
-    'field_paper_weight' => 'field_paper_weight',
-    'field_side' => 'field_side',
-    'field_colour_options' => 'field_colour_options',
-    'field_delivery' => 'field_delivery',
-    'field_price' => 'field_price',
-    'php' => 'php',
-    'add_to_cart' => 'add_to_cart',
+    'pkg_qty' => 'pkg_qty',
+    'field_bc_paper_stock' => 'field_bc_paper_stock',
+    'field_bc_paper_weight' => 'field_bc_paper_weight',
+    'field_bc_color_option' => 'field_bc_color_option',
+    'field_bc_sides' => 'field_bc_sides',
+    'field_uc_delivery' => 'field_uc_delivery',
+    'display_price' => 'display_price',
+    'addtocartlink' => 'addtocartlink',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -106,98 +104,99 @@ function f_tcss_cart_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_product' => array(
+    'pkg_qty' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_quantity' => array(
+    'field_bc_paper_stock' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_paper_stock' => array(
+    'field_bc_paper_weight' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_paper_weight' => array(
+    'field_bc_color_option' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_side' => array(
+    'field_bc_sides' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_colour_options' => array(
+    'field_uc_delivery' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_delivery' => array(
+    'display_price' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_price' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
+    'addtocartlink' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'add_to_cart' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
+  );
+  $handler->display->display_options['style_options']['bootstrap_styles'] = array(
+    'striped' => 0,
+    'bordered' => 0,
+    'hover' => 0,
+    'condensed' => 0,
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = 'Design';
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'colorbox_node_style' => 'uc_product_list',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'uc_product_full',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '[current-page:title]',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['label'] = 'Product';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  /* Field: Product: Package quantity */
-  $handler->display->display_options['fields']['pkg_qty']['id'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['pkg_qty']['field'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['label'] = 'Quantity';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '570';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '430';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_rel'] = '';
   /* Field: Content: Paper Stock */
   $handler->display->display_options['fields']['field_bc_paper_stock']['id'] = 'field_bc_paper_stock';
   $handler->display->display_options['fields']['field_bc_paper_stock']['table'] = 'field_data_field_bc_paper_stock';
@@ -206,22 +205,16 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['fields']['field_bc_paper_weight']['id'] = 'field_bc_paper_weight';
   $handler->display->display_options['fields']['field_bc_paper_weight']['table'] = 'field_data_field_bc_paper_weight';
   $handler->display->display_options['fields']['field_bc_paper_weight']['field'] = 'field_bc_paper_weight';
-  /* Field: Content: Color Option */
-  $handler->display->display_options['fields']['field_bc_color_option']['id'] = 'field_bc_color_option';
-  $handler->display->display_options['fields']['field_bc_color_option']['table'] = 'field_data_field_bc_color_option';
-  $handler->display->display_options['fields']['field_bc_color_option']['field'] = 'field_bc_color_option';
   /* Field: Content: Side */
   $handler->display->display_options['fields']['field_bc_sides']['id'] = 'field_bc_sides';
   $handler->display->display_options['fields']['field_bc_sides']['table'] = 'field_data_field_bc_sides';
   $handler->display->display_options['fields']['field_bc_sides']['field'] = 'field_bc_sides';
-  /* Field: Content: Delivery */
-  $handler->display->display_options['fields']['field_uc_delivery']['id'] = 'field_uc_delivery';
-  $handler->display->display_options['fields']['field_uc_delivery']['table'] = 'field_data_field_uc_delivery';
-  $handler->display->display_options['fields']['field_uc_delivery']['field'] = 'field_uc_delivery';
-  /* Field: Product: Display price */
-  $handler->display->display_options['fields']['display_price']['id'] = 'display_price';
-  $handler->display->display_options['fields']['display_price']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['display_price']['field'] = 'display_price';
+  /* Field: Product: Sell price */
+  $handler->display->display_options['fields']['sell_price']['id'] = 'sell_price';
+  $handler->display->display_options['fields']['sell_price']['table'] = 'uc_products';
+  $handler->display->display_options['fields']['sell_price']['field'] = 'sell_price';
+  $handler->display->display_options['fields']['sell_price']['label'] = 'Price';
+  $handler->display->display_options['fields']['sell_price']['precision'] = '0';
   /* Field: Product: Add to cart form */
   $handler->display->display_options['fields']['addtocartlink']['id'] = 'addtocartlink';
   $handler->display->display_options['fields']['addtocartlink']['table'] = 'uc_products';
@@ -348,21 +341,44 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['title'] = 'Flyers';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = 'Design';
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['type'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'colorbox_node_style' => 'uc_product_list',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'uc_product_full',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Flyers';
-  /* Field: Product: Package quantity */
-  $handler->display->display_options['fields']['pkg_qty']['id'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['pkg_qty']['field'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['label'] = 'Quantity';
+  $handler->display->display_options['fields']['title']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '570';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '430';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Paper Stock */
+  $handler->display->display_options['fields']['field_f_paper_stock']['id'] = 'field_f_paper_stock';
+  $handler->display->display_options['fields']['field_f_paper_stock']['table'] = 'field_data_field_f_paper_stock';
+  $handler->display->display_options['fields']['field_f_paper_stock']['field'] = 'field_f_paper_stock';
+  /* Field: Content: Paper Weight */
+  $handler->display->display_options['fields']['field_f_paper_weight']['id'] = 'field_f_paper_weight';
+  $handler->display->display_options['fields']['field_f_paper_weight']['table'] = 'field_data_field_f_paper_weight';
+  $handler->display->display_options['fields']['field_f_paper_weight']['field'] = 'field_f_paper_weight';
+  /* Field: Content: Side */
+  $handler->display->display_options['fields']['field_f_side']['id'] = 'field_f_side';
+  $handler->display->display_options['fields']['field_f_side']['table'] = 'field_data_field_f_side';
+  $handler->display->display_options['fields']['field_f_side']['field'] = 'field_f_side';
   /* Field: Product: Sell price */
   $handler->display->display_options['fields']['sell_price']['id'] = 'sell_price';
   $handler->display->display_options['fields']['sell_price']['table'] = 'uc_products';
@@ -479,36 +495,51 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['title'] = 'Letterheads';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = 'Design';
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'colorbox_node_style' => 'uc_product_list',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'uc_product_full',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['label'] = 'Printer Name';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Product';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '570';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '430';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Paper Stock */
+  $handler->display->display_options['fields']['field_lh_paper_stock']['id'] = 'field_lh_paper_stock';
+  $handler->display->display_options['fields']['field_lh_paper_stock']['table'] = 'field_data_field_lh_paper_stock';
+  $handler->display->display_options['fields']['field_lh_paper_stock']['field'] = 'field_lh_paper_stock';
+  /* Field: Content: Paper Weight */
+  $handler->display->display_options['fields']['field_lh_paper_weight']['id'] = 'field_lh_paper_weight';
+  $handler->display->display_options['fields']['field_lh_paper_weight']['table'] = 'field_data_field_lh_paper_weight';
+  $handler->display->display_options['fields']['field_lh_paper_weight']['field'] = 'field_lh_paper_weight';
+  /* Field: Content: Size */
+  $handler->display->display_options['fields']['field_lh_size']['id'] = 'field_lh_size';
+  $handler->display->display_options['fields']['field_lh_size']['table'] = 'field_data_field_lh_size';
+  $handler->display->display_options['fields']['field_lh_size']['field'] = 'field_lh_size';
   /* Field: Product: Sell price */
   $handler->display->display_options['fields']['sell_price']['id'] = 'sell_price';
   $handler->display->display_options['fields']['sell_price']['table'] = 'uc_products';
   $handler->display->display_options['fields']['sell_price']['field'] = 'sell_price';
   $handler->display->display_options['fields']['sell_price']['label'] = 'Price';
   $handler->display->display_options['fields']['sell_price']['precision'] = '0';
-  /* Field: Content: Paper Stock */
-  $handler->display->display_options['fields']['field_f_paper_stock']['id'] = 'field_f_paper_stock';
-  $handler->display->display_options['fields']['field_f_paper_stock']['table'] = 'field_data_field_f_paper_stock';
-  $handler->display->display_options['fields']['field_f_paper_stock']['field'] = 'field_f_paper_stock';
-  /* Field: Product: Package quantity */
-  $handler->display->display_options['fields']['pkg_qty']['id'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['pkg_qty']['field'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['label'] = 'Quantity';
-  /* Field: Content: Paper Weight */
-  $handler->display->display_options['fields']['field_lh_paper_weight']['id'] = 'field_lh_paper_weight';
-  $handler->display->display_options['fields']['field_lh_paper_weight']['table'] = 'field_data_field_lh_paper_weight';
-  $handler->display->display_options['fields']['field_lh_paper_weight']['field'] = 'field_lh_paper_weight';
   /* Field: Product: Add to cart form */
   $handler->display->display_options['fields']['addtocartlink']['id'] = 'addtocartlink';
   $handler->display->display_options['fields']['addtocartlink']['table'] = 'uc_products';
@@ -618,12 +649,33 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['title'] = 'Complimentary Slips';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = 'Design';
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'colorbox_node_style' => 'uc_product_list',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'uc_product_full',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['label'] = 'Printer Name';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Product';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '570';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '430';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_rel'] = '';
   /* Field: Content: Paper Stock */
   $handler->display->display_options['fields']['field_cs_paper_stock']['id'] = 'field_cs_paper_stock';
   $handler->display->display_options['fields']['field_cs_paper_stock']['table'] = 'field_data_field_cs_paper_stock';
@@ -636,11 +688,6 @@ function f_tcss_cart_views_default_views() {
   $handler->display->display_options['fields']['field_cs_size']['id'] = 'field_cs_size';
   $handler->display->display_options['fields']['field_cs_size']['table'] = 'field_data_field_cs_size';
   $handler->display->display_options['fields']['field_cs_size']['field'] = 'field_cs_size';
-  /* Field: Product: Package quantity */
-  $handler->display->display_options['fields']['pkg_qty']['id'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['pkg_qty']['field'] = 'pkg_qty';
-  $handler->display->display_options['fields']['pkg_qty']['label'] = 'Quantity';
   /* Field: Product: Sell price */
   $handler->display->display_options['fields']['sell_price']['id'] = 'sell_price';
   $handler->display->display_options['fields']['sell_price']['table'] = 'uc_products';

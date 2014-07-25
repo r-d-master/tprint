@@ -51,7 +51,7 @@ function f_tcss_cart_uc_product_default_classes() {
       'help' => '',
     ),
     'compliment_slips' => array(
-      'name' => t('Compliment Slips'),
+      'name' => t('Complimentry Slips'),
       'base' => 'uc_product',
       'description' => '',
       'has_title' => '1',
