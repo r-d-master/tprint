@@ -6728,6 +6728,18 @@ a:hover {
   color: #f1155a;
 }
 
+.tprint-product-view {
+  margin: 0;
+}
+.tprint-product-view .product-title {
+  color: #f1155a;
+  font-size: 24px;
+  font-weight: bold;
+}
+.tprint-product-view .product-desc {
+  margin-top: 16px;
+}
+
 .tabs-right > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a {
   min-width: 74px;
   margin-right: 0;

@@ -37,3 +37,15 @@
     color: $pink;
   }
 }
+
+.tprint-product-view {
+  margin: 0;
+  .product-title {
+    color:$pink;
+    font-size: $font-size-h3;
+    font-weight: bold;
+  }
+  .product-desc {
+    margin-top:$padding-large-horizontal;
+  }
+}
