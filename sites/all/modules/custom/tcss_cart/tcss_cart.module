@@ -134,9 +134,7 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
     break;
 
     case 'uc_order_view_update_form':
-    if (isUserSeller()) {
       $form['admin_comment_field']['#access'] = FALSE;
-    }
     break;
 
     default:
@@ -201,32 +199,6 @@ function tcss_cart_uc_cart_checkout_start($order) {
   }
 }
 
-
-/**
- * Filter product by seller id
- */
-function tcss_cart_get_product_by_sellerid(&$order) {
-  global $user;
-  if (isUserSeller()) {
-    $new_order_total = 0.0;
-    $result = array();
-    foreach ($order->products as $product_id => $product) {
-      if ($product->field_op_seller_id['und'][0]['target_id'] != $user->uid) {
-        unset($order->products[$product_id]);
-      }
-      else {
-        $new_order_total += $product->price;
-      }
-    }
-
-    if (count($order->products) == 0) {
-      drupal_goto();
-    }
-    $order->order_total = $new_order_total;
-    $order->line_items[0]['amount'] = $new_order_total;
-  }
-}
-
 /**
  * Removes Admin Content from orders view
  */
@@ -237,19 +209,6 @@ function tcss_cart_remove_admin_content($order_content) {
   }
   return $order_content;
 
-}
-
-/**
- * Check if user has seller role
- */
-function isUserSeller($user = NULL) {
-  if ($user == NULL) {
-    global $user;
-    if (in_array('Seller', $user->roles)) {
-      return TRUE;
-    }
-  }
-  return FALSE;
 }
 
 /**
@@ -264,7 +223,6 @@ function tcss_cart_views_pre_render(&$view) {
   if ($view->name == 'seller_order_history') {
     foreach ($view->result as $order_view) {
       $order = uc_order_load($order_view->order_id);
-      tcss_cart_get_product_by_sellerid($order);
       $order_view->uc_orders_order_total = $order->order_total;
     }
   }

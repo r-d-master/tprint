@@ -1214,7 +1214,6 @@ function uc_order_view($order, $view_mode = 'full') {
   $order->content += field_attach_view('uc_order', $order, $view_mode);
 
   $panes = _uc_order_pane_list($view_mode);
-  tcss_cart_get_product_by_sellerid($order);
   foreach ($panes as $pane) {
     if (in_array($view_mode, $pane['show'])) {
       $func = $pane['callback'];
@@ -1249,7 +1248,6 @@ function uc_order_view($order, $view_mode = 'full') {
  * Displays an order invoice.
  */
 function uc_order_view_invoice($order, $print = FALSE) {
-  tcss_cart_get_product_by_sellerid($order);
   $build = array(
     '#theme' => 'uc_order',
     '#order' => $order,
