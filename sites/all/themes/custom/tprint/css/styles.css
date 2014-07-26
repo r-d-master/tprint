@@ -6581,6 +6581,10 @@ button.close {
   background: #423338;
 }
 
+.navbar-fixed-top {
+  z-index: 999;
+}
+
 .logo img {
   width: 30%;
 }

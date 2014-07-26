@@ -3,6 +3,9 @@
 .navbar-default {
   background:$brown-dark;
 }
+.navbar-fixed-top {
+  z-index: 999;
+}
 
 .logo img {
   width:30%;
