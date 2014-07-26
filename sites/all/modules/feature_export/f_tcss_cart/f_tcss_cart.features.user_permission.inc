@@ -81,7 +81,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['administer store'] = array(
     'name' => 'administer store',
     'roles' => array(
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'uc_store',
@@ -91,7 +90,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['administer users'] = array(
     'name' => 'administer users',
     'roles' => array(
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -101,7 +99,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['create business_card content'] = array(
     'name' => 'create business_card content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -111,7 +108,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['create compliment_slips content'] = array(
     'name' => 'create compliment_slips content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -121,7 +117,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['create flyers content'] = array(
     'name' => 'create flyers content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -131,7 +126,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['create letterheads content'] = array(
     'name' => 'create letterheads content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -186,7 +180,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['delete own business_card content'] = array(
     'name' => 'delete own business_card content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -196,7 +189,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['delete own compliment_slips content'] = array(
     'name' => 'delete own compliment_slips content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -206,7 +198,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['delete own flyers content'] = array(
     'name' => 'delete own flyers content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -216,7 +207,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['delete own letterheads content'] = array(
     'name' => 'delete own letterheads content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -271,7 +261,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['edit own business_card content'] = array(
     'name' => 'edit own business_card content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -281,7 +270,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['edit own compliment_slips content'] = array(
     'name' => 'edit own compliment_slips content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -291,7 +279,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['edit own flyers content'] = array(
     'name' => 'edit own flyers content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -301,7 +288,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['edit own letterheads content'] = array(
     'name' => 'edit own letterheads content',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
@@ -331,7 +317,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view all orders'] = array(
     'name' => 'view all orders',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
@@ -342,7 +327,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view cc details'] = array(
     'name' => 'view cc details',
     'roles' => array(
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'uc_credit',
@@ -372,7 +356,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view own orders'] = array(
     'name' => 'view own orders',
     'roles' => array(
-      'Seller' => 'Seller',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -383,7 +366,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view payments'] = array(
     'name' => 'view payments',
     'roles' => array(
-      'Seller' => 'Seller',
       'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
@@ -394,7 +376,6 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view reports'] = array(
     'name' => 'view reports',
     'roles' => array(
-      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'uc_store',

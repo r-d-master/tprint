@@ -16,12 +16,6 @@ function f_tcss_cart_user_default_roles() {
     'weight' => 5,
   );
 
-  // Exported role: Seller.
-  $roles['Seller'] = array(
-    'name' => 'Seller',
-    'weight' => 3,
-  );
-
   // Exported role: Site Administrator.
   $roles['Site Administrator'] = array(
     'name' => 'Site Administrator',
