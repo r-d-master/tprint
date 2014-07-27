@@ -123,8 +123,8 @@ business-cards',
         'weight' => 0,
       ),
       'tprint' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'tprint',
         'weight' => -14,
       ),
@@ -162,6 +162,158 @@ business-cards',
       ),
       'tprint' => array(
         'region' => 'navigation',
+        'status' => 1,
+        'theme' => 'tprint',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views--exp-print_search-business_card'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => '-exp-print_search-business_card',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'tprint' => array(
+        'region' => 'form_first',
+        'status' => 1,
+        'theme' => 'tprint',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views--exp-print_search-flyers'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => '-exp-print_search-flyers',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'tprint' => array(
+        'region' => 'form_fourth',
+        'status' => 1,
+        'theme' => 'tprint',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views--exp-print_search-letterheads'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => '-exp-print_search-letterheads',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'tprint' => array(
+        'region' => 'form_second',
+        'status' => 1,
+        'theme' => 'tprint',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-ad1c50714daffed2afe0e726ac002891'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'ad1c50714daffed2afe0e726ac002891',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'tprint' => array(
+        'region' => 'form_third',
         'status' => 1,
         'theme' => 'tprint',
         'weight' => 0,

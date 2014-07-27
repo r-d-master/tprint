@@ -15,6 +15,12 @@ regions[help]           = 'Help'
 regions[content]        = 'Content'
 regions[sidebar_first]  = 'Primary'
 regions[sidebar_second] = 'Secondary'
+regions[form_first] = Form One
+regions[form_second] = Form Two
+regions[form_third] = Form Third
+regions[form_fourth] = Form Fourth
+regions[form_fifth] = Form Fifth
+regions[form_sixth] = Form Sixth
 regions[footer]         = 'Footer'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
@@ -25,7 +31,7 @@ regions[page_bottom]    = 'Page bottom'
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = css/styles.css
-
+stylesheets[all][] = css/owl.carousel.css
 
 
 ; For information on choosing the desired method, please read the Drupal

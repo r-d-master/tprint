@@ -114,9 +114,7 @@
 
 </header>
 
- <!-- Header banner -->
-<div class="header-banner container">
-<header role="banner" id="page-header">
+
   <!-- BANNER : begin -->
     <div id="banner">
 
@@ -132,13 +130,51 @@
     <!-- BANNER BG : end -->
 
     <!-- BANNER SEARCH : begin -->
-      <?php if (!empty($page['header'])): ?>
-        <?php print render($page['header']); ?>
-      <?php endif; ?>
-     </div>
-    <!-- BANNER : end -->
-  </header> <!-- /#page-header -->
- </div>
+      <div class="banner-search">
+        <div class="container">
+          <div class="banner-search-inner">
+            <ul class="custom-list tab-title-list clearfix">
+              <li class="tab-title active"><a href="#business-cards">Business Cards</a></li>
+              <li class="tab-title"><a href="#letterheads">Letterheads</a></li>
+              <li class="tab-title"><a href="#slips">Compliment Slips</a></li>
+              <li class="tab-title"><a href="#flyers">Flyers</a></li>
+              <li class="tab-title"><a href="#folded-flyers">Folded Flyers</a></li>
+            </ul>
+            <ul class="custom-list tab-content-list">
+
+              <!-- Bussiness Cards : begin -->
+              <li class="tab-content active">
+                <?php print render($page['form_first']); ?>
+              </li>
+              <!-- Bussiness Cards : end -->
+
+              <!-- Letterheads : begin -->
+              <li class="tab-content">
+                <?php print render($page['form_second']); ?>
+              </li>
+              <!-- Letterheads : end -->
+
+              <!-- Complimentry Slips : begin -->
+              <li class="tab-content">
+                <?php print render($page['form_third']); ?>
+              </li>
+              <!-- Complimentry Slips : end -->
+              <!-- Flyers : begin -->
+              <li class="tab-content">
+                <?php print render($page['form_fourth']); ?>
+              </li>
+              <!-- Flyers : end -->
+              <!-- Folded Flyers : begin -->
+              <li class="tab-content">
+                <?php print render($page['form_fifth']); ?>
+              </li>
+              <!-- Folded Flyers : end -->
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- BANNER SEARCH : end -->
 
 <div class="main-container container">
 

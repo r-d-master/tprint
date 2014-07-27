@@ -121,6 +121,41 @@
       <?php print render($page['header']); ?>
     <?php endif; ?>
   </header> <!-- /#page-header -->
+    <!-- CORE : begin -->
+    <div id="core">
+      <section id="browse" class="gs-search">
+        <div class="container">
+          <div class="row">
+        <!-- HORIZONTAL TABS : begin -->
+            <div class="tabs-container">
+              <ul class="tab-title-list">
+                <li class="tab-title active"><a href="#business-cards">Business Cards</a></li>
+                <li class="tab-title"><a href="#letterheads">Letterheads</a></li>
+                <li class="tab-title"><a href="#compliment-slips">Compliment Slips</a></li>
+                <li class="tab-title"><a href="#flyers">Flyers</a></li>
+                <li class="tab-title"><a href="#folded-flyers">Folded Flyers</a></li>
+              </ul>
+              <ul class="tab-content-list">
+                <li class="tab-content active">
+                  <?php print render($page['form_first']); ?>
+                </li>
+                <li class="tab-content">
+                  <?php print render($page['form_second']); ?>
+                </li>
+                <li class="tab-content">
+                  <?php print render($page['form_third']); ?>
+                </li>
+                <li class="tab-content">
+                  <?php print render($page['form_fourth']); ?>
+                </li>
+                <li class="tab-content">
+                  <?php print render($page['form_fifth']); ?>
+                </li>
+              </ul>
+            </div>
+            <!-- HORIZONTAL TABS : end --></div></div>
+
+      </section>
  </div>
 
 <div class="main-container container">

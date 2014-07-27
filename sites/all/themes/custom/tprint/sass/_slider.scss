@@ -1,0 +1,28 @@
+.custom-list {
+  list-style: none;
+  padding:0;
+}
+
+.banner-search {
+  .tab-title {
+    background-color: $brown-dark;
+    float:left;
+  }
+  .active {
+    background-color: $pink;
+  }
+  a {
+    color:white;
+  }
+}
+
+#banner {
+  margin-top:8em;
+}
+
+.banner-bg-item {
+width: 100%;
+height: 600px;
+background-position: center;
+background-size: cover;
+}
