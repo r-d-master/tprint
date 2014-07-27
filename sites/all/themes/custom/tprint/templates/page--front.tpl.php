@@ -175,6 +175,7 @@
   </div>
 </div>
 <!-- BANNER SEARCH : end -->
+</div>
 
 <div class="main-container container">
 
