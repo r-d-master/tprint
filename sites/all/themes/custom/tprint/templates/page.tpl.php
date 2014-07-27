@@ -77,13 +77,13 @@
   <div class="container">
     <div class="navbar-header">
       <?php if ($logo): ?>
-      <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
+        <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
       <?php endif; ?>
 
       <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -114,92 +114,100 @@
 
 </header>
 
- <!-- Header banner -->
+<!-- Header banner -->
 <div class="header-banner container">
-<header role="banner" id="page-header">
+  <header role="banner" id="page-header">
     <?php if (!empty($page['header'])): ?>
       <?php print render($page['header']); ?>
     <?php endif; ?>
   </header> <!-- /#page-header -->
-    <!-- CORE : begin -->
-    <div id="core">
-      <section id="browse" class="gs-search">
-        <div class="container">
-          <div class="row">
-        <!-- HORIZONTAL TABS : begin -->
-            <div class="tabs-container">
-              <ul class="tab-title-list">
-                <li class="tab-title active"><a href="#business-cards">Business Cards</a></li>
-                <li class="tab-title"><a href="#letterheads">Letterheads</a></li>
-                <li class="tab-title"><a href="#compliment-slips">Compliment Slips</a></li>
-                <li class="tab-title"><a href="#flyers">Flyers</a></li>
-                <li class="tab-title"><a href="#folded-flyers">Folded Flyers</a></li>
-              </ul>
-              <ul class="tab-content-list">
-                <li class="tab-content active">
-                  <?php print render($page['form_first']); ?>
-                </li>
-                <li class="tab-content">
-                  <?php print render($page['form_second']); ?>
-                </li>
-                <li class="tab-content">
-                  <?php print render($page['form_third']); ?>
-                </li>
-                <li class="tab-content">
-                  <?php print render($page['form_fourth']); ?>
-                </li>
-                <li class="tab-content">
-                  <?php print render($page['form_fifth']); ?>
-                </li>
-              </ul>
-            </div>
-            <!-- HORIZONTAL TABS : end --></div></div>
+<div class="banner-search">
+  <div class="container">
+    <div class="banner-search-inner">
+      <ul class="custom-list tab-title-list clearfix">
+        <li class="tab-title active"><a href="#business-cards">Business Cards</a></li>
+        <li class="tab-title"><a href="#letterheads">Letterheads</a></li>
+        <li class="tab-title"><a href="#slips">Compliment Slips</a></li>
+        <li class="tab-title"><a href="#flyers">Flyers</a></li>
+        <li class="tab-title"><a href="#folded-flyers">Folded Flyers</a></li>
+      </ul>
+      <ul class="custom-list tab-content-list">
 
-      </section>
- </div>
+        <!-- Bussiness Cards : begin -->
+        <li class="tab-content active">
+          <?php print render($page['form_first']); ?>
+        </li>
+        <!-- Bussiness Cards : end -->
 
-<div class="main-container container">
+        <!-- Letterheads : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_second']); ?>
+        </li>
+        <!-- Letterheads : end -->
 
-  <div class="row">
+        <!-- Complimentry Slips : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_third']); ?>
+        </li>
+        <!-- Complimentry Slips : end -->
+        <!-- Flyers : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_fourth']); ?>
+        </li>
+        <!-- Flyers : end -->
+        <!-- Folded Flyers : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_fifth']); ?>
+        </li>
+        <!-- Folded Flyers : end -->
 
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
+      </ul>
+    </div>
   </div>
 </div>
-<footer class="footer container-fluid">
-  <?php print render($page['footer']); ?>
-</footer>
+
+      <div class="main-container container">
+
+        <div class="row">
+
+          <?php if (!empty($page['sidebar_first'])): ?>
+            <aside class="col-sm-3" role="complementary">
+              <?php print render($page['sidebar_first']); ?>
+            </aside>  <!-- /#sidebar-first -->
+          <?php endif; ?>
+
+          <section<?php print $content_column_class; ?>>
+          <?php if (!empty($page['highlighted'])): ?>
+            <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+          <?php endif; ?>
+          <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+          <a id="main-content"></a>
+          <?php print render($title_prefix); ?>
+          <?php if (!empty($title)): ?>
+            <h1 class="page-header"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+          <?php print $messages; ?>
+          <?php if (!empty($tabs)): ?>
+            <?php print render($tabs); ?>
+          <?php endif; ?>
+          <?php if (!empty($page['help'])): ?>
+            <?php print render($page['help']); ?>
+          <?php endif; ?>
+          <?php if (!empty($action_links)): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
+          <?php print render($page['content']); ?>
+        </section>
+
+        <?php if (!empty($page['sidebar_second'])): ?>
+          <aside class="col-sm-3" role="complementary">
+            <?php print render($page['sidebar_second']); ?>
+          </aside>  <!-- /#sidebar-second -->
+        <?php endif; ?>
+
+      </div>
+    </div>
+    <footer class="footer container-fluid">
+      <?php print render($page['footer']); ?>
+    </footer>

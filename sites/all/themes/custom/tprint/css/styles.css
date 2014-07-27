@@ -6749,15 +6749,34 @@ a:hover {
   padding: 0;
 }
 
-.banner-search .tab-title {
+.front .banner-search {
+  position: absolute;
+  left: 0;
+  bottom: 200px;
+  width: 100%;
+}
+
+.banner-search .tab-title-list .tab-title {
   background-color: #423338;
   float: left;
 }
-.banner-search .active {
+.banner-search .tab-title-list .active {
   background-color: #f1155a;
+}
+.banner-search .tab-content-list {
+  background-color: #423338;
+}
+.banner-search .tab-content-list .tab-content {
+  display: none;
+}
+.banner-search .tab-content-list .active {
+  display: block;
 }
 .banner-search a {
   color: white;
+  display: block;
+  padding: 12px 30px;
+  border: 0;
 }
 
 #banner {

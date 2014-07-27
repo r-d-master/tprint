@@ -3,16 +3,36 @@
   padding:0;
 }
 
+.front .banner-search {
+  position: absolute;
+  left: 0;
+  bottom: 200px;
+  width: 100%;
+}
 .banner-search {
-  .tab-title {
-    background-color: $brown-dark;
-    float:left;
+  .tab-title-list {
+    .tab-title {
+      background-color: $brown-dark;
+      float:left;
+    }
+    .active {
+      background-color: $pink;
+    }
   }
-  .active {
-    background-color: $pink;
+  .tab-content-list {
+    background-color:$brown-dark;
+    .tab-content {
+      display:none;
+    }
+    .active {
+      display:block;
+    }
   }
   a {
     color:white;
+    display: block;
+    padding: 12px 30px;
+    border: 0;
   }
 }
 

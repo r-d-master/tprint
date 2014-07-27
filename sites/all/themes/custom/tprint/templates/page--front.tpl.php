@@ -77,13 +77,13 @@
   <div class="container">
     <div class="navbar-header">
       <?php if ($logo): ?>
-      <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
+        <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
       <?php endif; ?>
 
       <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -115,66 +115,66 @@
 </header>
 
 
-  <!-- BANNER : begin -->
-    <div id="banner">
+<!-- BANNER : begin -->
+<div id="banner">
 
-    <!-- BANNER BG : begin -->
-    <?php if (!empty($page['search_bg'])): ?>
-       <div class="banner-bg">
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][0]; ?>" alt="" /></div>
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][1]; ?>" alt="" /></div>
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][2]; ?>" alt="" /></div>
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][3]; ?>" alt="" /></div>
-      </div>
-      <?php endif; ?>
-    <!-- BANNER BG : end -->
+  <!-- BANNER BG : begin -->
+  <?php if (!empty($page['search_bg'])): ?>
+   <div class="banner-bg">
+    <div class="banner-bg-item"><img src="<?php print $page['search_bg'][0]; ?>" alt="" /></div>
+    <div class="banner-bg-item"><img src="<?php print $page['search_bg'][1]; ?>" alt="" /></div>
+    <div class="banner-bg-item"><img src="<?php print $page['search_bg'][2]; ?>" alt="" /></div>
+    <div class="banner-bg-item"><img src="<?php print $page['search_bg'][3]; ?>" alt="" /></div>
+  </div>
+<?php endif; ?>
+<!-- BANNER BG : end -->
 
-    <!-- BANNER SEARCH : begin -->
-      <div class="banner-search">
-        <div class="container">
-          <div class="banner-search-inner">
-            <ul class="custom-list tab-title-list clearfix">
-              <li class="tab-title active"><a href="#business-cards">Business Cards</a></li>
-              <li class="tab-title"><a href="#letterheads">Letterheads</a></li>
-              <li class="tab-title"><a href="#slips">Compliment Slips</a></li>
-              <li class="tab-title"><a href="#flyers">Flyers</a></li>
-              <li class="tab-title"><a href="#folded-flyers">Folded Flyers</a></li>
-            </ul>
-            <ul class="custom-list tab-content-list">
+<!-- BANNER SEARCH : begin -->
+<div class="banner-search">
+  <div class="container">
+    <div class="banner-search-inner">
+      <ul class="custom-list tab-title-list clearfix">
+        <li class="tab-title active"><a href="#business-cards">Business Cards</a></li>
+        <li class="tab-title"><a href="#letterheads">Letterheads</a></li>
+        <li class="tab-title"><a href="#slips">Compliment Slips</a></li>
+        <li class="tab-title"><a href="#flyers">Flyers</a></li>
+        <li class="tab-title"><a href="#folded-flyers">Folded Flyers</a></li>
+      </ul>
+      <ul class="custom-list tab-content-list">
 
-              <!-- Bussiness Cards : begin -->
-              <li class="tab-content active">
-                <?php print render($page['form_first']); ?>
-              </li>
-              <!-- Bussiness Cards : end -->
+        <!-- Bussiness Cards : begin -->
+        <li class="tab-content active">
+          <?php print render($page['form_first']); ?>
+        </li>
+        <!-- Bussiness Cards : end -->
 
-              <!-- Letterheads : begin -->
-              <li class="tab-content">
-                <?php print render($page['form_second']); ?>
-              </li>
-              <!-- Letterheads : end -->
+        <!-- Letterheads : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_second']); ?>
+        </li>
+        <!-- Letterheads : end -->
 
-              <!-- Complimentry Slips : begin -->
-              <li class="tab-content">
-                <?php print render($page['form_third']); ?>
-              </li>
-              <!-- Complimentry Slips : end -->
-              <!-- Flyers : begin -->
-              <li class="tab-content">
-                <?php print render($page['form_fourth']); ?>
-              </li>
-              <!-- Flyers : end -->
-              <!-- Folded Flyers : begin -->
-              <li class="tab-content">
-                <?php print render($page['form_fifth']); ?>
-              </li>
-              <!-- Folded Flyers : end -->
+        <!-- Complimentry Slips : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_third']); ?>
+        </li>
+        <!-- Complimentry Slips : end -->
+        <!-- Flyers : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_fourth']); ?>
+        </li>
+        <!-- Flyers : end -->
+        <!-- Folded Flyers : begin -->
+        <li class="tab-content">
+          <?php print render($page['form_fifth']); ?>
+        </li>
+        <!-- Folded Flyers : end -->
 
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- BANNER SEARCH : end -->
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- BANNER SEARCH : end -->
 
 <div class="main-container container">
 
@@ -187,36 +187,36 @@
     <?php endif; ?>
 
     <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
+    <?php if (!empty($page['highlighted'])): ?>
+      <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
+    <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+    <a id="main-content"></a>
+    <?php print render($title_prefix); ?>
+    <?php if (!empty($title)): ?>
+      <h1 class="page-header"><?php print $title; ?></h1>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <?php print $messages; ?>
+    <?php if (!empty($tabs)): ?>
+      <?php print render($tabs); ?>
+    <?php endif; ?>
+    <?php if (!empty($page['help'])): ?>
+      <?php print render($page['help']); ?>
+    <?php endif; ?>
+    <?php if (!empty($action_links)): ?>
+      <ul class="action-links"><?php print render($action_links); ?></ul>
+    <?php endif; ?>
+    <?php print render($page['content']); ?>
+  </section>
 
-  </div>
+  <?php if (!empty($page['sidebar_second'])): ?>
+    <aside class="col-sm-3" role="complementary">
+      <?php print render($page['sidebar_second']); ?>
+    </aside>  <!-- /#sidebar-second -->
+  <?php endif; ?>
+
+</div>
 </div>
 <footer class="footer container-fluid">
   <?php print render($page['footer']); ?>
