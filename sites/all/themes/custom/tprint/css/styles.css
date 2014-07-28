@@ -6702,6 +6702,9 @@ a:hover {
 .front .page-header {
   display: none;
 }
+.front .front-content {
+  padding: 0;
+}
 .front #first-time {
   display: none;
 }
@@ -7080,7 +7083,7 @@ a:hover {
 }
 
 .form-control:focus {
-  border-color: #999999;
+  border-color: #f1155a;
 }
 
 .tabs-right > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a {
