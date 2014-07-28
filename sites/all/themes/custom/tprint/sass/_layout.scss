@@ -79,13 +79,6 @@
 /* Begin Style for footer */
 .footer {
   padding: 0;
-  #block-panels-mini-footer-1 {
-    background-color: $brown-dark;
-  }
-
-  #block-panels-mini-footer-2 {
-    background-color: $footer ;
-  }
 
   .pane-title,
   .widget-title,
@@ -93,13 +86,27 @@
     color: $white;
   }
 
-
   .tprint-footer-1 {
-    margin: 0;
-    a:hover{
+    #block-panels-mini-footer-1 {
+      padding: 45px 0 24px 0;
+    }
+   background-color: $brown-dark;
+   a:hover{
       text-decoration: underline;
       background-color: $brown-dark !important;
     }
+    h2 {
+    margin: 0;
+    font-size: $font-size-h3;
+    }
+  }
+  .tprint-footer-2 {
+   background-color: $footer;
+   padding: 0.5em;
+  }
+  p {
+    color: #999999;
+    font-size: $font-size-medium;
   }
 }
 
@@ -177,10 +184,22 @@ a {
     overflow: hidden;
     border-radius: 50%;
     border: 10px solid;
+    @media ( max-width: 767px ) {
+       position: relative;
+       margin: 0 auto 24px auto;
+    }
+  }
+
+  @media ( max-width: 767px ) {
+ .testimonial-list { text-align: center; }
+ .navigation { text-align: center; }
   }
   .testimonials-inner {
     position: relative;
     padding-left: 290px;
+    @media ( max-width: 767px ) {
+     padding-left: 0;
+    }
   }
 
   .glyphicon-list,

@@ -6649,23 +6649,32 @@ button.close {
 .footer {
   padding: 0;
 }
-.footer #block-panels-mini-footer-1 {
-  background-color: #423338;
-}
-.footer #block-panels-mini-footer-2 {
-  background-color: #241c1f;
-}
 .footer .pane-title,
 .footer .widget-title,
 .footer .pane-content {
   color: white;
 }
 .footer .tprint-footer-1 {
-  margin: 0;
+  background-color: #423338;
+}
+.footer .tprint-footer-1 #block-panels-mini-footer-1 {
+  padding: 45px 0 24px 0;
 }
 .footer .tprint-footer-1 a:hover {
   text-decoration: underline;
   background-color: #423338 !important;
+}
+.footer .tprint-footer-1 h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.footer .tprint-footer-2 {
+  background-color: #241c1f;
+  padding: 0.5em;
+}
+.footer p {
+  color: #999999;
+  font-size: 16px;
 }
 
 table th {
@@ -6739,9 +6748,28 @@ a:hover {
   border-radius: 50%;
   border: 10px solid;
 }
+@media (max-width: 767px) {
+  .front .active-portrait {
+    position: relative;
+    margin: 0 auto 24px auto;
+  }
+}
+@media (max-width: 767px) {
+  .front .testimonial-list {
+    text-align: center;
+  }
+  .front .navigation {
+    text-align: center;
+  }
+}
 .front .testimonials-inner {
   position: relative;
   padding-left: 290px;
+}
+@media (max-width: 767px) {
+  .front .testimonials-inner {
+    padding-left: 0;
+  }
 }
 .front .glyphicon-list:before,
 .front .glyphicon-heart:before {

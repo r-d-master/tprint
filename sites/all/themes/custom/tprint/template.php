@@ -9,8 +9,11 @@
  * Implements template_preprocess_page().
  */
 function tprint_preprocess_page(&$variables) {
-
-  // Set background image product search form
+  $variables['page']['footer']['panels_mini_footer_1']['#prefix'] = '<div class="tprint-footer-1"><div class="container">';
+  $variables['page']['footer']['panels_mini_footer_1']['#suffix'] = '</div></div>';
+  $variables['page']['footer']['panels_mini_footer_2']['#prefix'] = '<div class="tprint-footer-2"><div class="container">';
+  $variables['page']['footer']['panels_mini_footer_2']['#suffix'] = '</div></div>';
+  // Set background image product search form[]
   if ($variables['is_front']) {
     $product_classes = uc_product_class_load();
     foreach ($product_classes as $key => $value) {

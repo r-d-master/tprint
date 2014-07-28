@@ -40,6 +40,7 @@ function f_theme_layout_default_panels_mini() {
           0 => 'main-row',
         ),
         'parent' => 'canvas',
+        'class' => 'container',
       ),
       'main-row' => array(
         'type' => 'row',
@@ -48,6 +49,7 @@ function f_theme_layout_default_panels_mini() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => '',
       ),
       'center' => array(
         'type' => 'region',
@@ -55,7 +57,7 @@ function f_theme_layout_default_panels_mini() {
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'row tprint-footer-1',
+        'class' => 'row',
       ),
     ),
   );
@@ -135,7 +137,7 @@ function f_theme_layout_default_panels_mini() {
       'title' => '',
       'body' => '<!-- TWITTER WIDGET : begin -->
 						<div class="widget twitter-widget loading">
-							<h3 class="widget-title">
+							<h2 class="widget-title">
 								<span>Latest Tweets</span>
 								<span class="tweet-nav">
 									<span class="tweet-nav-prev"><i class="fa fa-chevron-left"></i></span>
