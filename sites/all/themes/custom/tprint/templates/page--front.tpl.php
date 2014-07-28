@@ -177,7 +177,7 @@
 <!-- BANNER SEARCH : end -->
 </div>
 
-<div class="main-container container">
+<div class="main-container container-fluid">
 
   <div class="row">
 

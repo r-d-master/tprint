@@ -6696,6 +6696,79 @@ a:hover {
   margin-left: 0px;
 }
 
+/**
+ * Style for front page content
+ */
+.front .page-header {
+  display: none;
+}
+.front #first-time {
+  display: none;
+}
+.front .main-container {
+  padding: 0;
+}
+.front #testimonials {
+  padding: 0;
+  color: #FFF;
+  background: #72656c url("../images/testimonials_bg.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 78px 0 50px 0;
+  z-index: 10;
+}
+.front .testimonial .portrait {
+  display: none;
+}
+.front .active-portrait {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 10px solid;
+}
+.front .testimonials-inner {
+  position: relative;
+  padding-left: 290px;
+}
+.front .glyphicon-list:before,
+.front .glyphicon-heart:before {
+  padding-right: 7px;
+}
+.front h2 {
+  font-size: 36px;
+}
+.front p {
+  line-height: 1.5em;
+}
+.front .testimonial blockquote p {
+  font-size: 36px;
+}
+.front .testimonial blockquote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 1.125em;
+  color: white;
+}
+.front .prev {
+  margin-right: 10px;
+}
+.front .content-section {
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+.front .content-section .rounded-shadow {
+  display: block;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  box-shadow: 0 4px 0 #d9d9d9;
+  margin-top: -30px;
+}
+
 .subtotal .uc-price {
   font-size: 24px;
   color: #f1155a;
@@ -6997,13 +7070,17 @@ a:hover {
   color: #999999;
   background-color: #241c1f;
   border-color: #241c1f;
-  border-radius: 0px;
+  border-radius: 7px;
 }
 .banner-search label {
   color: white;
 }
 .banner-search .views-exposed-form {
   padding-left: 3em;
+}
+
+.form-control:focus {
+  border-color: #999999;
 }
 
 .tabs-right > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a {

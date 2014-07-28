@@ -265,7 +265,7 @@
     color: #999999;
     background-color: #241c1f;
     border-color: #241c1f;
-    border-radius: 0px;
+    border-radius: 7px;
   }
   label {
     color: $white;
@@ -274,3 +274,8 @@
     padding-left: 3em;
   }
 }
+
+.form-control:focus {
+border-color: #999999;
+}
+

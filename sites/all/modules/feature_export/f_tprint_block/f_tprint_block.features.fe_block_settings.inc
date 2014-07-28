@@ -12,6 +12,44 @@ function f_tprint_block_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-front_content'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'front_content',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'bootstrap' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bootstrap',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'tprint' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'tprint',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
+
   $export['panels_mini-footer_1'] = array(
     'cache' => -1,
     'custom' => 0,

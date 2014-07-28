@@ -115,13 +115,13 @@ table {
   }
 }
 
- a {
+a {
+  color:$pink;
+  font-size: $font-size-medium;
+  &:hover {
     color:$pink;
-    font-size: $font-size-medium;
-    &:hover {
-      color:$pink;
-    }
   }
+}
 
 .form-control {
   width: auto;
@@ -131,4 +131,86 @@ table {
 .radio input[type="radio"], .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
   margin-left: 0px;
+}
+
+/**
+ * Style for front page content
+ */
+ .front  {
+  .page-header {
+    display: none;
+  }
+  #first-time {
+    display: none;
+  }
+  .main-container{
+    padding: 0;
+  }
+  #testimonials {
+    padding: 0;
+    color: #FFF;
+    background: #72656c url('../images/testimonials_bg.jpg' ) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 78px 0 50px 0;
+    z-index: 10;
+  }
+  .testimonial .portrait {
+    display: none;
+  }
+  .active-portrait {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    margin: 0;
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 10px solid
+  }
+  .testimonials-inner {
+    position: relative;
+    padding-left: 290px;
+  }
+
+  .glyphicon-list,
+  .glyphicon-heart {
+    &:before  {
+      padding-right: 7px;
+    }
+  }
+  h2 {
+    font-size: $font-size-h1;
+  }
+  p {
+    line-height: 1.5em;
+  }
+
+  .testimonial blockquote {
+    p {
+      font-size: $font-size-h1;
+    }
+    cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 1.125em;
+      color:white;
+    }
+  }
+  .prev {
+    margin-right: 10px;
+  }
+  .content-section {
+    margin-top: 4em;
+    margin-bottom: 2em;
+
+    .rounded-shadow {
+      display: block;
+      border-radius: 50%;
+      border: 10px solid transparent;
+      box-shadow: 0 4px 0 #d9d9d9;
+      margin-top: -30px;
+    }
+  }
 }
