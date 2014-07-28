@@ -157,6 +157,12 @@ a {
     position: relative;
     padding: 78px 0 50px 0;
     z-index: 10;
+
+    blockquote {
+      border-left: none;
+      margin: 0;
+      padding: 0;
+    }
   }
   .testimonial .portrait {
     display: none;
@@ -170,7 +176,7 @@ a {
     height: 220px;
     overflow: hidden;
     border-radius: 50%;
-    border: 10px solid
+    border: 10px solid;
   }
   .testimonials-inner {
     position: relative;

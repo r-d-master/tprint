@@ -6720,6 +6720,11 @@ a:hover {
   padding: 78px 0 50px 0;
   z-index: 10;
 }
+.front #testimonials blockquote {
+  border-left: none;
+  margin: 0;
+  padding: 0;
+}
 .front .testimonial .portrait {
   display: none;
 }
