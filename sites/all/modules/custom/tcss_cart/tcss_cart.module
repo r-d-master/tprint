@@ -87,10 +87,9 @@ function upload_customer_artwork_submit($form, &$form_state) {
 }
 
 /**
- * Implments hook_form_alter
+ * Implments hook_form_alter.
  */
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
-
   if ($form_id == "views_exposed_form" && ($form['#id'] == "views-exposed-form-print-search-business-card" || $form['#id'] == "views-exposed-form-print-search-letterheads" || $form['#id'] == "views-exposed-form-print-search-complimentary-slips" || $form['#id'] == "views-exposed-form-print-search-flyers")) {
     $form['pkg_qty']['#type'] = "select";
     $form['pkg_qty']['#size'] = null;
@@ -136,11 +135,58 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
     case 'uc_order_view_update_form':
       $form['admin_comment_field']['#access'] = FALSE;
     break;
+   }
+}
 
-    default:
-      # code...
-    break;
-  }
+/**
+ * Alter drupal form.
+ */
+function tcss_cart_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $form['#attributes']['class'] = 'default-form';
+  $form['name']['#attributes']['placeholder'] = t('Name');
+  $form['name']['#title'] = NULL;
+  $form['name']['#prefix'] ='<div class="col-sm-6">';
+  $form['name']['#suffix'] ='</div>';
+  $form['mail']['#attributes']['placeholder'] = t('Email');
+  $form['mail']['#title'] = NULL;
+  $form['mail']['#prefix'] ='<div class="col-sm-6">';
+  $form['mail']['#suffix'] ='</div>';
+  $form['subject']['#attributes']['placeholder'] = t('Subject');
+  $form['subject']['#title'] = NULL;
+  $form['subject']['#prefix'] ='<div class="col-sm-12">';
+  $form['subject']['#suffix'] ='</div>';
+  $form['cid']['#attributes']['placeholder'] = t('Category');
+  $form['cid']['#title'] = NULL;
+  $form['cid']['#prefix'] ='<div class="col-sm-12"><span class="select-box" title="Category">';
+  $form['cid']['#suffix'] ='</span></div>';
+  $form['message']['#weight'] = 2;
+  $form['message']['#attributes']['placeholder'] = t('Message');
+  $form['message']['#prefix'] ='<div class="col-sm-12">';
+  $form['message']['#suffix'] ='</div>';
+  $form['message']['#title'] = NULL;
+  $form['copy']['#weight']    = 3;
+  $form['phone'] = array(
+    '#type' => 'textfield',
+    '#title' => NULL,
+    '#required' => TRUE,
+    '#prefix' => '<div class="col-sm-6">',
+    '#suffix' => '</div>',
+    '#attributes' => array(
+      'placeholder' => t('Phone'),
+      ),
+    '#weight' => 1
+    );
+  $form['company'] = array(
+    '#type' => 'textfield',
+    '#title' => NULL,
+    '#required' => TRUE,
+    '#prefix' => '<div class="col-sm-6">',
+    '#suffix' => '</div>',
+    '#attributes' => array(
+      'placeholder' => t('Company'),
+      ),
+    '#weight' => 1
+    );
 }
 
 function theme_tcss_cart_image_upload($variables) {

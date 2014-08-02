@@ -6805,6 +6805,79 @@ a:hover {
   margin-top: -30px;
 }
 
+.default-form input[type=text], .default-form input[type=password], .default-form input[type=date] {
+  margin: 0;
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid rbga(0, 0, 0, 0.17);
+  font: 16px 'Varela Round', sans-serif;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.default-form select, .default-form textarea {
+  margin: 0;
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid rbga(0, 0, 0, 0.17);
+  font: 16px 'Varela Round', sans-serif;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.default-form select {
+  padding: 8px 15px;
+  width: 100%;
+}
+.default-form textarea {
+  min-height: 100px;
+}
+.default-form .input-group {
+  position: relative;
+  padding-right: 40px;
+  border-radius: 7px;
+}
+.default-form .input-group button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.default-form .input-group button:hover {
+  opacity: .8;
+}
+.default-form .input-group button:active {
+  opacity: .5;
+}
+.default-form .input-group button > i {
+  font-size: 18px;
+}
+.default-form input[type=checkbox], .default-form button {
+  margin-left: 15px;
+}
+
+.form-select option:hover {
+  color: #fff;
+  background-color: #f1155a;
+}
+
+.main-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
 .subtotal .uc-price {
   font-size: 24px;
   color: #f1155a;

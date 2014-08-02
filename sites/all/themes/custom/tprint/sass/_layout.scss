@@ -242,3 +242,80 @@ a {
     }
   }
 }
+
+.default-form {
+  input {
+    &[type=text], &[type=password], &[type=date] {
+      margin: 0;
+      padding: 10px 15px;
+      width: 100%;
+      border-radius: 7px;
+      border: 1px solid rbga(0, 0, 0, 0.17);
+      font: 16px 'Varela Round', sans-serif;
+      -webkit-transition: all 300ms ease-in-out;
+      -moz-transition: all 300ms ease-in-out;
+      -ms-transition: all 300ms ease-in-out;
+      -o-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
+    }
+  }
+  select, textarea {
+    margin: 0;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid rbga(0, 0, 0, 0.17);
+    font: 16px 'Varela Round', sans-serif;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  select {
+    padding: 8px 15px;
+    width: 100%;
+  }
+  textarea {
+    min-height: 100px;
+  }
+  .input-group {
+    position: relative;
+    padding-right: 40px;
+    border-radius: 7px;
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px 12px;
+      cursor: pointer;
+      -webkit-transition: all 300ms ease-in-out;
+      -moz-transition: all 300ms ease-in-out;
+      -ms-transition: all 300ms ease-in-out;
+      -o-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        opacity: .8;
+      }
+      &:active {
+        opacity: .5;
+      }
+      > i {
+        font-size: 18px;
+      }
+    }
+  }
+  input[type=checkbox], button {
+    margin-left: 15px;
+  }
+}
+
+.form-select option:hover {
+  color: #fff;
+  background-color: #f1155a;
+}
+
+.main-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
