@@ -81,6 +81,7 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['administer store'] = array(
     'name' => 'administer store',
     'roles' => array(
+      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'uc_store',
@@ -90,6 +91,7 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['administer users'] = array(
     'name' => 'administer users',
     'roles' => array(
+      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -327,6 +329,7 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view cc details'] = array(
     'name' => 'view cc details',
     'roles' => array(
+      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'uc_credit',
@@ -376,6 +379,7 @@ function f_tcss_cart_user_default_permissions() {
   $permissions['view reports'] = array(
     'name' => 'view reports',
     'roles' => array(
+      'Site Administrator' => 'Site Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'uc_store',
