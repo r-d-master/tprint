@@ -173,6 +173,9 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
     case 'uc_order_view_update_form':
       $form['admin_comment_field']['#access'] = FALSE;
     break;
+    case 'user_login':
+      $form['#attributes']['class'][] = 'default-form';
+      break;
    }
 }
 

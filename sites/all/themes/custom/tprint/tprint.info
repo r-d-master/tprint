@@ -31,6 +31,7 @@ regions[page_bottom]    = 'Page bottom'
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/gsjha.css
 stylesheets[all][] = css/owl.carousel.css
 
 

@@ -1,0 +1,30 @@
+/* line 1, gsjha.scss */
+.dropdown-menu {
+  padding: 20px 30px 25px 30px;
+  border-top: 1px solid transparent;
+  top: 5.3em;
+  left: -100px;
+}
+/* line 6, gsjha.scss */
+.dropdown-menu input[type="text"] {
+  width: auto;
+  max-width: 280px;
+}
+/* line 9, gsjha.scss */
+.dropdown-menu input[type="password"] {
+  width: auto;
+  max-width: 280px;
+}
+
+/* line 13, gsjha.scss */
+nav {
+  margin-top: 1.5em;
+}
+
+/* line 17, gsjha.scss */
+.order-review-table td {
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  font-size: 14px;
+  text-align: center;
+}
