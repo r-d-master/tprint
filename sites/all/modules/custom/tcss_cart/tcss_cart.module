@@ -65,7 +65,6 @@ function upload_customer_artwork($form, &$form_state) {
   );
 
   drupal_add_js(drupal_get_path('module', 'tcss_cart') . '/js/customer_artwork.js');
-
   if (isset($_SESSION['customer_artwork_product'])) {
     $form['customer_artwork_front_side'] = array(
       '#title' => t('Upload Front Side'),
@@ -102,7 +101,7 @@ function upload_customer_artwork_submit($form, &$form_state) {
   // Set product and image information to session, used in storing customer's artwork
   if (isset($_SESSION['customer_artwork_pid'])) {
     if ($form_state['values']['customer_upload'] == 0) {
-      $_SESSION['customer_upload'] = 0;
+      $_SESSION['customer_upload'][$_SESSION['customer_artwork_pid']] = 0;
       if (isset($form_state['values']['customer_artwork'])) {
         $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']] = $form_state['values']['customer_artwork'];
       }
@@ -112,7 +111,7 @@ function upload_customer_artwork_submit($form, &$form_state) {
       }
     }
     else {
-      $_SESSION['customer_upload'] = 1;
+      $_SESSION['customer_upload'][$_SESSION['customer_artwork_pid']] = 1;
     }
     $form_state['redirect'] = 'cart';
     unset($_SESSION['customer_artwork_pid']);
@@ -124,7 +123,6 @@ function upload_customer_artwork_submit($form, &$form_state) {
  * Implments hook_form_alter.
  */
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
-  //dpm($form_id);
   if ($form_id == "views_exposed_form" && ($form['#id'] == "views-exposed-form-print-search-business-card" || $form['#id'] == "views-exposed-form-print-search-letterheads" || $form['#id'] == "views-exposed-form-print-search-complimentary-slips" || $form['#id'] == "views-exposed-form-print-search-flyers")) {
     $form['pkg_qty']['#type'] = "select";
     $form['pkg_qty']['#size'] = null;
@@ -142,6 +140,7 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
   if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
     $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
     if ($form_state['build_info']['args'][0]->type == 'business_card') {
+      dpm('tk');
       $_SESSION['customer_artwork_product'] = $form_state['build_info']['args'][0]->type;
     }
   }
@@ -264,37 +263,39 @@ function tcss_cart_uc_order_product_presave($order_product) {
  * Need to be changed, should be saved in hook_uc_order
  */
 function tcss_cart_uc_cart_checkout_start($order) {
-
   // Save Product image to database
-  if (isset($_SESSION['customer_artwork_fpid'])) {
+  if (isset($_SESSION['customer_artwork_fpid']) || isset($_SESSION['customer_upload'])) {
     foreach ($order->products as $id => $product) {
       $order_id = $order->order_id;
       $product_image = new stdClass();
       $product_image->type = 'product_image';
       node_object_prepare($product_image);
-      if(is_array($_SESSION['customer_artwork_fpid'][$product->nid])) {
+      $product_image->language = LANGUAGE_NONE;
+      $product_image->field_order_id['und'][]['value'] = $order_id;
+      $product_image->field_order_product_id['und'][]['target_id'] = $product->nid;
+      if (isset($_SESSION['customer_upload']) && $_SESSION['customer_upload'][$product->nid] == 1) {
+        $product_image->field_order_customer_design['und'][] = 20.00;
+      }
+      else {
+        if(is_array($_SESSION['customer_artwork_fpid'][$product->nid])) {
         foreach ($_SESSION['customer_artwork_fpid'][$product->nid] as $fid) {
           $image = (array) file_load($fid);
           if (isset($image['fid'])) {
-            $product_image->language = LANGUAGE_NONE;
-            $product_image->field_order_id['und'][]['value'] = $order_id;
-            $product_image->field_order_product_id['und'][]['target_id'] = $product->nid;
             $product_image->field_order_prodcut_image['und'][] = $image;
-            node_save($product_image);
           }
         }
       }
       else {
         $image = (array) file_load($_SESSION['customer_artwork_fpid'][$product->nid]);
         if (isset($image['fid'])) {
-          $product_image->language = LANGUAGE_NONE;
-          $product_image->field_order_id['und'][0]['value'] = $order_id;
-          $product_image->field_order_product_id['und'][0]['target_id'] = $product->nid;
           $product_image->field_order_prodcut_image['und'][0] = $image;
-          node_save($product_image);
         }
       }
+      }
+
+      node_save($product_image);
     }
+    unset($_SESSION['customer_upload']);
     unset($_SESSION['customer_artwork_fpid']);
   }
 }
@@ -312,15 +313,12 @@ function tcss_cart_remove_admin_content($order_content) {
 }
 
 /**
- * Alter items price
+ * Alter items price.
  */
 function tcss_cart_calculate_item_price($item) {
+  tcss_cart_product_image_load_by_product_id($item->nid);
   $new_price = ($item->qty / $item->default_qty) * ($item->sell_price);
-  if (isset($_SESSION['customer_upload']) && $_SESSION['customer_upload'] == 1) {
-    dpm('tk');
-    $new_price += 20;
-    unset($_SESSION['customer_upload']);
-  }
+
   return $new_price;
 }
 
@@ -333,24 +331,19 @@ function tcss_cart_views_pre_render(&$view) {
   }
 }
 
-function tcss_cart_quicktabs_alter(&$quicktabs) {
-  if ($quicktabs->machine_name == 'print_search_tabbed_menu') {
-    switch (arg(0)) {
-      case 'letterheads':
-      $default_tab = 1;
-      break;
-
-      case 'complimentary-slips':
-      $default_tab = 2;
-      break;
-
-      case 'flyers':
-      $default_tab = 3;
-      break;
-
-      default:
-      $default_tab = 0;
+function tcss_cart_product_image_load_by_product_id($product_id) {
+  $pm_node = FALSE;
+  if (isset($_SESSION['cart_order'])) {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'product_image')
+          ->fieldCondition('field_order_product_id', 'target_id', $product_id, '=')
+          ->fieldCondition('field_order_id', 'value', $_SESSION['cart_order']);
+    $result = $query->execute();
+    if (isset($result['node'])) {
+      $pm_node = array_keys($result['node'])[0];
+      $pm_node = node_load($pm_node);
     }
-    $quicktabs->default_tab = $default_tab;
   }
+  return $pm_node;
 }
