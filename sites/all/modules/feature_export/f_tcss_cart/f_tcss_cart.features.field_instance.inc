@@ -1259,6 +1259,56 @@ function f_tcss_cart_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_image-field_order_customer_design'
+  $field_instances['node-product_image-field_order_customer_design'] = array(
+    'bundle' => 'product_image',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_order_customer_design',
+    'label' => 'Customer Design',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-product_image-field_order_id'
   $field_instances['node-product_image-field_order_id'] = array(
     'bundle' => 'product_image',
@@ -1405,6 +1455,7 @@ function f_tcss_cart_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Color Option');
+  t('Customer Design');
   t('Delivery');
   t('Description');
   t('Image');
