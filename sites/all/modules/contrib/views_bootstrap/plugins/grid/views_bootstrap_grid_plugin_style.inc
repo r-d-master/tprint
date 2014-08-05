@@ -15,6 +15,7 @@ class ViewsBootstrapGridPluginStyle extends views_plugin_style {
     $options = parent::option_definition();
     $options['alignment'] = array('default' => 'horizontal');
     $options['columns'] = array('default' => 2);
+    $options['column_size'] = array('default' => 'lg');
     return $options;
   }
 
@@ -44,6 +45,20 @@ class ViewsBootstrapGridPluginStyle extends views_plugin_style {
       '#options' => array_combine($options, $options),
       '#required' => TRUE,
       '#default_value' => $this->options['columns'],
+    );
+
+    $column_sizes = array(
+      'xs' => t('extra small'),
+      'sm' => t('small'),
+      'md' => t('medium'),
+      'lg' => t('large')
+    );
+    $form['column_size'] = array(
+      '#type' => 'select',
+      '#title' => t('Size of a single column'),
+      '#options' => $column_sizes,
+      '#required' => TRUE,
+      '#default_value' => $this->options['column_size'],
     );
   }
 }

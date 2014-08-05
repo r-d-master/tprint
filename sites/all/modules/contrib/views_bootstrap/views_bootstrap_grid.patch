@@ -1,0 +1,64 @@
+diff --git a/sites/all/modules/contrib/views_bootstrap/plugins/grid/views_bootstrap_grid_plugin_style.inc b/sites/all/modules/contrib/views_bootstrap/plugins/grid/views_bootstrap_grid_plugin_style.inc
+index 6704631..b029f80 100644
+--- a/sites/all/modules/contrib/views_bootstrap/plugins/grid/views_bootstrap_grid_plugin_style.inc
++++ b/sites/all/modules/contrib/views_bootstrap/plugins/grid/views_bootstrap_grid_plugin_style.inc
+@@ -15,6 +15,7 @@ class ViewsBootstrapGridPluginStyle extends views_plugin_style {
+     $options = parent::option_definition();
+     $options['alignment'] = array('default' => 'horizontal');
+     $options['columns'] = array('default' => 2);
++    $options['column_size'] = array('default' => 'lg');
+     return $options;
+   }
+ 
+@@ -45,5 +46,19 @@ class ViewsBootstrapGridPluginStyle extends views_plugin_style {
+       '#required' => TRUE,
+       '#default_value' => $this->options['columns'],
+     );
++
++    $column_sizes = array(
++      'xs' => t('extra small'),
++      'sm' => t('small'),
++      'md' => t('medium'),
++      'lg' => t('large')
++    );
++    $form['column_size'] = array(
++      '#type' => 'select',
++      '#title' => t('Size of a single column'),
++      '#options' => $column_sizes,
++      '#required' => TRUE,
++      '#default_value' => $this->options['column_size'],
++    );
+   }
+ }
+diff --git a/sites/all/modules/contrib/views_bootstrap/templates/grid/theme.inc b/sites/all/modules/contrib/views_bootstrap/templates/grid/theme.inc
+index 2754ad6..e043774 100644
+--- a/sites/all/modules/contrib/views_bootstrap/templates/grid/theme.inc
++++ b/sites/all/modules/contrib/views_bootstrap/templates/grid/theme.inc
+@@ -13,4 +13,5 @@ function template_preprocess_views_bootstrap_grid_plugin_style(&$vars) {
+   // Split items by rows and columns.
+   $vars['items'] = _views_bootstrap_split_rows($vars, $columns, $horizontal);
+   $vars['column_type'] = 12 / $columns;
++  $vars['column_size'] = $options['column_size'];
+ }
+diff --git a/sites/all/modules/contrib/views_bootstrap/templates/grid/views-bootstrap-grid-plugin-style.tpl.php b/sites/all/modules/contrib/views_bootstrap/templates/grid/views-bootstrap-grid-plugin-style.tpl.php
+index 633fc3a..780d02c 100644
+--- a/sites/all/modules/contrib/views_bootstrap/templates/grid/views-bootstrap-grid-plugin-style.tpl.php
++++ b/sites/all/modules/contrib/views_bootstrap/templates/grid/views-bootstrap-grid-plugin-style.tpl.php
+@@ -19,7 +19,7 @@
+     <?php foreach ($items as $row): ?>
+       <div class="row">
+         <?php foreach ($row['content'] as $column): ?>
+-          <div class="col col-lg-<?php print $column_type ?>">
++          <div class="col col-<?php print isset($column_size) ? $column_size : 'lg'; ?>-<?php print $column_type ?>">
+             <?php print $column['content'] ?>
+           </div>
+         <?php endforeach ?>
+@@ -30,7 +30,7 @@
+ 
+     <div class="row">
+       <?php foreach ($items as $column): ?>
+-        <div class="col col-lg-<?php print $column_type ?>">
++        <div class="col col-<?php print isset($column_size) ? $column_size : 'lg'; ?>-<?php print $column_type ?>">
+           <?php foreach ($column['content'] as $row): ?>
+             <?php print $row['content'] ?>
+           <?php endforeach ?>
