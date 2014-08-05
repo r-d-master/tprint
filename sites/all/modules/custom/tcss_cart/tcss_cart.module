@@ -54,7 +54,7 @@ function tcss_cart_search_slider_form() {
  * Form for uploading customer design
  */
 function upload_customer_artwork($form, &$form_state) {
-  if (!isset($_SESSION['customer_artwork_pid'])) {
+  if (!isset($_SESSION['customer_artwork_product'])) {
    drupal_set_message(t('Your session has expired, so please again add the product to cart.'), 'error');
    return '';
   }
@@ -63,35 +63,43 @@ function upload_customer_artwork($form, &$form_state) {
     '#type' =>'checkbox',
     '#title' => t('Use our Templates'),
   );
-
+  $products = $_SESSION['customer_artwork_product'];
+  unset($_SESSION['customer_artwork_product']);
   drupal_add_js(drupal_get_path('module', 'tcss_cart') . '/js/customer_artwork.js');
-  if (isset($_SESSION['customer_artwork_product'])) {
-    $form['customer_artwork_front_side'] = array(
-      '#title' => t('Upload Front Side'),
-      '#type' => 'managed_file',
-      '#upload_location' => 'public://',
-      '#theme' => 'tcss_cart_image_upload',
-    );
-    $form['customer_artwork_back_side'] = array(
-      '#title' => t('Upload Back Side'),
-      '#type' => 'managed_file',
-      '#upload_location' => 'public://',
-      '#theme' => 'tcss_cart_image_upload',
-    );
+  foreach ($products as $key => $product) {
+    if ($product->type == 'business_card') {
+      $form['customer_artwork_field_set' . $key] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Busniess Cards'),
+      );
+      $form['customer_artwork_field_set' . $key]['customer_artwork_front_side_' . $key] = array(
+        '#title' => t('Upload Front Side for ' . $product->title),
+        '#type' => 'managed_file',
+        '#upload_location' => 'public://',
+        '#theme' => 'tcss_cart_image_upload',
+       );
+      $form['customer_artwork_field_set' . $key]['customer_artwork_back_side' . $key] = array(
+        '#title' => t('Upload Back Side for ' . $product->title),
+        '#type' => 'managed_file',
+        '#upload_location' => 'public://',
+        '#theme' => 'tcss_cart_image_upload',
+      );
+    }
+    else {
+      $form['customer_artwork' . $key] = array(
+        '#title' => t('Upload Your Design  for ' . $product->title),
+        '#type' => 'managed_file',
+        '#upload_location' => 'public://',
+        '#theme' => 'tcss_cart_image_upload',
+      );
+    }
   }
-  else {
-    $form['customer_artwork'] = array(
-      '#title' => t('Upload Your Design'),
-      '#type' => 'managed_file',
-      '#upload_location' => 'public://',
-      '#theme' => 'tcss_cart_image_upload',
-    );
-  }
-   $form['customer_artwork_submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'Submit',
+
+  $form['customer_artwork_submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
   );
- return $form;
+  return $form;
 }
 
 /**
@@ -102,6 +110,7 @@ function upload_customer_artwork_submit($form, &$form_state) {
   if (isset($_SESSION['customer_artwork_pid'])) {
     if ($form_state['values']['customer_upload'] == 0) {
       $_SESSION['customer_upload'][$_SESSION['customer_artwork_pid']] = 0;
+      $products = $_SESSION['customer_artwork_pid'];
       if (isset($form_state['values']['customer_artwork'])) {
         $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']] = $form_state['values']['customer_artwork'];
       }
@@ -114,8 +123,6 @@ function upload_customer_artwork_submit($form, &$form_state) {
       $_SESSION['customer_upload'][$_SESSION['customer_artwork_pid']] = 1;
     }
     $form_state['redirect'] = 'cart';
-    unset($_SESSION['customer_artwork_pid']);
-    unset($_SESSION['customer_artwork_product']);
   }
 }
 
@@ -138,11 +145,12 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
   }
   // Set product information to session, used in storing customer's artwork
   if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
-    $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
-    if ($form_state['build_info']['args'][0]->type == 'business_card') {
-      dpm('tk');
-      $_SESSION['customer_artwork_product'] = $form_state['build_info']['args'][0]->type;
-    }
+    // Make it expilicitly array
+    $_SESSION['customer_artwork_product'][$form_state['build_info']['args'][0]->nid] = $form_state['build_info']['args'][0];
+  }
+
+  if (strpos($form_id,'uc_product_kit_add_to_cart_form_') !== false) {
+    $_SESSION['customer_artwork_product'] = $form_state['build_info']['args'][0]->products;
   }
 
   if ($form_id == 'compliment_slips_node_form' || $form_id == 'business_card_node_form' || $form_id == 'flyers_node_form' || $form_id == 'letterheads_node_form') {
