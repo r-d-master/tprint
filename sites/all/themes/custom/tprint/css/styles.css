@@ -7192,6 +7192,10 @@ a:hover {
   border-color: #f1155a;
 }
 
+.offer-product-row {
+  margin: 2em 0 0 0;
+}
+
 .tabs-right > .nav-tabs > li > a, .tabs-left > .nav-tabs > li > a {
   min-width: 74px;
   margin-right: 0;
