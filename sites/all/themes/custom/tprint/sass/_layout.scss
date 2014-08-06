@@ -129,3 +129,11 @@ table {
 .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
   margin-left: 0px;
 }
+
+.navbar-fixed-top {
+  z-index: 900;
+}
+
+#admin-menu a {
+ font-size: 14px;
+}

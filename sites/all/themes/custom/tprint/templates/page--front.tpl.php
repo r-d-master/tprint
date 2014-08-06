@@ -117,20 +117,6 @@
  <!-- Header banner -->
 <div class="header-banner container">
 <header role="banner" id="page-header">
-  <!-- BANNER : begin -->
-    <div id="banner">
-
-    <!-- BANNER BG : begin -->
-    <?php if (!empty($page['search_bg'])): ?>
-       <div class="banner-bg">
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][0]; ?>" alt="" /></div>
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][1]; ?>" alt="" /></div>
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][2]; ?>" alt="" /></div>
-        <div class="banner-bg-item"><img src="<?php print $page['search_bg'][3]; ?>" alt="" /></div>
-      </div>
-      <?php endif; ?>
-    <!-- BANNER BG : end -->
-
     <!-- BANNER SEARCH : begin -->
       <?php if (!empty($page['header'])): ?>
         <?php print render($page['header']); ?>

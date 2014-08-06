@@ -6692,6 +6692,14 @@ a:hover {
   margin-left: 0px;
 }
 
+.navbar-fixed-top {
+  z-index: 900;
+}
+
+#admin-menu a {
+  font-size: 14px;
+}
+
 .subtotal .uc-price {
   font-size: 24px;
   color: #f1155a;
