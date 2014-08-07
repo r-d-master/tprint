@@ -21,3 +21,12 @@
 			text-align: center;
 		}
 	}
+	.navbar-default {
+		.navbar-nav > li > a {
+				color:#fff;			
+			&:hover{
+				background-color:#f1155a;
+				color:#fff;
+			}	
+	}
+	}

@@ -28,3 +28,13 @@ nav {
   font-size: 14px;
   text-align: center;
 }
+
+/* line 25, gsjha.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+/* line 27, gsjha.scss */
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #f1155a;
+  color: #fff;
+}

@@ -1,0 +1,106 @@
+
+#jMenu {
+	display:table;
+	margin:0;
+	padding:0
+}
+
+/********************/
+/** premier niveau **/
+/********************/
+#jMenu li {
+	display:table-cell;
+	margin:0;
+	font-size: 11px;
+	//float:left;
+}
+
+#jMenu li.leaf, #jMenu li.expanded, #jMenu li.collapsed{
+	padding: 0;
+	margin: 0;
+}
+
+#jMenu li a.fNiv{
+	padding-right: 11px;
+	background: url(../images/arrow_down.png) right center no-repeat;
+	margin-right:16px;
+}
+	#jMenu li a {
+		padding:28px 10px 28px 10px;
+		display:block;
+		margin-right:13px;
+		background-color: transparent;
+		text-transform:uppercase;
+		cursor:pointer;
+		color: #444;
+	}
+	
+	#jMenu li a:hover, #jMenu li a:visited{
+		text-decoration: none;
+		color: #555;
+	}
+	
+/*******************/
+/** second niveau **/
+/*******************/
+#jMenu li ul {
+	display:none;
+	position:absolute;
+	padding:0;
+	margin:0;
+	margin-left: -45px;
+	-webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 2px 3px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 2px 3px rgba(50, 50, 50, 0.3);
+	border-top: 1px solid;
+	border-bottom-left-radius: 4px;
+	-moz-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+}
+
+#jMenu li ul a{
+	font-weight: normal;
+}
+
+#jMenu li ul li ul {
+	margin-left: 0;
+}
+	#jMenu li ul li {
+		background-color:#fafafa;
+		display:block;
+		border-bottom:1px solid #ebebeb;
+		padding:0;
+		
+	}
+	#jMenu li ul li.arrow {
+		background:#322f32;
+		height:6px;
+		padding:0;
+		border-bottom:none;
+		padding-bottom:10px
+	}
+		#jMenu li ul li a {
+			text-transform:none;
+			padding:5px 9px;
+			display:block;
+		}
+		#jMenu li ul li a.isParent {
+			background:#fafafa ;
+		}
+			#jMenu li ul li a:hover {
+				background-color:#f6f6f6;
+			}
+			
+#jMenu li ul li:last-child {
+	border-bottom: none;
+	border-bottom-left-radius: 4px;
+	-moz-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+}
+

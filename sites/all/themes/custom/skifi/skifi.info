@@ -1,0 +1,859 @@
+name = Skifi
+description = This is a multipurpose Drupal theme with loads of customization options. Apart from corporate/portfolio, you can use this theme in various other websites too. Theme by <a href="http://www.worthapost.com/">Worthapost</a>. <br/>Like this theme? Please give us 5 star on themeforest
+version = 1.1.7
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = style.css
+stylesheets[all][] = customize_skifi.css
+
+; Important Drupal regions
+regions[help] = Help
+regions[footer] = Footer
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[search_box] = Search Box
+
+; Skifi  Regions
+regions[main_menu] = Main Menu Region
+regions[slider] = Slider Region
+
+
+
+
+; Highlighted region
+regions[dark_highlighted1] = Highlighted Region - Block 1
+regions[dark_highlighted2] = Highlighted Region - Block 2
+regions[dark_highlighted3] = Highlighted Region - Block 3
+regions[dark_highlighted4] = Highlighted Region - Block 4
+regions[dark_highlighted5] = Highlighted Region - Block 5
+regions[dark_highlighted6] = Highlighted Region - Block 6
+
+; Content Blocks Row 1
+regions[row1_full_span] = Blocks Row 1 - Full (For Region title)
+regions[row1_b1] = Blocks Row 1 - Block 1
+regions[row1_b2] = Blocks Row 1 - Block 2
+regions[row1_b3] = Blocks Row 1 - Block 3
+regions[row1_b4] = Blocks Row 1 - Block 4
+regions[row1_b5] = Blocks Row 1 - Block 5
+regions[row1_b6] = Blocks Row 1 - Block 6
+
+; Content Blocks Row 2
+regions[row2_full_span] = Blocks Row 2 - Full (For Region title)
+regions[row2_b1] = Blocks Row 2 - Block 1
+regions[row2_b2] = Blocks Row 2 - Block 2
+regions[row2_b3] = Blocks Row 2 - Block 3
+regions[row2_b4] = Blocks Row 2 - Block 4
+regions[row2_b5] = Blocks Row 2 - Block 5
+regions[row2_b6] = Blocks Row 2 - Block 6
+
+; CONTENT AREA
+regions[content_region_title] = Content Area Row - Full (For region title)
+regions[left_sidebar] = Left Sidebar (left to content)
+regions[right_sidebar] = Right Sidebar (right to content)
+regions[content] = Content
+
+
+; Content Blocks Row 2
+regions[underContent_full_span] = Under Content - Full (For Region title)
+regions[underContent_1] = Under Content Region - Block 1
+regions[underContent_2] = Under Content Region - Block 2
+regions[underContent_3] = Under Content Region - Block 3
+regions[underContent_4] = Under Content Region - Block 4
+regions[underContent_5] = Under Content Region - Block 5
+regions[underContent_6] = Under Content Region - Block 6
+
+
+
+; FOOTER BLOCKS
+regions[footer1] = Footer 1
+regions[footer2] = Footer 2
+regions[footer3] = Footer 3
+regions[footer4] = Footer 4
+regions[footer5] = Footer 5
+regions[footer6] = Footer 6
+
+
+regions[modal] = Modal Window
+regions[modal_2] = Modal Window 2
+regions[modal_3] = Modal Window 3
+
+; LAYOUT SETTING
+settings[width] = 1170
+settings[boxed_enabled] = 0
+
+; GOOGLE FONTS SETTINGS
+settings[google_enable] = 0 
+settings[heading_fonts_google] = Open Sans
+settings[menu_fonts_google] = Open Sans
+settings[slider_fonts_google] = Open Sans  
+settings[site_fonts_google] = Open Sans 
+settings[quote_fonts_google] = PT Serif 
+settings[heading_fonts_google_weight] = 300 
+settings[menu_fonts_google_weight] = 700 
+settings[slider_fonts_google_weight] = 300 
+settings[site_fonts_google_weight] = 400 
+settings[quote_fonts_google_weight] = 300 
+
+; TYPO
+settings[menu_font_size] = 11
+settings[site_font_size] = 12
+settings[site_font_family] = '' 
+
+
+; SLIDER SETTINGS
+settings[slider_type] = layer_slider
+
+; Custom Background Colors
+settings[predefined_schemes] = cinnabar
+settings[link_color] = E45635 
+settings[footer_link_color] = E45635
+settings[bg_scheme] = stripe_default.png
+settings[custom_bg_attribute] = ''
+settings[theme_color_scheme] = E45635
+settings[highlighted_region_bg] = 161616
+settings[portfolio_hover] = E45635
+settings[icon_scheme] = cinnabar
+
+; Sldiers setting
+settings[header_height] = 75
+settings[logo_top_margin] = 0
+settings[name_top_margin] = 12
+settings[menu_section_margin] = 0
+
+; Content area setting
+settings[left_span] = 3
+settings[content_span] = 6
+settings[right_span] = 3
+
+; Misc settings
+settings[skifi_breadcrumb] = 1
+settings[show_feedback_link] = 1
+
+
+; Portfolio
+settings[porfolio_2col_link] = ''
+settings[porfolio_3col_link] = ''
+settings[porfolio_4col_link] = ''
+
+
+
+; FLEX SLIDER OPTION
+settings[flex_width] = 100%
+settings[flex_img1] = ''
+settings[flex_img2] = ''
+settings[flex_img3] = ''
+settings[flex_img4] = ''
+settings[flex_img5] = ''
+settings[flex_img6] = ''
+
+
+; LAYER SLIDER OPTIONS
+settings[ls_height] = 470
+settings[ls_fallback_image] = ''
+
+; SLIDE 1 LAYER 1
+settings[s1_L1_status] = disabled
+settings[s1_L1_type] = img
+settings[s1_L1_html] =  ''
+settings[s1_L1_style] = ''
+settings[s1_L1_class] = ''
+settings[s1_L1_link] = ''
+settings[s1_L1_slideDirection] = default
+settings[s1_L1_slideOutDirection] = default
+settings[s1_L1_durationIn] = ''
+settings[s1_L1_durationOut] = ''
+settings[s1_L1_easingIn] = default
+settings[s1_L1_easingOut] = default
+settings[s1_L1_delayIn] = ''
+settings[s1_L1_delayOut] = ''
+
+
+; SLIDE 1 LAYER 2
+settings[s1_L2_status] = disabled
+settings[s1_L2_type] = img
+settings[s1_L2_html] =  ''
+settings[s1_L2_style] = ''
+settings[s1_L2_class] = ''
+settings[s1_L2_link] = ''
+settings[s1_L2_slideDirection] = default
+settings[s1_L2_slideOutDirection] = default
+settings[s1_L2_durationIn] = ''
+settings[s1_L2_durationOut] = ''
+settings[s1_L2_easingIn] = default
+settings[s1_L2_easingOut] = default
+settings[s1_L2_delayIn] = ''
+settings[s1_L2_delayOut] = ''
+
+
+
+; SLIDE 1 LAYER 3
+settings[s1_L3_status] = disabled
+settings[s1_L3_type] = img
+settings[s1_L3_html] =  ''
+settings[s1_L3_style] = ''
+settings[s1_L3_class] = ''
+settings[s1_L3_link] = ''
+settings[s1_L3_slideDirection] = default
+settings[s1_L3_slideOutDirection] = default
+settings[s1_L3_durationIn] = ''
+settings[s1_L3_durationOut] = ''
+settings[s1_L3_easingIn] = default
+settings[s1_L3_easingOut] = default
+settings[s1_L3_delayIn] = ''
+settings[s1_L3_delayOut] = ''
+
+
+; SLIDE 1 LAYER 4
+settings[s1_L4_status] = disabled
+settings[s1_L4_type] = img
+settings[s1_L4_html] =  ''
+settings[s1_L4_style] = ''
+settings[s1_L4_class] = ''
+settings[s1_L4_link] = ''
+settings[s1_L4_slideDirection] = default
+settings[s1_L4_slideOutDirection] = default
+settings[s1_L4_durationIn] = ''
+settings[s1_L4_durationOut] = ''
+settings[s1_L4_easingIn] = default
+settings[s1_L4_easingOut] = default
+settings[s1_L4_delayIn] = ''
+settings[s1_L4_delayOut] = ''
+
+
+
+; SLIDE 1 LAYER 5
+settings[s1_L5_status] = disabled
+settings[s1_L5_type] = img
+settings[s1_L5_html] =  ''
+settings[s1_L5_style] = ''
+settings[s1_L5_class] = ''
+settings[s1_L5_link] = ''
+settings[s1_L5_slideDirection] = default
+settings[s1_L5_slideOutDirection] = default
+settings[s1_L5_durationIn] = ''
+settings[s1_L5_durationOut] = ''
+settings[s1_L5_easingIn] = default
+settings[s1_L5_easingOut] = default
+settings[s1_L5_delayIn] = ''
+settings[s1_L5_delayOut] = ''
+
+
+; SLIDE 1 LAYER 6
+settings[s1_L6_status] = disabled
+settings[s1_L6_type] = img
+settings[s1_L6_html] =  ''
+settings[s1_L6_style] = ''
+settings[s1_L6_class] = ''
+settings[s1_L6_link] = ''
+settings[s1_L6_slideDirection] = default
+settings[s1_L6_slideOutDirection] = default
+settings[s1_L6_durationIn] = ''
+settings[s1_L6_durationOut] = ''
+settings[s1_L6_easingIn] = default
+settings[s1_L6_easingOut] = default
+settings[s1_L6_delayIn] = ''
+settings[s1_L6_delayOut] = ''
+
+
+
+; SLIDE 1 LAYER 7
+settings[s1_L7_status] = disabled
+settings[s1_L7_type] = img
+settings[s1_L7_html] =  ''
+settings[s1_L7_style] = ''
+settings[s1_L7_class] = ''
+settings[s1_L7_link] = ''
+settings[s1_L7_slideDirection] = default
+settings[s1_L7_slideOutDirection] = default
+settings[s1_L7_durationIn] = ''
+settings[s1_L7_durationOut] = ''
+settings[s1_L7_easingIn] = default
+settings[s1_L7_easingOut] = default
+settings[s1_L7_delayIn] = ''
+settings[s1_L7_delayOut] = ''
+
+
+; SLIDE 1 LAYER 8
+settings[s1_L8_status] = disabled
+settings[s1_L8_type] = img
+settings[s1_L8_html] =  ''
+settings[s1_L8_style] = ''
+settings[s1_L8_class] = ''
+settings[s1_L8_link] = ''
+settings[s1_L8_slideDirection] = default
+settings[s1_L8_slideOutDirection] = default
+settings[s1_L8_durationIn] = ''
+settings[s1_L8_durationOut] = ''
+settings[s1_L8_easingIn] = default
+settings[s1_L8_easingOut] = default
+settings[s1_L8_delayIn] = ''
+settings[s1_L8_delayOut] = ''
+
+
+
+
+
+
+; SLIDE 2 LAYER 1
+settings[s2_L1_status] = disabled
+settings[s2_L1_type] = img
+settings[s2_L1_html] =  ''
+settings[s2_L1_style] = ''
+settings[s2_L1_class] = ''
+settings[s2_L1_link] = ''
+settings[s2_L1_slideDirection] = default
+settings[s2_L1_slideOutDirection] = default
+settings[s2_L1_durationIn] = ''
+settings[s2_L1_durationOut] = ''
+settings[s2_L1_easingIn] = default
+settings[s2_L1_easingOut] = default
+settings[s2_L1_delayIn] = ''
+settings[s2_L1_delayOut] = ''
+
+
+; SLIDE 2 LAYER 2
+settings[s2_L2_status] = disabled
+settings[s2_L2_type] = img
+settings[s2_L2_html] =  ''
+settings[s2_L2_style] = ''
+settings[s2_L2_class] = ''
+settings[s2_L2_link] = ''
+settings[s2_L2_slideDirection] = default
+settings[s2_L2_slideOutDirection] = default
+settings[s2_L2_durationIn] = ''
+settings[s2_L2_durationOut] = ''
+settings[s2_L2_easingIn] = default
+settings[s2_L2_easingOut] = default
+settings[s2_L2_delayIn] = ''
+settings[s2_L2_delayOut] = ''
+
+
+
+; SLIDE 2 LAYER 3
+settings[s2_L3_status] = disabled
+settings[s2_L3_type] = img
+settings[s2_L3_html] =  ''
+settings[s2_L3_style] = ''
+settings[s2_L3_class] = ''
+settings[s2_L3_link] = ''
+settings[s2_L3_slideDirection] = default
+settings[s2_L3_slideOutDirection] = default
+settings[s2_L3_durationIn] = ''
+settings[s2_L3_durationOut] = ''
+settings[s2_L3_easingIn] = default
+settings[s2_L3_easingOut] = default
+settings[s2_L3_delayIn] = ''
+settings[s2_L3_delayOut] = ''
+
+
+; SLIDE 2 LAYER 4
+settings[s2_L4_status] = disabled
+settings[s2_L4_type] = img
+settings[s2_L4_html] =  ''
+settings[s2_L4_style] = ''
+settings[s2_L4_class] = ''
+settings[s2_L4_link] = ''
+settings[s2_L4_slideDirection] = default
+settings[s2_L4_slideOutDirection] = default
+settings[s2_L4_durationIn] = ''
+settings[s2_L4_durationOut] = ''
+settings[s2_L4_easingIn] = default
+settings[s2_L4_easingOut] = default
+settings[s2_L4_delayIn] = ''
+settings[s2_L4_delayOut] = ''
+
+
+
+; SLIDE 2 LAYER 5
+settings[s2_L5_status] = disabled
+settings[s2_L5_type] = img
+settings[s2_L5_html] =  ''
+settings[s2_L5_style] = ''
+settings[s2_L5_class] = ''
+settings[s2_L5_link] = ''
+settings[s2_L5_slideDirection] = default
+settings[s2_L5_slideOutDirection] = default
+settings[s2_L5_durationIn] = ''
+settings[s2_L5_durationOut] = ''
+settings[s2_L5_easingIn] = default
+settings[s2_L5_easingOut] = default
+settings[s2_L5_delayIn] = ''
+settings[s2_L5_delayOut] = ''
+
+
+; SLIDE 2 LAYER 6
+settings[s2_L6_status] = disabled
+settings[s2_L6_type] = img
+settings[s2_L6_html] =  ''
+settings[s2_L6_style] = ''
+settings[s2_L6_class] = ''
+settings[s2_L6_link] = ''
+settings[s2_L6_slideDirection] = default
+settings[s2_L6_slideOutDirection] = default
+settings[s2_L6_durationIn] = ''
+settings[s2_L6_durationOut] = ''
+settings[s2_L6_easingIn] = default
+settings[s2_L6_easingOut] = default
+settings[s2_L6_delayIn] = ''
+settings[s2_L6_delayOut] = ''
+
+
+
+; SLIDE 2 LAYER 7
+settings[s2_L7_status] = disabled
+settings[s2_L7_type] = img
+settings[s2_L7_html] =  ''
+settings[s2_L7_style] = ''
+settings[s2_L7_class] = ''
+settings[s2_L7_link] = ''
+settings[s2_L7_slideDirection] = default
+settings[s2_L7_slideOutDirection] = default
+settings[s2_L7_durationIn] = ''
+settings[s2_L7_durationOut] = ''
+settings[s2_L7_easingIn] = default
+settings[s2_L7_easingOut] = default
+settings[s2_L7_delayIn] = ''
+settings[s2_L7_delayOut] = ''
+
+
+; SLIDE 2 LAYER 8
+settings[s2_L8_status] = disabled
+settings[s2_L8_type] = img
+settings[s2_L8_html] =  ''
+settings[s2_L8_style] = ''
+settings[s2_L8_class] = ''
+settings[s2_L8_link] = ''
+settings[s2_L8_slideDirection] = default
+settings[s2_L8_slideOutDirection] = default
+settings[s2_L8_durationIn] = ''
+settings[s2_L8_durationOut] = ''
+settings[s2_L8_easingIn] = default
+settings[s2_L8_easingOut] = default
+settings[s2_L8_delayIn] = ''
+settings[s2_L8_delayOut] = ''
+
+
+
+
+
+; SLIDE 3 LAYER 1
+settings[s3_L1_status] = disabled
+settings[s3_L1_type] = img
+settings[s3_L1_html] =  ''
+settings[s3_L1_style] = ''
+settings[s3_L1_class] = ''
+settings[s3_L1_link] = ''
+settings[s3_L1_slideDirection] = default
+settings[s3_L1_slideOutDirection] = default
+settings[s3_L1_durationIn] = ''
+settings[s3_L1_durationOut] = ''
+settings[s3_L1_easingIn] = default
+settings[s3_L1_easingOut] = default
+settings[s3_L1_delayIn] = ''
+settings[s3_L1_delayOut] = ''
+
+
+; SLIDE 3 LAYER 2
+settings[s3_L2_status] = disabled
+settings[s3_L2_type] = img
+settings[s3_L2_html] =  ''
+settings[s3_L2_style] = ''
+settings[s3_L2_class] = ''
+settings[s3_L2_link] = ''
+settings[s3_L2_slideDirection] = default
+settings[s3_L2_slideOutDirection] = default
+settings[s3_L2_durationIn] = ''
+settings[s3_L2_durationOut] = ''
+settings[s3_L2_easingIn] = default
+settings[s3_L2_easingOut] = default
+settings[s3_L2_delayIn] = ''
+settings[s3_L2_delayOut] = ''
+
+
+
+; SLIDE 3 LAYER 3
+settings[s3_L3_status] = disabled
+settings[s3_L3_type] = img
+settings[s3_L3_html] =  ''
+settings[s3_L3_style] = ''
+settings[s3_L3_class] = ''
+settings[s3_L3_link] = ''
+settings[s3_L3_slideDirection] = default
+settings[s3_L3_slideOutDirection] = default
+settings[s3_L3_durationIn] = ''
+settings[s3_L3_durationOut] = ''
+settings[s3_L3_easingIn] = default
+settings[s3_L3_easingOut] = default
+settings[s3_L3_delayIn] = ''
+settings[s3_L3_delayOut] = ''
+
+
+; SLIDE 3 LAYER 4
+settings[s3_L4_status] = disabled
+settings[s3_L4_type] = img
+settings[s3_L4_html] =  ''
+settings[s3_L4_style] = ''
+settings[s3_L4_class] = ''
+settings[s3_L4_link] = ''
+settings[s3_L4_slideDirection] = default
+settings[s3_L4_slideOutDirection] = default
+settings[s3_L4_durationIn] = ''
+settings[s3_L4_durationOut] = ''
+settings[s3_L4_easingIn] = default
+settings[s3_L4_easingOut] = default
+settings[s3_L4_delayIn] = ''
+settings[s3_L4_delayOut] = ''
+
+
+
+; SLIDE 3 LAYER 5
+settings[s3_L5_status] = disabled
+settings[s3_L5_type] = img
+settings[s3_L5_html] =  ''
+settings[s3_L5_style] = ''
+settings[s3_L5_class] = ''
+settings[s3_L5_link] = ''
+settings[s3_L5_slideDirection] = default
+settings[s3_L5_slideOutDirection] = default
+settings[s3_L5_durationIn] = ''
+settings[s3_L5_durationOut] = ''
+settings[s3_L5_easingIn] = default
+settings[s3_L5_easingOut] = default
+settings[s3_L5_delayIn] = ''
+settings[s3_L5_delayOut] = ''
+
+
+; SLIDE 3 LAYER 6
+settings[s3_L6_status] = disabled
+settings[s3_L6_type] = img
+settings[s3_L6_html] =  ''
+settings[s3_L6_style] = ''
+settings[s3_L6_class] = ''
+settings[s3_L6_link] = ''
+settings[s3_L6_slideDirection] = default
+settings[s3_L6_slideOutDirection] = default
+settings[s3_L6_durationIn] = ''
+settings[s3_L6_durationOut] = ''
+settings[s3_L6_easingIn] = default
+settings[s3_L6_easingOut] = default
+settings[s3_L6_delayIn] = ''
+settings[s3_L6_delayOut] = ''
+
+
+
+; SLIDE 3 LAYER 7
+settings[s3_L7_status] = disabled
+settings[s3_L7_type] = img
+settings[s3_L7_html] =  ''
+settings[s3_L7_style] = ''
+settings[s3_L7_class] = ''
+settings[s3_L7_link] = ''
+settings[s3_L7_slideDirection] = default
+settings[s3_L7_slideOutDirection] = default
+settings[s3_L7_durationIn] = ''
+settings[s3_L7_durationOut] = ''
+settings[s3_L7_easingIn] = default
+settings[s3_L7_easingOut] = default
+settings[s3_L7_delayIn] = ''
+settings[s3_L7_delayOut] = ''
+
+
+; SLIDE 3 LAYER 8
+settings[s3_L8_status] = disabled
+settings[s3_L8_type] = img
+settings[s3_L8_html] =  ''
+settings[s3_L8_style] = ''
+settings[s3_L8_class] = ''
+settings[s3_L8_link] = ''
+settings[s3_L8_slideDirection] = default
+settings[s3_L8_slideOutDirection] = default
+settings[s3_L8_durationIn] = ''
+settings[s3_L8_durationOut] = ''
+settings[s3_L8_easingIn] = default
+settings[s3_L8_easingOut] = default
+settings[s3_L8_delayIn] = ''
+settings[s3_L8_delayOut] = ''
+
+
+
+
+; SLIDE 4 LAYER 1
+settings[s4_L1_status] = disabled
+settings[s4_L1_type] = img
+settings[s4_L1_html] =  ''
+settings[s4_L1_style] = ''
+settings[s4_L1_class] = ''
+settings[s4_L1_link] = ''
+settings[s4_L1_slideDirection] = default
+settings[s4_L1_slideOutDirection] = default
+settings[s4_L1_durationIn] = ''
+settings[s4_L1_durationOut] = ''
+settings[s4_L1_easingIn] = default
+settings[s4_L1_easingOut] = default
+settings[s4_L1_delayIn] = ''
+settings[s4_L1_delayOut] = ''
+
+
+; SLIDE 4 LAYER 2
+settings[s4_L2_status] = disabled
+settings[s4_L2_type] = img
+settings[s4_L2_html] =  ''
+settings[s4_L2_style] = ''
+settings[s4_L2_class] = ''
+settings[s4_L2_link] = ''
+settings[s4_L2_slideDirection] = default
+settings[s4_L2_slideOutDirection] = default
+settings[s4_L2_durationIn] = ''
+settings[s4_L2_durationOut] = ''
+settings[s4_L2_easingIn] = default
+settings[s4_L2_easingOut] = default
+settings[s4_L2_delayIn] = ''
+settings[s4_L2_delayOut] = ''
+
+
+
+; SLIDE 4 LAYER 3
+settings[s4_L3_status] = disabled
+settings[s4_L3_type] = img
+settings[s4_L3_html] =  ''
+settings[s4_L3_style] = ''
+settings[s4_L3_class] = ''
+settings[s4_L3_link] = ''
+settings[s4_L3_slideDirection] = default
+settings[s4_L3_slideOutDirection] = default
+settings[s4_L3_durationIn] = ''
+settings[s4_L3_durationOut] = ''
+settings[s4_L3_easingIn] = default
+settings[s4_L3_easingOut] = default
+settings[s4_L3_delayIn] = ''
+settings[s4_L3_delayOut] = ''
+
+
+; SLIDE 4 LAYER 4
+settings[s4_L4_status] = disabled
+settings[s4_L4_type] = img
+settings[s4_L4_html] =  ''
+settings[s4_L4_style] = ''
+settings[s4_L4_class] = ''
+settings[s4_L4_link] = ''
+settings[s4_L4_slideDirection] = default
+settings[s4_L4_slideOutDirection] = default
+settings[s4_L4_durationIn] = ''
+settings[s4_L4_durationOut] = ''
+settings[s4_L4_easingIn] = default
+settings[s4_L4_easingOut] = default
+settings[s4_L4_delayIn] = ''
+settings[s4_L4_delayOut] = ''
+
+
+
+; SLIDE 4 LAYER 5
+settings[s4_L5_status] = disabled
+settings[s4_L5_type] = img
+settings[s4_L5_html] =  ''
+settings[s4_L5_style] = ''
+settings[s4_L5_class] = ''
+settings[s4_L5_link] = ''
+settings[s4_L5_slideDirection] = default
+settings[s4_L5_slideOutDirection] = default
+settings[s4_L5_durationIn] = ''
+settings[s4_L5_durationOut] = ''
+settings[s4_L5_easingIn] = default
+settings[s4_L5_easingOut] = default
+settings[s4_L5_delayIn] = ''
+settings[s4_L5_delayOut] = ''
+
+
+; SLIDE 4 LAYER 6
+settings[s4_L6_status] = disabled
+settings[s4_L6_type] = img
+settings[s4_L6_html] =  ''
+settings[s4_L6_style] = ''
+settings[s4_L6_class] = ''
+settings[s4_L6_link] = ''
+settings[s4_L6_slideDirection] = default
+settings[s4_L6_slideOutDirection] = default
+settings[s4_L6_durationIn] = ''
+settings[s4_L6_durationOut] = ''
+settings[s4_L6_easingIn] = default
+settings[s4_L6_easingOut] = default
+settings[s4_L6_delayIn] = ''
+settings[s4_L6_delayOut] = ''
+
+
+
+; SLIDE 4 LAYER 7
+settings[s4_L7_status] = disabled
+settings[s4_L7_type] = img
+settings[s4_L7_html] =  ''
+settings[s4_L7_style] = ''
+settings[s4_L7_class] = ''
+settings[s4_L7_link] = ''
+settings[s4_L7_slideDirection] = default
+settings[s4_L7_slideOutDirection] = default
+settings[s4_L7_durationIn] = ''
+settings[s4_L7_durationOut] = ''
+settings[s4_L7_easingIn] = default
+settings[s4_L7_easingOut] = default
+settings[s4_L7_delayIn] = ''
+settings[s4_L7_delayOut] = ''
+
+
+; SLIDE 4 LAYER 8
+settings[s4_L8_status] = disabled
+settings[s4_L8_type] = img
+settings[s4_L8_html] =  ''
+settings[s4_L8_style] = ''
+settings[s4_L8_class] = ''
+settings[s4_L8_link] = ''
+settings[s4_L8_slideDirection] = default
+settings[s4_L8_slideOutDirection] = default
+settings[s4_L8_durationIn] = ''
+settings[s4_L8_durationOut] = ''
+settings[s4_L8_easingIn] = default
+settings[s4_L8_easingOut] = default
+settings[s4_L8_delayIn] = ''
+settings[s4_L8_delayOut] = ''
+
+
+
+
+
+; SLIDE 5 LAYER 1
+settings[s5_L1_status] = disabled
+settings[s5_L1_type] = img
+settings[s5_L1_html] =  ''
+settings[s5_L1_style] = ''
+settings[s5_L1_class] = ''
+settings[s5_L1_link] = ''
+settings[s5_L1_slideDirection] = default
+settings[s5_L1_slideOutDirection] = default
+settings[s5_L1_durationIn] = ''
+settings[s5_L1_durationOut] = ''
+settings[s5_L1_easingIn] = default
+settings[s5_L1_easingOut] = default
+settings[s5_L1_delayIn] = ''
+settings[s5_L1_delayOut] = ''
+
+
+; SLIDE 5 LAYER 2
+settings[s5_L2_status] = disabled
+settings[s5_L2_type] = img
+settings[s5_L2_html] =  ''
+settings[s5_L2_style] = ''
+settings[s5_L2_class] = ''
+settings[s5_L2_link] = ''
+settings[s5_L2_slideDirection] = default
+settings[s5_L2_slideOutDirection] = default
+settings[s5_L2_durationIn] = ''
+settings[s5_L2_durationOut] = ''
+settings[s5_L2_easingIn] = default
+settings[s5_L2_easingOut] = default
+settings[s5_L2_delayIn] = ''
+settings[s5_L2_delayOut] = ''
+
+
+
+; SLIDE 5 LAYER 3
+settings[s5_L3_status] = disabled
+settings[s5_L3_type] = img
+settings[s5_L3_html] =  ''
+settings[s5_L3_style] = ''
+settings[s5_L3_class] = ''
+settings[s5_L3_link] = ''
+settings[s5_L3_slideDirection] = default
+settings[s5_L3_slideOutDirection] = default
+settings[s5_L3_durationIn] = ''
+settings[s5_L3_durationOut] = ''
+settings[s5_L3_easingIn] = default
+settings[s5_L3_easingOut] = default
+settings[s5_L3_delayIn] = ''
+settings[s5_L3_delayOut] = ''
+
+
+; SLIDE 5 LAYER 4
+settings[s5_L4_status] = disabled
+settings[s5_L4_type] = img
+settings[s5_L4_html] =  ''
+settings[s5_L4_style] = ''
+settings[s5_L4_class] = ''
+settings[s5_L4_link] = ''
+settings[s5_L4_slideDirection] = default
+settings[s5_L4_slideOutDirection] = default
+settings[s5_L4_durationIn] = ''
+settings[s5_L4_durationOut] = ''
+settings[s5_L4_easingIn] = default
+settings[s5_L4_easingOut] = default
+settings[s5_L4_delayIn] = ''
+settings[s5_L4_delayOut] = ''
+
+
+
+; SLIDE 5 LAYER 5
+settings[s5_L5_status] = disabled
+settings[s5_L5_type] = img
+settings[s5_L5_html] =  ''
+settings[s5_L5_style] = ''
+settings[s5_L5_class] = ''
+settings[s5_L5_link] = ''
+settings[s5_L5_slideDirection] = default
+settings[s5_L5_slideOutDirection] = default
+settings[s5_L5_durationIn] = ''
+settings[s5_L5_durationOut] = ''
+settings[s5_L5_easingIn] = default
+settings[s5_L5_easingOut] = default
+settings[s5_L5_delayIn] = ''
+settings[s5_L5_delayOut] = ''
+
+
+; SLIDE 5 LAYER 6
+settings[s5_L6_status] = disabled
+settings[s5_L6_type] = img
+settings[s5_L6_html] =  ''
+settings[s5_L6_style] = ''
+settings[s5_L6_class] = ''
+settings[s5_L6_link] = ''
+settings[s5_L6_slideDirection] = default
+settings[s5_L6_slideOutDirection] = default
+settings[s5_L6_durationIn] = ''
+settings[s5_L6_durationOut] = ''
+settings[s5_L6_easingIn] = default
+settings[s5_L6_easingOut] = default
+settings[s5_L6_delayIn] = ''
+settings[s5_L6_delayOut] = ''
+
+
+
+; SLIDE 5 LAYER 7
+settings[s5_L7_status] = disabled
+settings[s5_L7_type] = img
+settings[s5_L7_html] =  ''
+settings[s5_L7_style] = ''
+settings[s5_L7_class] = ''
+settings[s5_L7_link] = ''
+settings[s5_L7_slideDirection] = default
+settings[s5_L7_slideOutDirection] = default
+settings[s5_L7_durationIn] = ''
+settings[s5_L7_durationOut] = ''
+settings[s5_L7_easingIn] = default
+settings[s5_L7_easingOut] = default
+settings[s5_L7_delayIn] = ''
+settings[s5_L7_delayOut] = ''
+
+
+; SLIDE 5 LAYER 8
+settings[s5_L8_status] = disabled
+settings[s5_L8_type] = img
+settings[s5_L8_html] =  ''
+settings[s5_L8_style] = ''
+settings[s5_L8_class] = ''
+settings[s5_L8_link] = ''
+settings[s5_L8_slideDirection] = default
+settings[s5_L8_slideOutDirection] = default
+settings[s5_L8_durationIn] = ''
+settings[s5_L8_durationOut] = ''
+settings[s5_L8_easingIn] = default
+settings[s5_L8_easingOut] = default
+settings[s5_L8_delayIn] = ''
+settings[s5_L8_delayOut] = ''
