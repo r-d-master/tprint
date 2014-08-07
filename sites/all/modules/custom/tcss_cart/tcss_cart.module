@@ -54,52 +54,24 @@ function tcss_cart_search_slider_form() {
  * Form for uploading customer design
  */
 function upload_customer_artwork($form, &$form_state) {
-  if (!isset($_SESSION['customer_artwork_product'])) {
+  if (!isset($_SESSION['customer_artwork_pid'])) {
    drupal_set_message(t('Your session has expired, so please again add the product to cart.'), 'error');
    return '';
-  }
+ }
 
-  $form['customer_upload'] = array(
-    '#type' =>'checkbox',
-    '#title' => t('Use our Templates'),
+ $form['customer_artwork'] = array(
+  '#title' => t('Upload Artwork'),
+  '#type' => 'managed_file',
+  '#description' => t('Upload you design for product'),
+  '#upload_location' => 'public://',
+  '#theme' => 'tcss_cart_image_upload',
   );
-  $products = $_SESSION['customer_artwork_product'];
-  unset($_SESSION['customer_artwork_product']);
-  drupal_add_js(drupal_get_path('module', 'tcss_cart') . '/js/customer_artwork.js');
-  foreach ($products as $key => $product) {
-    if ($product->type == 'business_card') {
-      $form['customer_artwork_field_set' . $key] = array(
-        '#type' => 'fieldset',
-        '#title' => t('Busniess Cards'),
-      );
-      $form['customer_artwork_field_set' . $key]['customer_artwork_front_side_' . $key] = array(
-        '#title' => t('Upload Front Side for ' . $product->title),
-        '#type' => 'managed_file',
-        '#upload_location' => 'public://',
-        '#theme' => 'tcss_cart_image_upload',
-       );
-      $form['customer_artwork_field_set' . $key]['customer_artwork_back_side' . $key] = array(
-        '#title' => t('Upload Back Side for ' . $product->title),
-        '#type' => 'managed_file',
-        '#upload_location' => 'public://',
-        '#theme' => 'tcss_cart_image_upload',
-      );
-    }
-    else {
-      $form['customer_artwork' . $key] = array(
-        '#title' => t('Upload Your Design  for ' . $product->title),
-        '#type' => 'managed_file',
-        '#upload_location' => 'public://',
-        '#theme' => 'tcss_cart_image_upload',
-      );
-    }
-  }
 
-  $form['customer_artwork_submit'] = array(
-    '#type' => 'submit',
-    '#value' => 'Submit',
+ $form['customer_artwork_submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'Submit',
   );
-  return $form;
+ return $form;
 }
 
 /**
@@ -108,26 +80,14 @@ function upload_customer_artwork($form, &$form_state) {
 function upload_customer_artwork_submit($form, &$form_state) {
   // Set product and image information to session, used in storing customer's artwork
   if (isset($_SESSION['customer_artwork_pid'])) {
-    if ($form_state['values']['customer_upload'] == 0) {
-      $_SESSION['customer_upload'][$_SESSION['customer_artwork_pid']] = 0;
-      $products = $_SESSION['customer_artwork_pid'];
-      if (isset($form_state['values']['customer_artwork'])) {
-        $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']] = $form_state['values']['customer_artwork'];
-      }
-      elseif (isset($form_state['values']['customer_artwork_front_side'])) {
-        $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']][] = $form_state['values']['customer_artwork_front_side'];
-        $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']][] = $form_state['values']['customer_artwork_back_side'];
-      }
-    }
-    else {
-      $_SESSION['customer_upload'][$_SESSION['customer_artwork_pid']] = 1;
-    }
+    $_SESSION['customer_artwork_fpid'][$_SESSION['customer_artwork_pid']] = $form_state['values']['customer_artwork'];
     $form_state['redirect'] = 'cart';
+    unset($_SESSION['customer_artwork_pid']);
   }
 }
 
 /**
- * Implments hook_form_alter.
+ * Implments hook_form_alter
  */
 function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "views_exposed_form" && ($form['#id'] == "views-exposed-form-print-search-business-card" || $form['#id'] == "views-exposed-form-print-search-letterheads" || $form['#id'] == "views-exposed-form-print-search-complimentary-slips" || $form['#id'] == "views-exposed-form-print-search-flyers")) {
@@ -145,12 +105,7 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
   }
   // Set product information to session, used in storing customer's artwork
   if (strpos($form_id,'uc_product_add_to_cart_form_') !== false) {
-    // Make it expilicitly array
-    $_SESSION['customer_artwork_product'][$form_state['build_info']['args'][0]->nid] = $form_state['build_info']['args'][0];
-  }
-
-  if (strpos($form_id,'uc_product_kit_add_to_cart_form_') !== false) {
-    $_SESSION['customer_artwork_product'] = $form_state['build_info']['args'][0]->products;
+    $_SESSION['customer_artwork_pid'] = $form_state['build_info']['args'][0]->nid;
   }
 
   if ($form_id == 'compliment_slips_node_form' || $form_id == 'business_card_node_form' || $form_id == 'flyers_node_form' || $form_id == 'letterheads_node_form') {
@@ -178,63 +133,37 @@ function tcss_cart_form_alter(&$form, &$form_state, $form_id) {
     break;
 
     case 'uc_order_view_update_form':
-      $form['admin_comment_field']['#access'] = FALSE;
-    break;
-    case 'user_login':
-      $form['#attributes']['class'][] = 'default-form';
+      if (isUserSeller()) {
+        $form['admin_comment_field']['#access'] = FALSE;
+      }
       break;
-   }
-}
 
-/**
- * Alter drupal form.
- */
-function tcss_cart_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
-  $form['#attributes']['class'] = 'default-form';
-  $form['name']['#attributes']['placeholder'] = t('Name');
-  $form['name']['#title'] = NULL;
-  $form['name']['#prefix'] ='<div class="col-sm-6">';
-  $form['name']['#suffix'] ='</div>';
-  $form['mail']['#attributes']['placeholder'] = t('Email');
-  $form['mail']['#title'] = NULL;
-  $form['mail']['#prefix'] ='<div class="col-sm-6">';
-  $form['mail']['#suffix'] ='</div>';
-  $form['subject']['#attributes']['placeholder'] = t('Subject');
-  $form['subject']['#title'] = NULL;
-  $form['subject']['#prefix'] ='<div class="col-sm-12">';
-  $form['subject']['#suffix'] ='</div>';
-  $form['cid']['#attributes']['placeholder'] = t('Category');
-  $form['cid']['#title'] = NULL;
-  $form['cid']['#prefix'] ='<div class="col-sm-12"><span class="select-box" title="Category">';
-  $form['cid']['#suffix'] ='</span></div>';
-  $form['message']['#weight'] = 2;
-  $form['message']['#attributes']['placeholder'] = t('Message');
-  $form['message']['#prefix'] ='<div class="col-sm-12">';
-  $form['message']['#suffix'] ='</div>';
-  $form['message']['#title'] = NULL;
-  $form['copy']['#weight']    = 3;
-  $form['phone'] = array(
-    '#type' => 'textfield',
-    '#title' => NULL,
-    '#required' => TRUE,
-    '#prefix' => '<div class="col-sm-6">',
-    '#suffix' => '</div>',
-    '#attributes' => array(
-      'placeholder' => t('Phone'),
-      ),
-    '#weight' => 1
-    );
-  $form['company'] = array(
-    '#type' => 'textfield',
-    '#title' => NULL,
-    '#required' => TRUE,
-    '#prefix' => '<div class="col-sm-6">',
-    '#suffix' => '</div>',
-    '#attributes' => array(
-      'placeholder' => t('Company'),
-      ),
-    '#weight' => 1
-    );
+    case 'user_requirement_node_form':
+      $form['business_card'] = array(
+        '#type' => 'fieldset',
+        '#states' => array(
+          'visible' => array(
+            ':input[name="field_user_req_select_type[und]"]' => array('value' => 'business_card'),
+          ),
+        ),
+        '#title' => t('Business Cards'),
+      );
+       $form['flyers'] = array(
+        '#type' => 'fieldset',
+        '#states' => array(
+          'visible' => array(
+            ':input[name="field_user_req_select_type[und]"]' => array('value' => 'flyers'),
+          ),
+        ),
+        '#title' => t('Flyers'),
+      );
+      $form['business_card']['field_bc_paper_weight'] = $form['field_bc_paper_weight'];
+      $form['flyers']['field_f_color_option'] = $form['field_f_color_option'];
+      $form['field_user_req_select_type']['#weight'] = -1;
+      unset($form['field_bc_paper_weight']);
+      unset($form['field_f_color_option']);
+      break;
+    }
 }
 
 function theme_tcss_cart_image_upload($variables) {
@@ -271,40 +200,51 @@ function tcss_cart_uc_order_product_presave($order_product) {
  * Need to be changed, should be saved in hook_uc_order
  */
 function tcss_cart_uc_cart_checkout_start($order) {
+
   // Save Product image to database
-  if (isset($_SESSION['customer_artwork_fpid']) || isset($_SESSION['customer_upload'])) {
+  if (isset($_SESSION['customer_artwork_fpid'])) {
     foreach ($order->products as $id => $product) {
       $order_id = $order->order_id;
       $product_image = new stdClass();
       $product_image->type = 'product_image';
       node_object_prepare($product_image);
-      $product_image->language = LANGUAGE_NONE;
-      $product_image->field_order_id['und'][]['value'] = $order_id;
-      $product_image->field_order_product_id['und'][]['target_id'] = $product->nid;
-      if (isset($_SESSION['customer_upload']) && $_SESSION['customer_upload'][$product->nid] == 1) {
-        $product_image->field_order_customer_design['und'][] = 20.00;
-      }
-      else {
-        if(is_array($_SESSION['customer_artwork_fpid'][$product->nid])) {
-        foreach ($_SESSION['customer_artwork_fpid'][$product->nid] as $fid) {
-          $image = (array) file_load($fid);
-          if (isset($image['fid'])) {
-            $product_image->field_order_prodcut_image['und'][] = $image;
-          }
-        }
-      }
-      else {
-        $image = (array) file_load($_SESSION['customer_artwork_fpid'][$product->nid]);
-        if (isset($image['fid'])) {
-          $product_image->field_order_prodcut_image['und'][0] = $image;
-        }
-      }
+      $image = (array) file_load($_SESSION['customer_artwork_fpid'][$product->nid]);
+      if (isset($image['fid'])) {
+        $product_image->language = LANGUAGE_NONE;
+        $product_image->field_order_id['und'][0]['value'] = $order_id;
+        $product_image->field_order_product_id['und'][0]['target_id'] = $product->nid;
+        $product_image->field_order_prodcut_image['und'][0] = $image;
+        node_save($product_image);
       }
 
-      node_save($product_image);
     }
-    unset($_SESSION['customer_upload']);
     unset($_SESSION['customer_artwork_fpid']);
+  }
+}
+
+
+/**
+ * Filter product by seller id
+ */
+function tcss_cart_get_product_by_sellerid(&$order) {
+  global $user;
+  if (isUserSeller()) {
+    $new_order_total = 0.0;
+    $result = array();
+    foreach ($order->products as $product_id => $product) {
+      if ($product->field_op_seller_id['und'][0]['target_id'] != $user->uid) {
+        unset($order->products[$product_id]);
+      }
+      else {
+        $new_order_total += $product->price;
+      }
+    }
+
+    if (count($order->products) == 0) {
+      drupal_goto();
+    }
+    $order->order_total = $new_order_total;
+    $order->line_items[0]['amount'] = $new_order_total;
   }
 }
 
@@ -321,12 +261,23 @@ function tcss_cart_remove_admin_content($order_content) {
 }
 
 /**
- * Alter items price.
+ * Check if user has seller role
+ */
+function isUserSeller($user = NULL) {
+  if ($user == NULL) {
+    global $user;
+    if (in_array('Seller', $user->roles)) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Alter items price
  */
 function tcss_cart_calculate_item_price($item) {
-  tcss_cart_product_image_load_by_product_id($item->nid);
   $new_price = ($item->qty / $item->default_qty) * ($item->sell_price);
-
   return $new_price;
 }
 
@@ -334,24 +285,30 @@ function tcss_cart_views_pre_render(&$view) {
   if ($view->name == 'seller_order_history') {
     foreach ($view->result as $order_view) {
       $order = uc_order_load($order_view->order_id);
+      tcss_cart_get_product_by_sellerid($order);
       $order_view->uc_orders_order_total = $order->order_total;
     }
   }
 }
 
-function tcss_cart_product_image_load_by_product_id($product_id) {
-  $pm_node = FALSE;
-  if (isset($_SESSION['cart_order'])) {
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-          ->entityCondition('bundle', 'product_image')
-          ->fieldCondition('field_order_product_id', 'target_id', $product_id, '=')
-          ->fieldCondition('field_order_id', 'value', $_SESSION['cart_order']);
-    $result = $query->execute();
-    if (isset($result['node'])) {
-      $pm_node = array_keys($result['node'])[0];
-      $pm_node = node_load($pm_node);
+function tcss_cart_quicktabs_alter(&$quicktabs) {
+  if ($quicktabs->machine_name == 'print_search_tabbed_menu') {
+    switch (arg(0)) {
+      case 'letterheads':
+      $default_tab = 1;
+      break;
+
+      case 'complimentary-slips':
+      $default_tab = 2;
+      break;
+
+      case 'flyers':
+      $default_tab = 3;
+      break;
+
+      default:
+      $default_tab = 0;
     }
+    $quicktabs->default_tab = $default_tab;
   }
-  return $pm_node;
 }

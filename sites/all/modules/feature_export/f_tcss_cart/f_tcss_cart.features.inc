@@ -33,6 +33,14 @@ function f_tcss_cart_node_info() {
       'title_label' => t('Product Image'),
       'help' => '',
     ),
+    'user_requirement' => array(
+      'name' => t('User Requirement'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   return $items;
 }
