@@ -75,15 +75,10 @@
   text-align: center;
 }
 /* line 55, ../sass/view.scss */
-.views-exposed-form .views-exposed-widget {
-  float: none;
-  padding: 0;
-}
-/* line 60, ../sass/view.scss */
 .views-exposed-form .form-type-bef-link {
   display: inline-block;
 }
-/* line 63, ../sass/view.scss */
+/* line 58, ../sass/view.scss */
 .views-exposed-form .form-type-bef-link a {
   background: white;
   border: 1px solid #dddddd;
@@ -101,20 +96,20 @@
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 78, ../sass/view.scss */
+/* line 73, ../sass/view.scss */
 .views-exposed-form .form-type-bef-link a:hover {
   background: black;
   border-color: black;
   color: white;
 }
-/* line 88, ../sass/view.scss */
+/* line 83, ../sass/view.scss */
 .views-exposed-form .selected.form-type-bef-link a {
   background: black;
   border-color: black;
   color: white;
 }
 
-/* line 97, ../sass/view.scss */
+/* line 92, ../sass/view.scss */
 .views-field-field-status .wp-bag {
   border-radius: 50%;
   color: white;
@@ -127,42 +122,42 @@
   top: 20px;
   width: 40px;
 }
-/* line 108, ../sass/view.scss */
+/* line 103, ../sass/view.scss */
 .views-field-field-status .wp-bag a {
   color: white;
 }
-/* line 112, ../sass/view.scss */
+/* line 107, ../sass/view.scss */
 .views-field-field-status .wp-bag-none {
   display: none;
 }
-/* line 116, ../sass/view.scss */
+/* line 111, ../sass/view.scss */
 .views-field-field-status .wp-bag-new {
   background: #1abc9c;
 }
-/* line 119, ../sass/view.scss */
+/* line 114, ../sass/view.scss */
 .views-field-field-status .wp-bag-hot {
   background: #f64243;
 }
-/* line 123, ../sass/view.scss */
+/* line 118, ../sass/view.scss */
 .views-field-field-status .wp-bag-cool,
 .views-field-field-status .wp-bag-sale {
   background: #a57bcd;
 }
 
-/* line 128, ../sass/view.scss */
+/* line 123, ../sass/view.scss */
 .views-field-uc-product-image {
   -webkit-transition: all 300ms;
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
 
-/* line 132, ../sass/view.scss */
+/* line 127, ../sass/view.scss */
 .wp-group-image {
   margin-bottom: 15px;
   position: relative;
   /* end views-field-addtocartlink */
 }
-/* line 137, ../sass/view.scss */
+/* line 132, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink,
 .wp-group-image .views-field-view-node {
   background: white;
@@ -184,12 +179,12 @@
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 151, ../sass/view.scss */
+/* line 146, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink {
   margin-right: -55px;
   right: 0;
 }
-/* line 155, ../sass/view.scss */
+/* line 150, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink:after {
   content: "\f07a";
   line-height: 50px;
@@ -201,21 +196,21 @@
   width: 100%;
   z-index: 1;
 }
-/* line 162, ../sass/view.scss */
+/* line 157, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink .attributes,
 .wp-group-image .views-field-addtocartlink .form-item-qty {
   display: none;
 }
-/* line 166, ../sass/view.scss */
+/* line 161, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink:hover {
   background: #1abc9c;
   color: white;
 }
-/* line 171, ../sass/view.scss */
+/* line 166, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink .form-actions {
   margin: 0;
 }
-/* line 175, ../sass/view.scss */
+/* line 170, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink .node-add-to-cart {
   background: none;
   border: none;
@@ -227,16 +222,16 @@
   width: 50px;
   z-index: 2;
 }
-/* line 186, ../sass/view.scss */
+/* line 181, ../sass/view.scss */
 .wp-group-image .views-field-addtocartlink .node-add-to-wishlist {
   display: none;
 }
-/* line 191, ../sass/view.scss */
+/* line 186, ../sass/view.scss */
 .wp-group-image .views-field-view-node {
   left: 0;
   margin-left: -55px;
 }
-/* line 195, ../sass/view.scss */
+/* line 190, ../sass/view.scss */
 .wp-group-image .views-field-view-node:after {
   content: "\f08e";
   line-height: 50px;
@@ -248,12 +243,12 @@
   width: 100%;
   z-index: 1;
 }
-/* line 201, ../sass/view.scss */
+/* line 196, ../sass/view.scss */
 .wp-group-image .views-field-view-node:hover {
   background: #1abc9c;
   color: white;
 }
-/* line 206, ../sass/view.scss */
+/* line 201, ../sass/view.scss */
 .wp-group-image .views-field-view-node a {
   display: block;
   height: 50px;
@@ -261,68 +256,68 @@
   text-indent: -9999em;
   z-index: 2;
 }
-/* line 215, ../sass/view.scss */
+/* line 210, ../sass/view.scss */
 .wp-group-image:hover .views-field-uc-product-image {
   filter: alpha(opacity=50);
   opacity: .5;
 }
-/* line 221, ../sass/view.scss */
+/* line 216, ../sass/view.scss */
 .wp-group-image:hover .views-field-addtocartlink, .wp-group-image:hover .views-field-view-node {
   filter: alpha(opacity=100);
   opacity: 1;
   margin-top: -25px;
   top: 50%;
 }
-/* line 228, ../sass/view.scss */
+/* line 223, ../sass/view.scss */
 .wp-group-image:hover .views-field-addtocartlink {
   right: 50%;
 }
-/* line 232, ../sass/view.scss */
+/* line 227, ../sass/view.scss */
 .wp-group-image:hover .views-field-view-node {
   left: 50%;
 }
 
-/* line 237, ../sass/view.scss */
+/* line 232, ../sass/view.scss */
 .wp-group-info {
   overflow: hidden;
 }
-/* line 240, ../sass/view.scss */
+/* line 235, ../sass/view.scss */
 .wp-group-info .views-field-sell-price {
   float: right;
 }
-/* line 245, ../sass/view.scss */
+/* line 240, ../sass/view.scss */
 .wp-group-info .views-field-title,
 .wp-group-info .views-field-taxonomy-catalog {
   padding-right: 55px;
 }
 
 /* testimonials */
-/* line 253, ../sass/view.scss */
+/* line 248, ../sass/view.scss */
 .view-testimonials .views-field-body {
   font-family: "roboto_slabregular";
   font-size: 1.071em;
   font-size: 2.571em;
   padding-bottom: 20px;
 }
-/* line 258, ../sass/view.scss */
+/* line 253, ../sass/view.scss */
 .view-testimonials .views-field-body p:before {
   content: "\'\' ";
 }
-/* line 262, ../sass/view.scss */
+/* line 257, ../sass/view.scss */
 .view-testimonials .views-field-body p:after {
   content: " \'\'";
 }
-/* line 267, ../sass/view.scss */
+/* line 262, ../sass/view.scss */
 .view-testimonials .views-field-title {
   font-size: 1.286em;
   padding: 15px 0 0;
   position: relative;
 }
-/* line 272, ../sass/view.scss */
+/* line 267, ../sass/view.scss */
 .view-testimonials .views-field-title a {
   color: white;
 }
-/* line 276, ../sass/view.scss */
+/* line 271, ../sass/view.scss */
 .view-testimonials .views-field-title:after {
   border-top: 1px solid white;
   content: "";
@@ -334,37 +329,37 @@
 }
 
 /* View slideshow */
-/* line 290, ../sass/view.scss */
+/* line 285, ../sass/view.scss */
 #slideshow .container-fluid {
   padding-right: 0;
   padding-left: 0;
 }
 
-/* line 296, ../sass/view.scss */
+/* line 291, ../sass/view.scss */
 .main-slideshow,
 .wp-slideshow2 {
   overflow: hidden;
   position: relative;
   z-index: 1;
 }
-/* line 300, ../sass/view.scss */
+/* line 295, ../sass/view.scss */
 .main-slideshow .views-row,
 .wp-slideshow2 .views-row {
   margin-left: 0;
 }
-/* line 303, ../sass/view.scss */
+/* line 298, ../sass/view.scss */
 .main-slideshow .views-slideshow-cycle-main-frame-row, .main-slideshow .views-slideshow-cycle-main-frame,
 .wp-slideshow2 .views-slideshow-cycle-main-frame-row,
 .wp-slideshow2 .views-slideshow-cycle-main-frame {
   width: 100% !important;
   text-align: center;
 }
-/* line 308, ../sass/view.scss */
+/* line 303, ../sass/view.scss */
 .main-slideshow .views-field-type-image,
 .wp-slideshow2 .views-field-type-image {
   margin-bottom: 0;
 }
-/* line 311, ../sass/view.scss */
+/* line 306, ../sass/view.scss */
 .main-slideshow .views-field-field-category,
 .wp-slideshow2 .views-field-field-category {
   font-family: 'museo_slab500';
@@ -374,18 +369,18 @@
   -moz-text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
   text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
-/* line 317, ../sass/view.scss */
+/* line 312, ../sass/view.scss */
 .main-slideshow .views-field-field-category a,
 .wp-slideshow2 .views-field-field-category a {
   color: white;
 }
-/* line 321, ../sass/view.scss */
+/* line 316, ../sass/view.scss */
 .main-slideshow .views-field-type-image img,
 .wp-slideshow2 .views-field-type-image img {
   height: auto;
   max-width: 100%;
 }
-/* line 325, ../sass/view.scss */
+/* line 320, ../sass/view.scss */
 .main-slideshow .slideshow-content,
 .wp-slideshow2 .slideshow-content {
   position: absolute;
@@ -397,7 +392,7 @@
   transform: translate(-50%, -50%);
   width: 70%;
 }
-/* line 335, ../sass/view.scss */
+/* line 330, ../sass/view.scss */
 .main-slideshow .slideshow-content input[type="submit"],
 .wp-slideshow2 .slideshow-content input[type="submit"] {
   background-color: #1abc9c;
@@ -413,14 +408,14 @@
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 346, ../sass/view.scss */
+/* line 341, ../sass/view.scss */
 .main-slideshow .slideshow-content input[type="submit"]:hover, .main-slideshow .slideshow-content input[type="submit"]:focus,
 .wp-slideshow2 .slideshow-content input[type="submit"]:hover,
 .wp-slideshow2 .slideshow-content input[type="submit"]:focus {
   background: none;
   border-color: white;
 }
-/* line 352, ../sass/view.scss */
+/* line 347, ../sass/view.scss */
 .main-slideshow .views-field-title,
 .wp-slideshow2 .views-field-title {
   margin: 15px 0 30px;
@@ -433,17 +428,17 @@
   -moz-text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
   text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
-/* line 362, ../sass/view.scss */
+/* line 357, ../sass/view.scss */
 .main-slideshow .views-field-title a,
 .wp-slideshow2 .views-field-title a {
   color: white;
 }
-/* line 366, ../sass/view.scss */
+/* line 361, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-pause,
 .wp-slideshow2 .views-slideshow-controls-text-pause {
   display: none;
 }
-/* line 370, ../sass/view.scss */
+/* line 365, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-previous,
 .main-slideshow .views-slideshow-controls-text-next,
 .wp-slideshow2 .views-slideshow-controls-text-previous,
@@ -458,7 +453,7 @@
   width: 50px;
   z-index: 500;
 }
-/* line 380, ../sass/view.scss */
+/* line 375, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-previous:hover, .main-slideshow .views-slideshow-controls-text-previous:focus,
 .main-slideshow .views-slideshow-controls-text-next:hover,
 .main-slideshow .views-slideshow-controls-text-next:focus,
@@ -472,12 +467,12 @@
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 386, ../sass/view.scss */
+/* line 381, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-next,
 .wp-slideshow2 .views-slideshow-controls-text-next {
   right: 0;
 }
-/* line 390, ../sass/view.scss */
+/* line 385, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-next:before,
 .main-slideshow .views-slideshow-controls-text-previous:before,
 .wp-slideshow2 .views-slideshow-controls-text-next:before,
@@ -493,17 +488,17 @@
   display: block;
   text-align: center;
 }
-/* line 397, ../sass/view.scss */
+/* line 392, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-next:before,
 .wp-slideshow2 .views-slideshow-controls-text-next:before {
   content: "\f105";
 }
-/* line 400, ../sass/view.scss */
+/* line 395, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-previous:before,
 .wp-slideshow2 .views-slideshow-controls-text-previous:before {
   content: "\f104";
 }
-/* line 404, ../sass/view.scss */
+/* line 399, ../sass/view.scss */
 .main-slideshow .views-slideshow-controls-text-previous a,
 .main-slideshow .views-slideshow-controls-text-next a,
 .wp-slideshow2 .views-slideshow-controls-text-previous a,
@@ -512,31 +507,31 @@
 }
 
 /* View Jcarousel */
-/* line 410, ../sass/view.scss */
+/* line 405, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default {
   position: relative;
   text-align: left;
 }
-/* line 413, ../sass/view.scss */
+/* line 408, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal {
   height: 505px;
   padding: 0;
   width: auto;
 }
-/* line 417, ../sass/view.scss */
+/* line 412, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal {
   height: 505px;
   padding: 100px 0 0;
   width: auto;
 }
-/* line 421, ../sass/view.scss */
+/* line 416, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal .jcarousel-item {
   border: none;
   height: 505px;
   margin: 0 20px 0 0;
   width: 270px;
 }
-/* line 429, ../sass/view.scss */
+/* line 424, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next,
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev {
   background: none;
@@ -548,7 +543,7 @@
   top: 0;
   width: 50px;
 }
-/* line 438, ../sass/view.scss */
+/* line 433, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next:hover, .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next:focus,
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev:hover,
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev:focus {
@@ -557,17 +552,17 @@
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 443, ../sass/view.scss */
+/* line 438, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next {
   margin-right: -52px;
   right: 50%;
 }
-/* line 447, ../sass/view.scss */
+/* line 442, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev {
   margin-left: -52px;
   left: 50%;
 }
-/* line 452, ../sass/view.scss */
+/* line 447, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next:before,
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev:before {
   display: inline-block;
@@ -578,17 +573,17 @@
   -moz-osx-font-smoothing: grayscale;
   font-size: 2.2em;
 }
-/* line 456, ../sass/view.scss */
+/* line 451, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next:before {
   content: "\f105";
 }
-/* line 459, ../sass/view.scss */
+/* line 454, ../sass/view.scss */
 .main-jcarousel .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev:before {
   content: "\f104";
 }
 
 /* .wp-slideshow2 */
-/* line 469, ../sass/view.scss */
+/* line 464, ../sass/view.scss */
 .wp-slideshow-link .views-field-field-link a,
 .wp-slideshow-link .views-field-field-link2 a,
 .wp-collection .views-field-field-link a {
@@ -606,7 +601,7 @@
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 481, ../sass/view.scss */
+/* line 476, ../sass/view.scss */
 .wp-slideshow-link .views-field-field-link a:hover, .wp-slideshow-link .views-field-field-link a:focus,
 .wp-slideshow-link .views-field-field-link2 a:hover,
 .wp-slideshow-link .views-field-field-link2 a:focus,
@@ -617,25 +612,25 @@
   color: white;
 }
 
-/* line 488, ../sass/view.scss */
+/* line 483, ../sass/view.scss */
 .wp-slideshow2 {
   background: black;
   margin: 60px 0 10px;
 }
-/* line 493, ../sass/view.scss */
+/* line 488, ../sass/view.scss */
 .wp-slideshow2 .wp-slideshow-link > .views-field-field-link,
 .wp-slideshow2 .wp-slideshow-link > .views-field-field-link2 {
   display: inline-block;
   margin: 0 10px;
 }
-/* line 498, ../sass/view.scss */
+/* line 493, ../sass/view.scss */
 .wp-slideshow2 .wp-slideshow-link .views-field-field-link a,
 .wp-slideshow2 .wp-slideshow-link .views-field-field-link2 a {
   border-color: white;
   color: white;
   text-shadow: none;
 }
-/* line 502, ../sass/view.scss */
+/* line 497, ../sass/view.scss */
 .wp-slideshow2 .wp-slideshow-link .views-field-field-link a:hover, .wp-slideshow2 .wp-slideshow-link .views-field-field-link a:focus,
 .wp-slideshow2 .wp-slideshow-link .views-field-field-link2 a:hover,
 .wp-slideshow2 .wp-slideshow-link .views-field-field-link2 a:focus {
@@ -643,29 +638,29 @@
   border-color: #1abc9c;
 }
 
-/* line 510, ../sass/view.scss */
+/* line 505, ../sass/view.scss */
 .wp-collection {
   text-align: center;
 }
-/* line 514, ../sass/view.scss */
+/* line 509, ../sass/view.scss */
 .wp-collection .views-field-field-image,
 .wp-collection .views-field-title,
 .wp-collection .views-field-body {
   margin-bottom: 25px;
 }
-/* line 517, ../sass/view.scss */
+/* line 512, ../sass/view.scss */
 .wp-collection .views-field-title {
   font-family: "roboto_slabregular";
   font-size: 1.071em;
   font-family: 'roboto_slabbold';
   text-transform: uppercase;
 }
-/* line 522, ../sass/view.scss */
+/* line 517, ../sass/view.scss */
 .wp-collection .views-field-field-image {
   overflow: hidden;
   position: relative;
 }
-/* line 525, ../sass/view.scss */
+/* line 520, ../sass/view.scss */
 .wp-collection .views-field-field-image:after {
   border: 1px solid white;
   bottom: 5px;
@@ -677,20 +672,20 @@
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
 }
-/* line 536, ../sass/view.scss */
+/* line 531, ../sass/view.scss */
 .wp-collection .views-field-field-image img {
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 543, ../sass/view.scss */
+/* line 538, ../sass/view.scss */
 .wp-collection .views-field-field-image:hover img {
   opacity: .7;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 548, ../sass/view.scss */
+/* line 543, ../sass/view.scss */
 .wp-collection .views-field-field-image:hover:after {
   -webkit-transform: scale(0.55, 0.5);
   transform: scale(0.55, 0.5);
@@ -699,35 +694,35 @@
 }
 
 /* wp-shop-grid */
-/* line 560, ../sass/view.scss */
+/* line 555, ../sass/view.scss */
 .wp-shop-grid > .view-header {
   float: left;
   line-height: 2.4;
   margin-bottom: 13px;
 }
-/* line 566, ../sass/view.scss */
+/* line 561, ../sass/view.scss */
 .wp-shop-grid > .view-filters {
   float: right;
   margin-bottom: 13px;
 }
-/* line 571, ../sass/view.scss */
+/* line 566, ../sass/view.scss */
 .wp-shop-grid > .view-content {
   clear: both;
   border-top: 1px solid #dddddd;
   padding-top: 40px;
 }
-/* line 578, ../sass/view.scss */
+/* line 573, ../sass/view.scss */
 .wp-shop-grid .views-exposed-form .views-exposed-widget {
   float: left;
   margin-left: 15px;
 }
-/* line 582, ../sass/view.scss */
+/* line 577, ../sass/view.scss */
 .wp-shop-grid .views-exposed-form .views-submit-button {
   display: none;
 }
 
 /* latest-blog */
-/* line 590, ../sass/view.scss */
+/* line 585, ../sass/view.scss */
 .latest-blog .views-field-type-image {
   background: #1abc9c;
   overflow: hidden;
@@ -749,23 +744,23 @@
 }
 
 /* blog-masonry */
-/* line 598, ../sass/view.scss */
+/* line 593, ../sass/view.scss */
 .wp-blog-masonry .view-content {
   margin-left: -20px;
   margin-right: -20px;
 }
-/* line 602, ../sass/view.scss */
+/* line 597, ../sass/view.scss */
 .wp-blog-masonry .wp-blog {
   border-bottom: none;
   padding: 0 20px;
   width: 33.333%;
 }
-/* line 608, ../sass/view.scss */
+/* line 603, ../sass/view.scss */
 .wp-blog-masonry .wp-row-inner {
   border: 1px solid #f0f0f0;
   padding: 30px 30px 0;
 }
-/* line 614, ../sass/view.scss */
+/* line 609, ../sass/view.scss */
 .wp-blog-masonry .views-field-field-image,
 .wp-blog-masonry .views-field-field-video {
   margin-left: -30px;
@@ -791,47 +786,47 @@
   -ms-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
 }
-/* line 622, ../sass/view.scss */
+/* line 617, ../sass/view.scss */
 .wp-blog-masonry .views-field-title {
   font-family: 'ralewayregular';
   font-size: 1.285em;
   font-weight: 100;
 }
-/* line 628, ../sass/view.scss */
+/* line 623, ../sass/view.scss */
 .wp-blog-masonry .views-field-body {
   margin-bottom: 25px;
 }
-/* line 632, ../sass/view.scss */
+/* line 627, ../sass/view.scss */
 .wp-blog-masonry .views-field-view-node {
   margin-bottom: 25px;
   margin-top: 0;
 }
-/* line 638, ../sass/view.scss */
+/* line 633, ../sass/view.scss */
 .wp-blog-masonry .views-field-name .views-label {
   padding-right: 5px;
 }
-/* line 643, ../sass/view.scss */
+/* line 638, ../sass/view.scss */
 .wp-blog-masonry .blog-extra-info {
   border-top: 1px solid #f0f0f0;
   margin: 0 -30px !important;
   overflow: hidden;
   padding: 15px 30px;
 }
-/* line 648, ../sass/view.scss */
+/* line 643, ../sass/view.scss */
 .wp-blog-masonry .blog-extra-info:after {
   border-bottom: none;
 }
-/* line 651, ../sass/view.scss */
+/* line 646, ../sass/view.scss */
 .wp-blog-masonry .blog-extra-info .views-field-comment-count {
   float: right;
 }
 
 /* blog mix */
-/* line 659, ../sass/view.scss */
+/* line 654, ../sass/view.scss */
 .wp-blog-mix .views-row {
   margin-bottom: 50px;
 }
-/* line 663, ../sass/view.scss */
+/* line 658, ../sass/view.scss */
 .wp-blog-mix .views-field-type-image,
 .wp-blog-mix .views-field-field-video {
   background: #1abc9c;
@@ -857,70 +852,70 @@
   -ms-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
 }
-/* line 670, ../sass/view.scss */
+/* line 665, ../sass/view.scss */
 .wp-blog-mix .blog-extra-info {
   clear: right;
   display: inline-block;
 }
 
 /* list-item-thumb */
-/* line 678, ../sass/view.scss */
+/* line 673, ../sass/view.scss */
 .list-item-thumb .views-row {
   margin-left: 0;
   overflow: hidden;
 }
-/* line 681, ../sass/view.scss */
+/* line 676, ../sass/view.scss */
 .list-item-thumb .views-row + .views-row {
   border-top: 1px dotted #dddddd;
   margin-top: 20px;
   padding-top: 20px;
 }
-/* line 687, ../sass/view.scss */
+/* line 682, ../sass/view.scss */
 .list-item-thumb .views-field-uc-product-image {
   float: left;
   margin-bottom: 0;
   margin-right: 15px;
 }
-/* line 692, ../sass/view.scss */
+/* line 687, ../sass/view.scss */
 .list-item-thumb .wp-product-info {
   padding-top: 3px;
 }
-/* line 695, ../sass/view.scss */
+/* line 690, ../sass/view.scss */
 .list-item-thumb .views-field-field-category {
   margin-bottom: 5px;
 }
-/* line 698, ../sass/view.scss */
+/* line 693, ../sass/view.scss */
 .list-item-thumb .views-field-field-rate {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-/* line 701, ../sass/view.scss */
+/* line 696, ../sass/view.scss */
 .list-item-thumb .views-field-field-rate .form-item {
   margin: 0;
 }
 
 /* view-home3 */
-/* line 709, ../sass/view.scss */
+/* line 704, ../sass/view.scss */
 .view-home3 .views-row {
   margin-left: -10px;
 }
-/* line 711, ../sass/view.scss */
+/* line 706, ../sass/view.scss */
 .view-home3 .views-row > .grid {
   float: left;
 }
-/* line 714, ../sass/view.scss */
+/* line 709, ../sass/view.scss */
 .view-home3 .views-row .two-col {
   width: 50%;
 }
-/* line 717, ../sass/view.scss */
+/* line 712, ../sass/view.scss */
 .view-home3 .views-row .one-col {
   width: 25%;
 }
-/* line 721, ../sass/view.scss */
+/* line 716, ../sass/view.scss */
 .view-home3 .views-field-type-image {
   margin-bottom: 0;
 }
-/* line 724, ../sass/view.scss */
+/* line 719, ../sass/view.scss */
 .view-home3 .cat-caption {
   background-color: rgba(0, 0, 0, 0.8);
   bottom: 0;
@@ -935,14 +930,14 @@
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
-/* line 737, ../sass/view.scss */
+/* line 732, ../sass/view.scss */
 .view-home3 .cat-caption .views-field-title, .view-home3 .cat-caption .views-field-field-link {
   -webkit-transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   -webkit-transform: translate3d(0, 200%, 0);
   transform: translate3d(0, 200%, 0);
 }
-/* line 743, ../sass/view.scss */
+/* line 738, ../sass/view.scss */
 .view-home3 .cat-caption .views-field-title {
   color: white;
   font-family: Roboto Slab, serif;
@@ -950,7 +945,7 @@
   line-height: 1;
   margin-bottom: 5px;
 }
-/* line 750, ../sass/view.scss */
+/* line 745, ../sass/view.scss */
 .view-home3 .cat-caption .views-field-field-link a {
   color: rgba(255, 255, 255, 0.5);
   font-size: .857em;
@@ -958,14 +953,14 @@
   text-transform: uppercase;
   text-decoration: underline;
 }
-/* line 758, ../sass/view.scss */
+/* line 753, ../sass/view.scss */
 .view-home3 .col-inner {
   margin-bottom: 10px;
   margin-left: 10px;
   overflow: hidden;
   position: relative;
 }
-/* line 765, ../sass/view.scss */
+/* line 760, ../sass/view.scss */
 .view-home3 .col-inner:hover .cat-caption, .view-home3 .col-inner:hover .views-field-title, .view-home3 .col-inner:hover .views-field-field-link {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);

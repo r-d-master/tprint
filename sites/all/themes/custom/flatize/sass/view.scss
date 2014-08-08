@@ -2,12 +2,12 @@
 @import "includes/_mixins";
 
 .views-row {
-  margin-left: -30px; 
+  margin-left: -30px;
 }
 
 .col-inner {
   margin-left: 30px;
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
 
 .views-field-title,
@@ -35,7 +35,7 @@
 
 .views-field-field-image,
 .views-field-type-image {
-  margin-bottom: 15px;  
+  margin-bottom: 15px;
 }
 
 .views-field-sell-price {
@@ -51,15 +51,10 @@
 .views-exposed-form {
 	position: relative;
 	text-align: center;
-	
-	.views-exposed-widget {
-		float: none;
-		padding: 0;
-	}
-	
+
 	.form-type-bef-link {
 		display: inline-block;
-		
+
 		a {
 			background: $white;
 			border: 1px solid $dark-grey;
@@ -74,16 +69,16 @@
 			width: 150px;
 			z-index: 2;
 			@include transition;
-			
+
 			&:hover {
 				background: $black;
 				border-color: $black;
 				color: $white;
 			}
 		}
-		
+
 	}
-	
+
 	.selected.form-type-bef-link {
 		a {
 			background: $black;
@@ -132,7 +127,7 @@
 .wp-group-image {
 	margin-bottom: 15px;
 	position: relative;
-	
+
 	.views-field-addtocartlink,
 	.views-field-view-node {
 		background: $white;
@@ -147,31 +142,31 @@
 		width: 50px;
 		@include transition;
 	}
-	
+
 	.views-field-addtocartlink {
 		margin-right: -55px;
 		right: 0;
-		
+
 		&:after {
 			content: "\f07a";
 			@include icon-after;
 			z-index: 1;
 		}
-		
+
 		.attributes,
 		.form-item-qty {
 			display: none;
 		}
-		
+
 		&:hover {
 			background: $cyan;
 			color: $white;
 		}
-		
+
 		.form-actions {
 			margin: 0;
 		}
-		
+
 		.node-add-to-cart {
 			background: none;
 			border: none;
@@ -187,22 +182,22 @@
 			display: none;
 		}
 	} /* end views-field-addtocartlink */
-	
+
 	.views-field-view-node {
 		left: 0;
 		margin-left: -55px;
-		
+
 		&:after {
 			content: "\f08e";
 			@include icon-after;
 			z-index: 1;
 		}
-		
+
 		&:hover {
 			background: $cyan;
 			color: $white;
 		}
-		
+
 		a {
 			display: block;
 			height: 50px;
@@ -216,7 +211,7 @@
 		filter: alpha(opacity=50);
 		opacity: .5;
 	}
-	
+
 	&:hover .views-field-addtocartlink,
 	&:hover .views-field-view-node {
 		filter: alpha(opacity=100);
@@ -224,11 +219,11 @@
 		margin-top: -25px;
 		top: 50%;
 	}
-	
+
 	&:hover .views-field-addtocartlink {
 		right: 50%;
 	}
-	
+
 	&:hover .views-field-view-node {
 		left: 50%;
 	}
@@ -236,11 +231,11 @@
 
 .wp-group-info	{
 	overflow: hidden;
-	
+
 	.views-field-sell-price {
 		float: right;
 	}
-	
+
 	.views-field-title,
 	.views-field-taxonomy-catalog {
 		padding-right: 55px;
@@ -254,28 +249,28 @@
     @include font-robo;
     font-size: 2.571em;
     padding-bottom: 20px;
-  
+
     p:before {
       content: "\'\' ";
     }
-  
+
     p:after {
       content: " \'\'";
     }
   }
-  
+
   .views-field-title {
     font-size: 1.286em;
     padding: 15px 0 0;
     position: relative;
-    
+
     a {
       color: $white;
     }
-  
+
     &:after {
       border-top: 1px solid $white;
-      content: "";  
+      content: "";
       left: 50%;
       margin-left: -25px;
       position: absolute;
@@ -304,7 +299,7 @@
   	width: 100% !important;
   	text-align: center;
   }
-  
+
   .views-field-type-image {
       margin-bottom: 0;
   }
@@ -313,7 +308,7 @@
   	font-size: 1.286em;
 	text-transform: uppercase;
 	@include text-shadow;
-	
+
 	a {
 		color: $white;
 	}
@@ -325,13 +320,13 @@
   .slideshow-content {
     position: absolute;
     top: 50%;
-    left: 50%;   
+    left: 50%;
     text-align: center;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     width: 70%;
-    
+
     input[type="submit"] {
       background-color: $cyan;
       border: 1px solid $cyan;
@@ -348,7 +343,7 @@
         border-color: $white;
       }
     }
-  } 
+  }
 	.views-field-title {
 		margin: 15px 0 30px;
 		color: $white;
@@ -373,7 +368,7 @@
     margin-top: -25px;
     position: absolute;
     text-align: center;
-    top: 50%;    
+    top: 50%;
     height: 50px;
     width: 50px;
     z-index: 500;
@@ -382,12 +377,12 @@
       text-decoration: none;
       @include transition;
     }
-  } 
+  }
   .views-slideshow-controls-text-next {
     right: 0;
   }
-  .views-slideshow-controls-text-next:before, 
-  .views-slideshow-controls-text-previous:before {        
+  .views-slideshow-controls-text-next:before,
+  .views-slideshow-controls-text-previous:before {
     @include fontawesome;
     font-size: 2em;
     line-height: 50px;
@@ -395,14 +390,14 @@
     text-align: center;
   }
   .views-slideshow-controls-text-next:before {
-    content: "\f105"; 
+    content: "\f105";
   }
   .views-slideshow-controls-text-previous:before {
-    content: "\f104"; 
+    content: "\f104";
   }
   .views-slideshow-controls-text-previous a,
   .views-slideshow-controls-text-next a {
-    font-size: 0;     
+    font-size: 0;
   }
 }
 /* View Jcarousel */
@@ -425,14 +420,14 @@
           width: 270px;
         }
       }
-      .jcarousel-next, 
+      .jcarousel-next,
       .jcarousel-prev {
         background: none;
         border: 2px solid $dark-grey;
         color: $black;
         display: block !important;
-        height: 50px;    
-        text-align: center;    
+        height: 50px;
+        text-align: center;
         top: 0;
         width: 50px;
         &:hover, &:focus {
@@ -448,19 +443,19 @@
 	  	margin-left: -52px;
         left: 50%;
       }
-      .jcarousel-next:before, 
-      .jcarousel-prev:before {        
+      .jcarousel-next:before,
+      .jcarousel-prev:before {
         @include fontawesome;
         font-size: 2.2em;
       }
       .jcarousel-next:before {
-        content: "\f105"; 
+        content: "\f105";
       }
       .jcarousel-prev:before {
-        content: "\f104"; 
+        content: "\f104";
       }
-    }    
-  }  
+    }
+  }
 }
 
 /* .wp-slideshow2 */
@@ -562,18 +557,18 @@
 		line-height: 2.4;
 		margin-bottom: 13px;
 	}
-	
+
 	> .view-filters {
 		float: right;
 		margin-bottom: 13px;
 	}
-	
+
 	> .view-content {
 		clear: both;
 		border-top: 1px solid $dark-grey;
 		padding-top: 40px;
 	}
-	
+
 	.views-exposed-form {
 		.views-exposed-widget {
 			float: left;
@@ -604,12 +599,12 @@
 		padding: 0 20px;
 		width: 33.333%;
 	}
-	
+
 	.wp-row-inner {
 		border: 1px solid $light-dark;
 		padding: 30px 30px 0;
 	}
-	
+
 	.views-field-field-image,
 	.views-field-field-video {
 		margin-left: -30px;
@@ -618,28 +613,28 @@
 		background: $cyan;
 		@include scale-up;
 	}
-	
+
 	.views-field-title {
 		font-family: 'ralewayregular';
 		font-size: 1.285em;
 		font-weight: 100;
 	}
-	
+
 	.views-field-body {
 		margin-bottom: 25px;
 	}
-	
+
 	.views-field-view-node {
 		margin-bottom: 25px;
 		margin-top: 0;
 	}
-	
+
 	.views-field-name {
 		.views-label {
 			padding-right: 5px;
 		}
 	}
-	
+
 	.blog-extra-info {
 		border-top: 1px solid $light-dark;
 		margin: 0 -30px !important;
@@ -663,7 +658,7 @@
 	.views-field-field-video {
 		background: $cyan;
 		@include scale-up;
-		float: left; 
+		float: left;
 		margin-right: 30px;
 		width: 270px;
 	}
