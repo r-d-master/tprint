@@ -14,6 +14,7 @@ function f_tprint_block_default_fe_block_settings() {
 
   $export['block-front_content'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'front_content',
     'module' => 'block',
@@ -27,10 +28,10 @@ function f_tprint_block_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'bootstrap' => array(
+      'flatize' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap',
+        'theme' => 'flatize',
         'weight' => 0,
       ),
       'seven' => array(
@@ -52,6 +53,7 @@ function f_tprint_block_default_fe_block_settings() {
 
   $export['panels_mini-footer_1'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'footer_1',
     'module' => 'panels_mini',
@@ -65,11 +67,11 @@ function f_tprint_block_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'bootstrap' => array(
+      'flatize' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
+        'theme' => 'flatize',
+        'weight' => -15,
       ),
       'seven' => array(
         'region' => '',
@@ -90,6 +92,7 @@ function f_tprint_block_default_fe_block_settings() {
 
   $export['panels_mini-footer_2'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'footer_2',
     'module' => 'panels_mini',
@@ -103,11 +106,11 @@ function f_tprint_block_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
+      'flatize' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'flatize',
+        'weight' => -15,
       ),
       'seven' => array(
         'region' => '',
@@ -128,6 +131,7 @@ function f_tprint_block_default_fe_block_settings() {
 
   $export['quicktabs-print_search_tabbed_menu'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'print_search_tabbed_menu',
     'module' => 'quicktabs',
@@ -139,7 +143,7 @@ flyers
 business-cards',
     'roles' => array(
       'administrator' => 3,
-      'Customer' => 6,
+      'Customer' => 4,
     ),
     'themes' => array(
       'bartik' => array(
@@ -148,11 +152,11 @@ business-cards',
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'bootstrap' => array(
+      'flatize' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
+        'theme' => 'flatize',
+        'weight' => -14,
       ),
       'seven' => array(
         'region' => '',
@@ -173,6 +177,7 @@ business-cards',
 
   $export['tcss_login-bootstrap-login'] = array(
     'cache' => 1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'bootstrap-login',
     'module' => 'tcss_login',
@@ -186,10 +191,10 @@ business-cards',
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'bootstrap' => array(
-        'region' => 'navigation',
-        'status' => 1,
-        'theme' => 'bootstrap',
+      'flatize' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'flatize',
         'weight' => 0,
       ),
       'seven' => array(
@@ -200,120 +205,6 @@ business-cards',
       ),
       'tprint' => array(
         'region' => 'navigation',
-        'status' => 1,
-        'theme' => 'tprint',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views--exp-print_search-business_card'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '-exp-print_search-business_card',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tprint' => array(
-        'region' => 'form_first',
-        'status' => 1,
-        'theme' => 'tprint',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views--exp-print_search-flyers'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '-exp-print_search-flyers',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tprint' => array(
-        'region' => 'form_fourth',
-        'status' => 1,
-        'theme' => 'tprint',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views--exp-print_search-letterheads'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '-exp-print_search-letterheads',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'bootstrap' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bootstrap',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'tprint' => array(
-        'region' => 'form_second',
         'status' => 1,
         'theme' => 'tprint',
         'weight' => 0,
@@ -325,6 +216,7 @@ business-cards',
 
   $export['views-ad1c50714daffed2afe0e726ac002891'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'ad1c50714daffed2afe0e726ac002891',
     'module' => 'views',
@@ -338,10 +230,10 @@ business-cards',
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'bootstrap' => array(
+      'flatize' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bootstrap',
+        'theme' => 'flatize',
         'weight' => 0,
       ),
       'seven' => array(
