@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+@import "includes/_include";
+@import "includes/_mixins";
+
+.views-view-grid {
+
+	.views-col {
+		float: left;
+	}
+
+	&.cols-1 .views-col {
+		width: 100%;
+	}
+	&.cols-2 .views-col {
+		width: 50%;
+	}
+	&.cols-3 .views-col {
+		width: 33.33%;
+	}
+	&.cols-4 .views-col {
+		width: 25%;
+	}
+	&.cols-5 .views-col {
+		width: 20%;
+	}
+
+}
+
+#change_skin_menu_wrapper {
+	background: url(../images/colorswitcher.png) no-repeat 100% 0;
+	left: -61px;
+	padding-right: 37px;
+	position: fixed;
+	top: 25%;
+	z-index: 500;
+
+	.container {
+		border: 1px solid #cdcccc;
+		border-left: 0;
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+	ul {
+		background-color: #ececec;
+		border: 1px solid $white;
+		float: none;
+		list-style: none;
+		margin: 0;
+		min-height: 103px;
+		overflow: hidden;
+		padding: 10px 0 10px 10px;
+		width: 61px;
+	}
+	ul li {
+		float: left;
+		margin: 0 7px 7px 0;
+		padding: 0;
+	}
+	ul li a {
+		display: block;
+		height: 15px;
+		text-indent: -999em;
+		width: 15px;
+	}
+	a.color-default {
+		background: $cyan;
+	}
+	a.color-red {
+		background: $red;
+	}
+	a.color-blue {
+		background: $blue;
+	}
+	a.color-brown {
+		background: $brown;
+	}
+	a.color-green {
+		background: $green;
+	}
+	a.color-violet {
+		background: $violet;
+	}
+	a.color-orange {
+		background: $orange;
+	}
+	a.color-yellow {
+		background: $yellow;
+	}
+}
+/* maintenance page */
+.maintenance-page {
+	background: #e6e6e6;
+
+	#page {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 60px 0 0 0;
+		text-align: center;
+	}
+	#header {
+		overflow: hidden;
+	}
+	#logo {
+		float: none;
+		margin: 0 0 10px;
+		width: 100% !important;
+	}
+	#name-and-slogan {
+		float: none;
+	}
+	#container {
+		padding: 40px 0 0 0;
+	}
+
+}

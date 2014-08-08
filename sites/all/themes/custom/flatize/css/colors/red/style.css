@@ -1,0 +1,516 @@
+/* COLORS */
+/* COLORS */
+/* line 5, ../../../sass/colors/red/style.scss */
+a:hover, a:focus {
+  color: #f64243;
+}
+
+/* line 10, ../../../sass/colors/red/style.scss */
+ul.inline {
+  /* end li */
+}
+/* line 11, ../../../sass/colors/red/style.scss */
+ul.inline li {
+  /* end a */
+  /* end node-readmore */
+}
+/* line 12, ../../../sass/colors/red/style.scss */
+ul.inline li a {
+  color: #f64243;
+}
+/* line 14, ../../../sass/colors/red/style.scss */
+ul.inline li a:hover, ul.inline li a:focus {
+  color: #333333;
+}
+/* line 18, ../../../sass/colors/red/style.scss */
+ul.inline li.node-readmore {
+  /* end a */
+}
+/* line 19, ../../../sass/colors/red/style.scss */
+ul.inline li.node-readmore a {
+  background: #f64243;
+  color: white;
+}
+/* line 22, ../../../sass/colors/red/style.scss */
+ul.inline li.node-readmore a:hover, ul.inline li.node-readmore a:focus {
+  background: #333333;
+}
+
+/* search */
+/* line 33, ../../../sass/colors/red/style.scss */
+#block-search-form:hover, #block-search-form:focus {
+  color: #f64243;
+}
+
+/* view */
+/* line 39, ../../../sass/colors/red/style.scss */
+.views-field-title a:hover, .views-field-title a:focus {
+  color: #f64243;
+}
+
+/* line 44, ../../../sass/colors/red/style.scss */
+.views-field-sell-price {
+  color: #f64243;
+  font-family: "roboto_slabregular";
+  font-size: 1.071em;
+}
+
+/* line 51, ../../../sass/colors/red/style.scss */
+.wp-group-image .views-field-addtocartlink:hover {
+  background: #f64243;
+}
+/* line 56, ../../../sass/colors/red/style.scss */
+.wp-group-image .views-field-view-node:hover {
+  background: #f64243;
+}
+
+/* line 64, ../../../sass/colors/red/style.scss */
+.form-submit:hover, .form-submit:focus,
+.form-actions > a:hover,
+.form-actions > a:focus {
+  background: #f64243;
+  border-color: #f64243;
+}
+
+/* line 72, ../../../sass/colors/red/style.scss */
+.form-submit[value="Checkout"],
+#edit-continue,
+#edit-submit {
+  background: #f64243;
+  border-color: #f64243;
+}
+/* line 75, ../../../sass/colors/red/style.scss */
+.form-submit[value="Checkout"]:hover, .form-submit[value="Checkout"]:focus,
+#edit-continue:hover,
+#edit-continue:focus,
+#edit-submit:hover,
+#edit-submit:focus {
+  background: #333333;
+  border-color: #333333;
+}
+
+/* menu */
+/* line 87, ../../../sass/colors/red/style.scss */
+.navbar-default ul.menu li a.active, .navbar-default ul.menu li a.active-trail {
+  color: #f64243;
+}
+
+/* .tb-megamenu */
+/* line 100, ../../../sass/colors/red/style.scss */
+.tb-megamenu .nav > li > a:focus, .tb-megamenu .nav > li > a:hover {
+  color: #f64243;
+}
+/* line 107, ../../../sass/colors/red/style.scss */
+.tb-megamenu .nav > li.active > a, .tb-megamenu .nav > li.active > a:hover, .tb-megamenu .nav > li.active > a:focus {
+  color: #f64243;
+}
+/* line 113, ../../../sass/colors/red/style.scss */
+.tb-megamenu .nav > li.dropdown.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > a:hover {
+  color: #f64243;
+}
+/* line 118, ../../../sass/colors/red/style.scss */
+.tb-megamenu .dropdown-menu {
+  /* end li */
+}
+/* line 122, ../../../sass/colors/red/style.scss */
+.tb-megamenu .dropdown-menu li > a:hover, .tb-megamenu .dropdown-menu li > a:focus {
+  color: #f64243;
+}
+/* line 128, ../../../sass/colors/red/style.scss */
+.tb-megamenu .dropdown-menu li.active > a, .tb-megamenu .dropdown-menu li.active > a:hover {
+  color: #f64243;
+}
+/* line 135, ../../../sass/colors/red/style.scss */
+.tb-megamenu .dropdown-menu .views-field-title a:hover, .tb-megamenu .dropdown-menu .views-field-title a:focus {
+  color: #f64243;
+}
+/* line 141, ../../../sass/colors/red/style.scss */
+.tb-megamenu .mega-dropdown-menu-more {
+  /* end tb-block */
+}
+/* line 144, ../../../sass/colors/red/style.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-taxonomy-catalog a {
+  color: #999999;
+}
+
+/* View slideshow */
+/* line 157, ../../../sass/colors/red/style.scss */
+.main-slideshow .slideshow-content input[type="submit"],
+.wp-slideshow2 .slideshow-content input[type="submit"] {
+  background-color: #f64243;
+  border-color: #f64243;
+}
+/* line 164, ../../../sass/colors/red/style.scss */
+.main-slideshow .views-slideshow-controls-text-previous:hover, .main-slideshow .views-slideshow-controls-text-previous:focus,
+.main-slideshow .views-slideshow-controls-text-next:hover,
+.main-slideshow .views-slideshow-controls-text-next:focus,
+.wp-slideshow2 .views-slideshow-controls-text-previous:hover,
+.wp-slideshow2 .views-slideshow-controls-text-previous:focus,
+.wp-slideshow2 .views-slideshow-controls-text-next:hover,
+.wp-slideshow2 .views-slideshow-controls-text-next:focus {
+  background: #f64243;
+}
+
+/* Bootstrap slideshow */
+/* line 175, ../../../sass/colors/red/style.scss */
+.bootstrap-slideshow .carousel-inner .slideshow-content input[type="submit"]:hover, .bootstrap-slideshow .carousel-inner .slideshow-content input[type="submit"]:focus {
+  border-color: #f64243;
+  color: #f64243;
+}
+
+/* line 185, ../../../sass/colors/red/style.scss */
+.carousel-control:hover, .carousel-control:focus {
+  background: #f64243;
+}
+
+/* .wp-slideshow2 */
+/* line 194, ../../../sass/colors/red/style.scss */
+.wp-slideshow-link .views-field-field-link a:hover, .wp-slideshow-link .views-field-field-link a:focus,
+.wp-slideshow-link .views-field-field-link2 a:hover,
+.wp-slideshow-link .views-field-field-link2 a:focus,
+.wp-collection .views-field-field-link a:hover,
+.wp-collection .views-field-field-link a:focus {
+  background-color: #f64243;
+  border-color: #f64243;
+}
+
+/* line 204, ../../../sass/colors/red/style.scss */
+.wp-slideshow2 .wp-slideshow-link .views-field-field-link a:hover, .wp-slideshow2 .wp-slideshow-link .views-field-field-link a:focus,
+.wp-slideshow2 .wp-slideshow-link .views-field-field-link2 a:hover,
+.wp-slideshow2 .wp-slideshow-link .views-field-field-link2 a:focus {
+  background-color: #f64243;
+  border-color: #f64243;
+}
+
+/* */
+/* line 215, ../../../sass/colors/red/style.scss */
+.panel-column .block-menu ul.menu li a:hover,
+.panel-column .block-menu ul.menu li a:focus {
+  color: #f64243;
+}
+
+/* line 221, ../../../sass/colors/red/style.scss */
+.tagclouds-term a:hover, .tagclouds-term a:focus {
+  border-color: #f64243;
+  color: #f64243;
+}
+
+/* line 228, ../../../sass/colors/red/style.scss */
+.block-system .tagclouds-term a:hover, .block-system .tagclouds-term a:focus {
+  color: #f64243;
+}
+
+/* line 238, ../../../sass/colors/red/style.scss */
+#panel-footer .block-menu ul.menu li a:hover, #panel-footer .block-menu ul.menu li a:focus {
+  color: #f64243;
+}
+
+/* line 248, ../../../sass/colors/red/style.scss */
+#footer a {
+  color: #f64243;
+}
+/* line 250, ../../../sass/colors/red/style.scss */
+#footer a:hover, #footer a:focus {
+  color: white;
+}
+/* line 258, ../../../sass/colors/red/style.scss */
+#footer .social-list li a:hover, #footer .social-list li a:focus {
+  color: #f64243;
+}
+
+/* line 268, ../../../sass/colors/red/style.scss */
+#newsletter-subscribe-form #subscribe:hover:after {
+  border-left-color: #f64243;
+}
+
+/* line 274, ../../../sass/colors/red/style.scss */
+.btn-btt {
+  background: #f64243;
+}
+/* line 276, ../../../sass/colors/red/style.scss */
+.btn-btt:hover, .btn-btt:focus {
+  background: #333333;
+}
+
+/* line 281, ../../../sass/colors/red/style.scss */
+.main-title {
+  background: #f64243;
+}
+
+/* blog */
+/* line 289, ../../../sass/colors/red/style.scss */
+.page-blog .action-links li a {
+  background: #f64243;
+}
+/* line 291, ../../../sass/colors/red/style.scss */
+.page-blog .action-links li a:hover, .page-blog .action-links li a:focus {
+  background: #333333;
+}
+
+/* line 300, ../../../sass/colors/red/style.scss */
+.view-blog-view .blog-extra-info {
+  color: #999999;
+  font-size: .929em;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  position: relative;
+}
+/* line 144, ../../../sass/includes/_mixins.scss */
+.view-blog-view .blog-extra-info:after {
+  border-bottom: 1px solid #f0f0f0;
+  content: '';
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100px;
+}
+/* line 152, ../../../sass/includes/_mixins.scss */
+.view-blog-view .blog-extra-info a {
+  color: #1abc9c;
+}
+/* line 154, ../../../sass/includes/_mixins.scss */
+.view-blog-view .blog-extra-info a:hover, .view-blog-view .blog-extra-info a:focus {
+  color: #999999;
+}
+/* line 159, ../../../sass/includes/_mixins.scss */
+.view-blog-view .blog-extra-info > span > span + span {
+  margin-left: 10px;
+}
+/* line 162, ../../../sass/includes/_mixins.scss */
+.view-blog-view .blog-extra-info > span i {
+  margin-right: 8px;
+}
+/* line 302, ../../../sass/colors/red/style.scss */
+.view-blog-view .blog-extra-info a {
+  color: #f64243;
+}
+/* line 304, ../../../sass/colors/red/style.scss */
+.view-blog-view .blog-extra-info a:hover, .view-blog-view .blog-extra-info a:focus {
+  color: #999999;
+}
+/* line 311, ../../../sass/colors/red/style.scss */
+.view-blog-view .views-field-view-node a:hover, .view-blog-view .views-field-view-node a:focus {
+  background: #f64243;
+}
+
+/* node */
+/* line 320, ../../../sass/colors/red/style.scss */
+.node .submitted {
+  color: #999999;
+  font-size: .929em;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  position: relative;
+}
+/* line 144, ../../../sass/includes/_mixins.scss */
+.node .submitted:after {
+  border-bottom: 1px solid #f0f0f0;
+  content: '';
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100px;
+}
+/* line 152, ../../../sass/includes/_mixins.scss */
+.node .submitted a {
+  color: #1abc9c;
+}
+/* line 154, ../../../sass/includes/_mixins.scss */
+.node .submitted a:hover, .node .submitted a:focus {
+  color: #999999;
+}
+/* line 159, ../../../sass/includes/_mixins.scss */
+.node .submitted > span > span + span {
+  margin-left: 10px;
+}
+/* line 162, ../../../sass/includes/_mixins.scss */
+.node .submitted > span i {
+  margin-right: 8px;
+}
+/* line 322, ../../../sass/colors/red/style.scss */
+.node .submitted a {
+  color: #f64243;
+}
+/* line 324, ../../../sass/colors/red/style.scss */
+.node .submitted a:hover, .node .submitted a:focus {
+  color: #999999;
+}
+
+/* line 332, ../../../sass/colors/red/style.scss */
+.node-wp-product .group-item-info {
+  /* add-to-cart */
+}
+/* line 334, ../../../sass/colors/red/style.scss */
+.node-wp-product .group-item-info .sell-price .uc-price {
+  color: #f64243;
+}
+/* line 340, ../../../sass/colors/red/style.scss */
+.node-wp-product .group-item-info .add-to-cart .form-actions .node-add-to-cart {
+  background-color: #f64243;
+  border-color: #f64243;
+}
+/* line 343, ../../../sass/colors/red/style.scss */
+.node-wp-product .group-item-info .add-to-cart .form-actions .node-add-to-cart:hover, .node-wp-product .group-item-info .add-to-cart .form-actions .node-add-to-cart:focus {
+  background-color: #333333;
+  border-color: #333333;
+}
+/* line 348, ../../../sass/colors/red/style.scss */
+.node-wp-product .group-item-info .add-to-cart .form-actions .node-add-to-wishlist {
+  background: #f0f0f0;
+  border-color: #f0f0f0;
+}
+/* line 351, ../../../sass/colors/red/style.scss */
+.node-wp-product .group-item-info .add-to-cart .form-actions .node-add-to-wishlist:hover, .node-wp-product .group-item-info .add-to-cart .form-actions .node-add-to-wishlist:focus {
+  background: #333333;
+}
+
+/* Primary */
+/* line 364, ../../../sass/colors/red/style.scss */
+ul.primary li.active a {
+  border-color: #f64243;
+  background: #f64243;
+}
+
+/* user-login */
+/* line 373, ../../../sass/colors/red/style.scss */
+.profile a {
+  color: #f64243;
+}
+/* line 376, ../../../sass/colors/red/style.scss */
+.profile a:hover, .profile a:focus {
+  color: #333333;
+}
+
+/* wp-404 */
+/* line 384, ../../../sass/colors/red/style.scss */
+.wp-404 .wp-return-back {
+  background: #f64243;
+}
+/* line 386, ../../../sass/colors/red/style.scss */
+.wp-404 .wp-return-back:hover, .wp-404 .wp-return-back:focus {
+  background: #333333;
+}
+
+/* check out */
+/* line 399, ../../../sass/colors/red/style.scss */
+#cart-form-pane table td.subtotal .uc-price,
+#cart-pane table td.subtotal .uc-price,
+.order-review-table table td.subtotal .uc-price {
+  color: #f64243;
+}
+
+/* line 409, ../../../sass/colors/red/style.scss */
+.uc-cart-checkout-form .fieldset-wrapper a {
+  color: #f64243;
+}
+/* line 411, ../../../sass/colors/red/style.scss */
+.uc-cart-checkout-form .fieldset-wrapper a:hover, .uc-cart-checkout-form .fieldset-wrapper a:focus {
+  color: #333333;
+}
+
+/* block */
+/* line 420, ../../../sass/colors/red/style.scss */
+.wp-cart-status .shopping-bad {
+  background: #f64243;
+}
+
+/* line 425, ../../../sass/colors/red/style.scss */
+.sidebar {
+  /* end quicktabs-tabs */
+  /* end quicktabs-tabpage */
+}
+/* line 125, ../../../sass/includes/_mixins.scss */
+.sidebar .item-list .quicktabs-tabs li.active:after {
+  height: 0;
+  border-top: 5px solid #1abc9c;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  width: 0;
+}
+/* line 429, ../../../sass/colors/red/style.scss */
+.sidebar .item-list .quicktabs-tabs li.active:after {
+  border-top-color: #f64243;
+}
+/* line 432, ../../../sass/colors/red/style.scss */
+.sidebar .item-list .quicktabs-tabs li.active a {
+  background: #f64243;
+}
+/* line 441, ../../../sass/colors/red/style.scss */
+.sidebar .quicktabs-tabpage .views-field-title a:hover, .sidebar .quicktabs-tabpage .views-field-title a:focus {
+  color: #f64243;
+}
+
+/* line 449, ../../../sass/colors/red/style.scss */
+.ui-slider .ui-slider-range {
+  background: #f64243;
+}
+
+/* faqs */
+/* line 456, ../../../sass/colors/red/style.scss */
+.faq-question.faq-qa-visible .active {
+  color: #f64243;
+}
+
+/* latest-blog */
+/* line 464, ../../../sass/colors/red/style.scss */
+.latest-blog .views-field-type-image {
+  background: #f64243;
+}
+
+/* line 471, ../../../sass/colors/red/style.scss */
+.wp-blog-masonry .views-field-field-image,
+.wp-blog-masonry .views-field-field-video {
+  background: #f64243;
+}
+/* line 475, ../../../sass/colors/red/style.scss */
+.wp-blog-masonry .views-field-name a {
+  color: #f64243;
+}
+
+/* line 483, ../../../sass/colors/red/style.scss */
+.wp-blog-mix .views-field-type-image,
+.wp-blog-mix .views-field-field-video {
+  background: #f64243;
+}
+
+/* line 489, ../../../sass/colors/red/style.scss */
+.wp-ads li {
+  background: #f64243;
+}
+/* line 491, ../../../sass/colors/red/style.scss */
+.wp-ads li + li {
+  background: rgba(246, 66, 67, 0.9);
+}
+/* line 493, ../../../sass/colors/red/style.scss */
+.wp-ads li + li + li {
+  background: rgba(246, 66, 67, 0.8);
+}
+/* line 495, ../../../sass/colors/red/style.scss */
+.wp-ads li + li + li + li {
+  background: rgba(246, 66, 67, 0.7);
+}
+/* line 497, ../../../sass/colors/red/style.scss */
+.wp-ads li + li + li + li + li {
+  background: rgba(246, 66, 67, 0.6);
+}
+
+/* login */
+/* line 511, ../../../sass/colors/red/style.scss */
+#wp-user-wrapper #user-login-form .item-list li a:hover, #wp-user-wrapper #user-login-form .item-list li a :focus {
+  color: #f64243;
+}
+/* line 517, ../../../sass/colors/red/style.scss */
+#wp-user-wrapper #user-login-form .form-submit:hover, #wp-user-wrapper #user-login-form .form-submit:focus {
+  background: #f64243;
+  border-color: #f64243;
+}
+
+/* wp-special-button */
+/* line 526, ../../../sass/colors/red/style.scss */
+.wp-special-button:hover, .wp-special-button:focus {
+  color: #f64243;
+}

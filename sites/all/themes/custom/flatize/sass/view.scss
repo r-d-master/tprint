@@ -1,0 +1,771 @@
+@import "includes/_include";
+@import "includes/_mixins";
+
+.views-row {
+  margin-left: -30px; 
+}
+
+.col-inner {
+  margin-left: 30px;
+  margin-bottom: 30px;  
+}
+
+.views-field-title,
+.views-field-created {
+	@include font-robo;
+}
+
+.views-field-title {
+  color: $dark;
+}
+
+.views-field-title a {
+  color: $dark;
+  &:hover, &:focus {
+    color: $cyan;
+  }
+}
+
+.views-field-created,
+.views-field-taxonomy-catalog a,
+.views-field-field-category a {
+  color: $grey;
+  font-size: .929em;
+}
+
+.views-field-field-image,
+.views-field-type-image {
+  margin-bottom: 15px;  
+}
+
+.views-field-sell-price {
+	color: $cyan;
+	@include font-robo;
+}
+
+/**/
+.view-frontpage .views-exposed-form {
+	margin-bottom: 49px;
+	@include line-through;
+}
+.views-exposed-form {
+	position: relative;
+	text-align: center;
+	
+	.views-exposed-widget {
+		float: none;
+		padding: 0;
+	}
+	
+	.form-type-bef-link {
+		display: inline-block;
+		
+		a {
+			background: $white;
+			border: 1px solid $dark-grey;
+			color: $black;
+			font-size: .929em;
+			font-weight: 700;
+			display: inline-block;
+			margin: 0 -3px;
+			padding: 15px 0;
+			position: relative;
+			text-transform: uppercase;
+			width: 150px;
+			z-index: 2;
+			@include transition;
+			
+			&:hover {
+				background: $black;
+				border-color: $black;
+				color: $white;
+			}
+		}
+		
+	}
+	
+	.selected.form-type-bef-link {
+		a {
+			background: $black;
+			border-color: $black;
+			color: $white;
+		}
+	}
+}
+
+.views-field-field-status {
+	.wp-bag {
+		border-radius: 50%;
+		color: $white;
+		font-size: .857em;
+		height: 40px;
+		line-height: 40px;
+		left: 20px;
+		position: absolute;
+		text-align: center;
+		top: 20px;
+		width: 40px;
+		a {
+			color: $white;
+		}
+	}
+	.wp-bag-none {
+		display: none;
+	}
+
+	.wp-bag-new {
+		background: $cyan;
+	}
+	.wp-bag-hot {
+		background: $red;
+	}
+	.wp-bag-cool,
+	.wp-bag-sale {
+		background: $violet;
+	}
+}
+
+.views-field-uc-product-image {
+	@include transition;
+}
+
+.wp-group-image {
+	margin-bottom: 15px;
+	position: relative;
+	
+	.views-field-addtocartlink,
+	.views-field-view-node {
+		background: $white;
+		color: $dark;
+		@include fontawesome;
+		height: 50px;
+		filter: alpha(opacity=0);
+		opacity: 0;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 50px;
+		@include transition;
+	}
+	
+	.views-field-addtocartlink {
+		margin-right: -55px;
+		right: 0;
+		
+		&:after {
+			content: "\f07a";
+			@include icon-after;
+			z-index: 1;
+		}
+		
+		.attributes,
+		.form-item-qty {
+			display: none;
+		}
+		
+		&:hover {
+			background: $cyan;
+			color: $white;
+		}
+		
+		.form-actions {
+			margin: 0;
+		}
+		
+		.node-add-to-cart {
+			background: none;
+			border: none;
+			display: block;
+			height: 50px;
+			padding: 0;
+			position: relative;
+			text-indent: -9999em;
+			width: 50px;
+			z-index: 2;
+		}
+		.node-add-to-wishlist {
+			display: none;
+		}
+	} /* end views-field-addtocartlink */
+	
+	.views-field-view-node {
+		left: 0;
+		margin-left: -55px;
+		
+		&:after {
+			content: "\f08e";
+			@include icon-after;
+			z-index: 1;
+		}
+		
+		&:hover {
+			background: $cyan;
+			color: $white;
+		}
+		
+		a {
+			display: block;
+			height: 50px;
+			position: relative;
+			text-indent: -9999em;
+			z-index: 2;
+		}
+	}
+
+	&:hover .views-field-uc-product-image {
+		filter: alpha(opacity=50);
+		opacity: .5;
+	}
+	
+	&:hover .views-field-addtocartlink,
+	&:hover .views-field-view-node {
+		filter: alpha(opacity=100);
+		opacity: 1;
+		margin-top: -25px;
+		top: 50%;
+	}
+	
+	&:hover .views-field-addtocartlink {
+		right: 50%;
+	}
+	
+	&:hover .views-field-view-node {
+		left: 50%;
+	}
+}
+
+.wp-group-info	{
+	overflow: hidden;
+	
+	.views-field-sell-price {
+		float: right;
+	}
+	
+	.views-field-title,
+	.views-field-taxonomy-catalog {
+		padding-right: 55px;
+	}
+}
+
+/* testimonials */
+.view-testimonials {
+
+  .views-field-body {
+    @include font-robo;
+    font-size: 2.571em;
+    padding-bottom: 20px;
+  
+    p:before {
+      content: "\'\' ";
+    }
+  
+    p:after {
+      content: " \'\'";
+    }
+  }
+  
+  .views-field-title {
+    font-size: 1.286em;
+    padding: 15px 0 0;
+    position: relative;
+    
+    a {
+      color: $white;
+    }
+  
+    &:after {
+      border-top: 1px solid $white;
+      content: "";  
+      left: 50%;
+      margin-left: -25px;
+      position: absolute;
+      top: 0;
+      width: 50px;
+    }
+  }
+}
+
+/* View slideshow */
+#slideshow{
+	.container-fluid{
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+.main-slideshow,
+.wp-slideshow2 {
+	overflow: hidden;
+  position: relative;
+  z-index: 1;
+  .views-row{
+  	margin-left: 0;
+  }
+  .views-slideshow-cycle-main-frame-row, .views-slideshow-cycle-main-frame{
+  	width: 100% !important;
+  	text-align: center;
+  }
+  
+  .views-field-type-image {
+      margin-bottom: 0;
+  }
+  .views-field-field-category {
+  	font-family: 'museo_slab500';
+  	font-size: 1.286em;
+	text-transform: uppercase;
+	@include text-shadow;
+	
+	a {
+		color: $white;
+	}
+  }
+  .views-field-type-image img {
+    height: auto;
+    max-width: 100%;
+  }
+  .slideshow-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;   
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 70%;
+    
+    input[type="submit"] {
+      background-color: $cyan;
+      border: 1px solid $cyan;
+      color: $white;
+      font-size: 0.857em;
+      font-weight: bold;
+      height: 46px;
+      line-height: 46px;
+      padding: 0 30px;
+      text-transform: uppercase;
+	  @include transition;
+      &:hover, &:focus {
+        background: none;
+        border-color: $white;
+      }
+    }
+  } 
+	.views-field-title {
+		margin: 15px 0 30px;
+		color: $white;
+		font-family: 'museo_slab500';
+		font-size: 4.286em;
+		line-height: 60px;
+		text-transform: uppercase;
+		-webkit-text-shadow: 1px 3px 5px rgba(0,0,0,0.25);
+		 -moz-text-shadow: 1px 3px 5px rgba(0,0,0,0.25);
+			  text-shadow: 1px 3px 5px rgba(0,0,0,0.25);
+		a {
+			color: $white;
+		}
+	}
+  .views-slideshow-controls-text-pause {
+    display: none;
+  }
+  .views-slideshow-controls-text-previous,
+  .views-slideshow-controls-text-next {
+    background: $dark;
+    color: $white;
+    margin-top: -25px;
+    position: absolute;
+    text-align: center;
+    top: 50%;    
+    height: 50px;
+    width: 50px;
+    z-index: 500;
+    &:hover, &:focus {
+      background: $cyan;
+      text-decoration: none;
+      @include transition;
+    }
+  } 
+  .views-slideshow-controls-text-next {
+    right: 0;
+  }
+  .views-slideshow-controls-text-next:before, 
+  .views-slideshow-controls-text-previous:before {        
+    @include fontawesome;
+    font-size: 2em;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+  }
+  .views-slideshow-controls-text-next:before {
+    content: "\f105"; 
+  }
+  .views-slideshow-controls-text-previous:before {
+    content: "\f104"; 
+  }
+  .views-slideshow-controls-text-previous a,
+  .views-slideshow-controls-text-next a {
+    font-size: 0;     
+  }
+}
+/* View Jcarousel */
+.main-jcarousel {
+  .jcarousel-skin-default {
+    position: relative;
+    text-align: left;
+    .jcarousel-container-horizontal {
+      height: 505px;
+      padding: 0;
+      width: auto;
+      .jcarousel-clip-horizontal {
+        height: 505px;
+        padding: 100px 0 0;
+        width: auto;
+        .jcarousel-item {
+          border: none;
+          height: 505px;
+          margin: 0 20px 0 0;
+          width: 270px;
+        }
+      }
+      .jcarousel-next, 
+      .jcarousel-prev {
+        background: none;
+        border: 2px solid $dark-grey;
+        color: $black;
+        display: block !important;
+        height: 50px;    
+        text-align: center;    
+        top: 0;
+        width: 50px;
+        &:hover, &:focus {
+          border-color: $black;
+          @include transition;
+        }
+      }
+      .jcarousel-next {
+	  	margin-right: -52px;
+        right: 50%;
+      }
+      .jcarousel-prev {
+	  	margin-left: -52px;
+        left: 50%;
+      }
+      .jcarousel-next:before, 
+      .jcarousel-prev:before {        
+        @include fontawesome;
+        font-size: 2.2em;
+      }
+      .jcarousel-next:before {
+        content: "\f105"; 
+      }
+      .jcarousel-prev:before {
+        content: "\f104"; 
+      }
+    }    
+  }  
+}
+
+/* .wp-slideshow2 */
+.wp-slideshow-link .views-field-field-link a,
+.wp-slideshow-link .views-field-field-link2 a,
+.wp-collection .views-field-field-link a {
+	border: 2px solid $dark;
+	color: $dark;
+	display: inline-block;
+	font-size: 0.857em;
+	font-weight: 700;
+	height: 46px;
+	line-height: 46px;
+	min-width: 140px;
+	text-align: center;
+	text-transform: uppercase;
+	@include transition;
+	&:hover, &:focus {
+		background-color: $cyan;
+		border-color: $cyan;
+		color: $white;
+	}
+}
+
+.wp-slideshow2 {
+	background: $black;
+	margin: 60px 0 10px;
+	.wp-slideshow-link {
+		> .views-field-field-link,
+		> .views-field-field-link2 {
+			display: inline-block;
+			margin: 0 10px;
+		}
+		.views-field-field-link a,
+		.views-field-field-link2 a {
+			border-color: $white;
+			color: $white;
+			text-shadow: none;
+			&:hover, &:focus {
+				background-color: $cyan;
+				border-color: $cyan;
+			}
+		}
+	}
+}
+
+.wp-collection {
+	text-align: center;
+	.views-field-field-image,
+	.views-field-title,
+	.views-field-body {
+		margin-bottom: 25px;
+	}
+	.views-field-title {
+		@include font-robo;
+		font-family: 'roboto_slabbold';
+		text-transform: uppercase;
+	}
+	.views-field-field-image {
+		overflow: hidden;
+		position: relative;
+		&:after {
+			border: 1px solid $white;
+			bottom: 5px;
+			content: "";
+			left: 5px;
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+		}
+		img {
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+		&:hover {
+			img {
+				opacity: .7;
+				-webkit-transform: scale(1.1);
+				transform: scale(1.1);
+			}
+			&:after {
+				-webkit-transform: scale(.55, .50);
+				transform: scale(.55, .50);
+				filter: alpha(opacity=0);
+				opacity: 0;
+			}
+		}
+	}
+}
+
+/* wp-shop-grid */
+.wp-shop-grid {
+	> .view-header {
+		float: left;
+		line-height: 2.4;
+		margin-bottom: 13px;
+	}
+	
+	> .view-filters {
+		float: right;
+		margin-bottom: 13px;
+	}
+	
+	> .view-content {
+		clear: both;
+		border-top: 1px solid $dark-grey;
+		padding-top: 40px;
+	}
+	
+	.views-exposed-form {
+		.views-exposed-widget {
+			float: left;
+			margin-left: 15px;
+		}
+		.views-submit-button {
+			display: none;
+		}
+	}
+}
+
+/* latest-blog */
+.latest-blog {
+	.views-field-type-image {
+		background: $cyan;
+		@include scale-up;
+	}
+}
+
+/* blog-masonry */
+.wp-blog-masonry {
+	.view-content {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.wp-blog {
+		border-bottom: none;
+		padding: 0 20px;
+		width: 33.333%;
+	}
+	
+	.wp-row-inner {
+		border: 1px solid $light-dark;
+		padding: 30px 30px 0;
+	}
+	
+	.views-field-field-image,
+	.views-field-field-video {
+		margin-left: -30px;
+		margin-right: -30px;
+		margin-top: -30px;
+		background: $cyan;
+		@include scale-up;
+	}
+	
+	.views-field-title {
+		font-family: 'ralewayregular';
+		font-size: 1.285em;
+		font-weight: 100;
+	}
+	
+	.views-field-body {
+		margin-bottom: 25px;
+	}
+	
+	.views-field-view-node {
+		margin-bottom: 25px;
+		margin-top: 0;
+	}
+	
+	.views-field-name {
+		.views-label {
+			padding-right: 5px;
+		}
+	}
+	
+	.blog-extra-info {
+		border-top: 1px solid $light-dark;
+		margin: 0 -30px !important;
+		overflow: hidden;
+		padding: 15px 30px;
+		&:after {
+			border-bottom: none;
+		}
+		.views-field-comment-count {
+			float: right;
+		}
+	}
+}
+
+/* blog mix */
+.wp-blog-mix {
+	.views-row {
+		margin-bottom: 50px;
+	}
+	.views-field-type-image,
+	.views-field-field-video {
+		background: $cyan;
+		@include scale-up;
+		float: left; 
+		margin-right: 30px;
+		width: 270px;
+	}
+	.blog-extra-info {
+		clear: right;
+		display: inline-block;
+	}
+}
+
+/* list-item-thumb */
+.list-item-thumb {
+	.views-row {
+		margin-left: 0;
+		overflow: hidden;
+		+ .views-row {
+			border-top: 1px dotted $dark-grey;
+			margin-top: 20px;
+			padding-top: 20px;
+		}
+	}
+	.views-field-uc-product-image {
+		float: left;
+		margin-bottom: 0;
+		margin-right: 15px;
+	}
+	.wp-product-info {
+		padding-top: 3px;
+	}
+	.views-field-field-category {
+		margin-bottom: 5px;
+	}
+	.views-field-field-rate {
+		margin-bottom: 5px;
+		margin-top: 5px;
+		.form-item {
+			margin: 0;
+		}
+	}
+}
+
+/* view-home3 */
+.view-home3 {
+	.views-row {
+		margin-left: -10px;
+		> .grid {
+			float: left;
+		}
+		.two-col {
+			width: 50%;
+		}
+		.one-col {
+			width: 25%;
+		}
+	}
+	.views-field-type-image {
+		margin-bottom: 0;
+	}
+	.cat-caption {
+		background-color: rgba($black, .8);
+		bottom: 0;
+		color: $white;
+		left: 0;
+		padding: 20px;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		-webkit-transition: -webkit-transform 0.35s;
+		transition: transform 0.35s;
+		-webkit-transform: translate3d(0,100%,0);
+		transform: translate3d(0,100%,0);
+		.views-field-title, .views-field-field-link {
+			-webkit-transition: -webkit-transform 0.5s;
+			transition: transform 0.5s;
+			-webkit-transform: translate3d(0,200%,0);
+			transform: translate3d(0,200%,0);
+		}
+		.views-field-title {
+			color: $white;
+			font-family: Roboto Slab, serif;
+			font-size: 1.714em;
+			line-height: 1;
+			margin-bottom: 5px;
+		}
+		.views-field-field-link a {
+			color: rgba($white, .5);
+			font-size: .857em;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-decoration: underline;
+		}
+	}
+	.col-inner {
+		margin-bottom: 10px;
+		margin-left: 10px;
+		overflow: hidden;
+		position: relative;
+		&:hover .cat-caption,
+		&:hover .views-field-title,
+		&:hover .views-field-field-link {
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+	}
+}
+

@@ -1,0 +1,56 @@
+@import "includes/_include";
+@import "includes/_mixins";
+@import url(../fonts/font-awesome/css/font-awesome.css);
+@import url(../fonts/stylesheet.css);
+
+body {
+	color: $grayer;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'ralewayregular', Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
+
+a {
+	color: $dark;	
+
+	&:hover, &:focus {
+		color: $cyan;
+    	outline: none;
+		text-decoration: none;	
+	}
+}
+
+h1, h2, h3 {
+	color: $dark;
+	margin: 0 0 20px;
+}
+
+.form-text {
+	color: $grey;
+	font-size: 0.929em;	
+  &:hover, &:focus {
+    color: $dark;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, select, textarea {
+	background: $lighter-grey;
+	border: 1px solid $dark-grey;
+	padding: 10px;
+}
+
+label {
+	font-weight: 100;
+}

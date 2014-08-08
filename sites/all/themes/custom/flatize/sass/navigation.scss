@@ -1,0 +1,72 @@
+@import "includes/_include";
+@import "includes/_mixins";
+
+ul.inline {
+	li {
+		a {
+			color: $cyan;
+			display: inline-block;
+			padding-left: 5px;
+			&:hover, &:focus {
+				color: $dark;
+			}
+		}/* end a */
+		&.node-readmore {
+			a {
+				background: $cyan;
+				color: $white;
+				padding: 10px 20px;
+				&:hover, &:focus {
+					background: $dark;
+				}
+			}/* end a */
+			
+		}/* end node-readmore */
+		
+		&.blog_usernames_blog {
+			a {
+				background: $light-dark;
+				color: $dark;
+				padding: 10px 20px;
+				&:hover, &:focus {
+					background: $dark;
+					color: $white;
+				}
+			}/* end a */
+		}
+		&.comment_forbidden.first {
+			a:first-child {
+				padding-left: 0;
+			}
+		}
+		
+	}/* end li */
+}
+
+/* pager */
+.item-list .pager {
+  margin: 20px 0 50px;
+
+  li {
+    background: $light-grey;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 -2px;
+    padding: 0 18px;
+    text-align: center;
+  }
+  
+  li > a,
+  li > span {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+  
+  .pager-current {
+    background: $dark;
+    color: $white;
+  }
+}

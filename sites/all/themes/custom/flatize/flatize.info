@@ -1,0 +1,95 @@
+name = Flatize
+description = Theme for the Companies
+version = VERSION
+core = 7.x
+engine = 'phptemplate'
+
+stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = bootstrap/css/bootstrap-theme.css
+stylesheets[all][] = css/base.css
+stylesheets[all][] = css/html.css
+stylesheets[all][] = css/menu.css
+stylesheets[all][] = css/block.css
+stylesheets[all][] = css/field.css
+stylesheets[all][] = css/node.css
+stylesheets[all][] = css/page.css
+stylesheets[all][] = css/region.css
+stylesheets[all][] = css/view.css
+stylesheets[all][] = css/navigation.css
+stylesheets[all][] = css/screens/theme-responsive.css
+stylesheets[all][] = css/menu-off-canvas.css
+
+scripts[] = 'bootstrap/js/bootstrap.js'
+scripts[] = 'js/jquery.smooth-scroll.js'
+scripts[] = 'js/jquery.cookie.js'
+scripts[] = 'js/jquery.stellar.js'
+scripts[] = 'js/masonry.pkgd.min.js'
+scripts[] = 'js/weebpal.js'
+scripts[] = 'js/flatize.js'
+
+features[] = 'logo'
+features[] = 'name'
+features[] = 'slogan'
+features[] = 'node_user_picture'
+features[] = 'comment_user_picture'
+features[] = 'comment_user_verification'
+features[] = 'favicon'
+
+; title background
+titlebgs[style1] = 'Style 1'
+titlebgs[style2] = 'Style 2'
+titlebgs[style3] = 'Style 3'
+
+regions[headline] = Headline
+regions[user_login] = User Login
+regions[header] = Header
+regions[main_menu] = Main Menu
+regions[slideshow] = Slideshow
+regions[slideshow2] = Slideshow Wrapper
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[panel_first] = Panel First
+regions[panel_second] = Panel Second
+regions[panel_third] = Panel Third
+regions[panel_fourth] = Panel Fourth
+regions[panel_fifth] = Panel Fifth
+regions[panel_sixth] = Panel Sixth
+regions[panel_seventh_1] = Panel Seventh 1
+regions[panel_seventh_2] = Panel Seventh 2
+regions[panel_seventh_3] = Panel Seventh 3
+regions[panel_eighth] = Panel Eighth
+
+regions[gmap] = Gmap
+
+regions[panel_footer_1] = Panel Footer 1
+regions[panel_footer_2] = Panel Footer 2
+regions[panel_footer_3] = Panel Footer 3
+regions[panel_footer_4] = Panel Footer 4
+regions[footer] = Footer
+
+settings[sidebar_first_width] = 3
+settings[sidebar_second_width] = 3
+
+settings[panel_seventh_1_width] = 4
+settings[panel_seventh_2_width] = 4
+settings[panel_seventh_3_width] = 4
+
+settings[panel_footer_1_width] = 3
+settings[panel_footer_2_width] = 3
+settings[panel_footer_3_width] = 3
+settings[panel_footer_4_width] = 3
+
+skins[green] = 'Green'
+skins[red] = 'Red'
+skins[blue] = 'Blue'
+skins[orange] = 'Orange'
+skins[violet] = 'Violet'
+skins[yellow] = 'Yellow'
+skins[brown] = 'Brown'

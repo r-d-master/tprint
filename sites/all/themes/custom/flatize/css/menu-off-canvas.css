@@ -1,0 +1,22 @@
+@media (max-width: 992px) {
+    #header .navbar-toggle {
+      display: block;
+    }
+    #main-menu-inner.collapse {
+      display: none !important;
+    }
+    #main-menu-inner.collapsing {
+      display: block;
+    }
+    #main-menu-inner.collapse.in {
+      display: block!important;
+    }
+    #main-menu-inner {
+      height: 100%;
+      overflow-y: hidden;
+    }
+    #main-menu-inner ul, 
+    #main-menu-inner li {
+      display: block;
+    }
+}

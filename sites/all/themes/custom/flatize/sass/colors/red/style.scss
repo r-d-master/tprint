@@ -1,0 +1,529 @@
+@import "../../includes/_include";
+@import "../../includes/_mixins";
+
+a {
+	&:hover, &:focus {
+		color: $red;
+	}
+}
+
+ul.inline {
+	li {
+		a {
+			color: $red;
+			&:hover, &:focus {
+				color: $dark;
+			}
+		}/* end a */
+		&.node-readmore {
+			a {
+				background: $red;
+				color: $white;
+				&:hover, &:focus {
+					background: $dark;
+				}
+			}/* end a */
+			
+		}/* end node-readmore */
+				
+	}/* end li */
+}
+/* search */
+#block-search-form{
+	&:hover, &:focus{
+		color: $red;
+	}
+}
+/* view */
+.views-field-title a {
+	&:hover, &:focus {
+		color: $red;
+	}
+}
+
+.views-field-sell-price {
+	color: $red;
+	@include font-robo;
+}
+
+.wp-group-image {
+	.views-field-addtocartlink {
+		&:hover {
+			background: $red;
+		}
+	}
+	.views-field-view-node {
+		&:hover {
+			background: $red;
+		}
+	}
+}
+
+.form-submit,
+.form-actions > a {
+	&:hover, &:focus {
+		background: $red;
+		border-color: $red;
+	}
+}
+
+.form-submit[value="Checkout"],
+#edit-continue,
+#edit-submit {
+	background: $red;
+	border-color: $red;
+	&:hover, &:focus {
+		background: $dark;
+		border-color: $dark;
+	}
+}
+
+/* menu */
+.navbar-default {
+	ul.menu {  
+		li {
+			a {
+			&.active,
+			&.active-trail {
+				color: $red; 
+			}
+			}
+		}
+	}
+}
+
+/* .tb-megamenu */
+.tb-megamenu {
+	.nav > li {
+			> a {
+				&:focus,
+				&:hover {
+					color: $red;  
+					}
+				}
+
+			&.active > a,
+			&.active > a:hover,
+			&.active > a:focus {
+					color: $red;
+			}
+			&.dropdown.active > .dropdown-toggle,
+			&.dropdown.open > .dropdown-toggle,
+			&.dropdown.open.active > .dropdown-toggle,
+			&.dropdown.open.active > a:hover {
+				color: $red;
+			}
+	}
+
+	.dropdown-menu {
+		li {
+			> a {
+				&:hover,
+				&:focus {
+					color: $red;
+				}
+			}
+		&.active > {
+			a, a:hover
+			 {
+				color: $red;
+			}
+		}
+		}/* end li */
+		
+		.views-field-title a {
+			&:hover, &:focus {
+				color: $red;
+			}
+		} 
+	}
+	
+	.mega-dropdown-menu-more {
+		.tb-block {
+			.views-field-taxonomy-catalog {
+				a {
+					color: $grey;
+				}
+			}
+		}/* end tb-block */
+	}
+	
+}
+
+/* View slideshow */
+.main-slideshow,
+.wp-slideshow2 {
+	.slideshow-content {
+		input[type="submit"] {
+			background-color: $red;
+			border-color: $red;
+		}
+	}
+	.views-slideshow-controls-text-previous,
+	.views-slideshow-controls-text-next {
+		&:hover, &:focus {
+			background: $red;
+		}
+	} 
+}
+
+/* Bootstrap slideshow */
+.bootstrap-slideshow {
+	.carousel-inner {
+		.slideshow-content {
+			input[type="submit"] {
+				&:hover, &:focus {
+					border-color: $red;
+					color: $red;
+				}
+			}
+		}
+	}
+}
+
+.carousel-control {
+	&:hover, &:focus {
+		background: $red;
+	}
+}
+
+/* .wp-slideshow2 */
+.wp-slideshow-link .views-field-field-link a,
+.wp-slideshow-link .views-field-field-link2 a,
+.wp-collection .views-field-field-link a {
+	&:hover, &:focus {
+		background-color: $red;
+		border-color: $red;
+	}
+}
+
+.wp-slideshow2 {
+	.wp-slideshow-link {
+		.views-field-field-link a,
+		.views-field-field-link2 a {
+			&:hover, &:focus {
+				background-color: $red;
+				border-color: $red;
+			}
+		}
+	}
+}
+
+/* */
+.panel-column {
+	.block-menu ul.menu li a:hover,
+	.block-menu ul.menu li a:focus {
+		color: $red; 
+	}
+}
+
+.tagclouds-term a {
+  &:hover, &:focus {
+  	border-color: $red;
+	color: $red;
+  }
+}
+
+.block-system .tagclouds-term a {
+	&:hover, &:focus {
+		color: $red;
+  }
+}
+
+#panel-footer {
+  .block-menu {
+    ul.menu {
+      li {
+        a {
+        &:hover, &:focus {
+          color: $red;
+          }
+        }
+      }      
+    }
+  } 
+}
+
+#footer {
+	a {
+		color: $red; 
+		&:hover, &:focus {
+			color: $white;
+		}
+	}
+	
+	.social-list {
+		li {
+			a {
+				&:hover, &:focus {
+					color: $red;
+				}
+			}
+		}   
+  	}
+}
+
+#newsletter-subscribe-form {
+	#subscribe {
+		&:hover:after {
+			border-left-color: $red;      
+		}
+	}
+}
+
+.btn-btt {
+	background: $red;
+	&:hover, &:focus {
+		background: $dark;
+	}
+}
+
+.main-title {
+	background: $red;
+}
+
+/* blog */
+.page-blog {
+  .action-links {
+    li {
+      a {
+        background: $red;
+        &:hover, &:focus {
+          background: $dark;
+        }
+      }
+    }    
+  }
+}
+
+.view-blog-view {
+	.blog-extra-info {
+		@include submitted;
+		a {
+		  color: $red;
+		  &:hover, &:focus {
+			color: $grey;
+		  }
+		}
+	}
+	.views-field-view-node {
+		a {
+			&:hover, &:focus {
+				background: $red;
+			}
+		}
+	}
+}
+
+/* node */
+.node {
+	.submitted {
+		@include submitted;
+		a {
+		  color: $red;
+		  &:hover, &:focus {
+			color: $grey;
+		  }
+		}
+	}
+}
+
+.node-wp-product {
+	.group-item-info {
+		.sell-price {
+			.uc-price {
+				color: $red;
+			}
+		}
+		.add-to-cart {
+			.form-actions {
+				.node-add-to-cart {
+					background-color: $red;
+					border-color: $red;
+					&:hover, &:focus {
+						background-color: $dark;
+						border-color: $dark;
+					}
+				}
+				.node-add-to-wishlist {
+					background: $light-dark;
+					border-color: $light-dark;
+					&:hover, &:focus {
+						background: $dark;
+					}
+					
+				}
+			}
+		}/* add-to-cart */
+	}
+}
+
+/* Primary */
+ul.primary {
+	li.active {
+		 a {
+			border-color: $red;
+			background: $red;
+		}
+	}
+}
+
+/* user-login */
+.profile {
+	a {
+		color: $red;
+		&:hover,
+		&:focus {
+			color: $dark;
+		}
+	}	
+}
+
+/* wp-404 */
+.wp-404 {
+	.wp-return-back {
+		background: $red;
+		&:hover, &:focus {
+			background: $dark;
+		}
+	}
+}
+
+/* check out */
+#cart-form-pane,
+#cart-pane,
+.order-review-table {
+	table {
+		td {
+			&.subtotal {
+				.uc-price {
+					color: $red;
+				}
+			}
+		}
+	}
+}
+
+.uc-cart-checkout-form {
+	.fieldset-wrapper {
+		a {
+			color: $red;
+			&:hover, &:focus {
+				color: $dark;
+			}
+		}
+	}
+}
+
+/* block */
+.wp-cart-status {
+	.shopping-bad {
+		background: $red;
+	}
+}
+
+.sidebar {
+	.item-list .quicktabs-tabs {
+	li.active {
+			@include arrow-bottom;
+			&:after {
+				border-top-color: $red;
+			}
+			a {
+				background: $red;
+			}
+		}
+	}/* end quicktabs-tabs */
+	
+	.quicktabs-tabpage {
+		.views-field-title {
+			a {
+				&:hover, &:focus {
+					color: $red;
+				}
+			}
+		}
+	}/* end quicktabs-tabpage */
+}
+
+.ui-slider .ui-slider-range {
+	background: $red;
+}
+
+/* faqs */
+.faq-question {
+	&.faq-qa-visible {
+		.active {
+			color: $red;
+		}
+	}
+}
+
+/* latest-blog */
+.latest-blog {
+	.views-field-type-image {
+		background: $red;
+	}
+}
+
+.wp-blog-masonry {
+	.views-field-field-image,
+	.views-field-field-video {
+		background: $red;
+	}
+	.views-field-name{
+		a{
+			color: $red;
+		}
+	}
+}
+
+.wp-blog-mix {
+	.views-field-type-image,
+	.views-field-field-video {
+		background: $red;
+	}
+}
+
+.wp-ads {
+	li {
+		background: $red;
+		+ li {
+			background: rgba($red, 0.9);
+			+ li {
+				background: rgba($red, 0.8);
+				+ li {
+					background: rgba($red, 0.7);
+					+ li {
+						background: rgba($red, 0.6);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* login */
+#wp-user-wrapper {
+	#user-login-form {
+		.item-list li {
+			a {
+				&:hover, :focus {
+					color: $red;
+				}
+			}
+		}
+		.form-submit {
+			&:hover, &:focus {
+				background: $red;
+				border-color: $red;
+			}
+		}
+	}
+}
+/* wp-special-button */
+.wp-special-button {
+	&:hover, &:focus{
+		color: $red;
+	}
+}

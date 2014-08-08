@@ -1,0 +1,417 @@
+/* COLORS */
+/* COLORS */
+/* line 3, ../sass/menu.scss */
+#main-menu-wrapper {
+  font-size: .857em;
+  text-transform: uppercase;
+}
+
+/* line 8, ../sass/menu.scss */
+.block-menu ul.menu {
+  margin: 0;
+  padding: 0;
+}
+/* line 12, ../sass/menu.scss */
+.block-menu ul.menu li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 19, ../sass/menu.scss */
+.navbar-default {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  /*end block-superfish*/
+}
+/* line 25, ../sass/menu.scss */
+.navbar-default ul.menu {
+  font-family: 'roboto_slabregular';
+  text-align: right;
+  text-transform: uppercase;
+}
+/* line 30, ../sass/menu.scss */
+.navbar-default ul.menu li {
+  display: inline;
+  position: relative;
+}
+/* line 34, ../sass/menu.scss */
+.navbar-default ul.menu li a {
+  display: inline-block;
+  font-size: .857em;
+  padding: 34px 20px;
+}
+/* line 39, ../sass/menu.scss */
+.navbar-default ul.menu li a.active, .navbar-default ul.menu li a.active-trail {
+  color: #1abc9c;
+}
+/* line 44, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded {
+  list-style-image: none;
+  list-style-type: none;
+}
+/* line 48, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded ul.menu {
+  background: white;
+  border-top: 1px solid #dddddd;
+  display: none;
+  font-family: 'ralewayregular';
+  left: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  padding: 10px 0;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  top: 53px;
+  width: 190px;
+  z-index: 10;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+}
+/* line 111, ../sass/includes/_mixins.scss */
+.navbar-default ul.menu li.expanded ul.menu:after {
+  height: 0;
+  border-bottom: 6px solid #dddddd;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  left: 35px;
+  position: absolute;
+  top: -6px;
+  width: 0;
+}
+/* line 67, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded ul.menu li {
+  display: block;
+  padding: 5px 10px;
+}
+/* line 70, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded ul.menu li a {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+/* line 75, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded ul.menu li.expanded ul.menu {
+  display: none;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  left: 100%;
+  top: 0;
+}
+/* line 81, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded ul.menu li.expanded ul.menu:after {
+  border-bottom: none;
+}
+/* line 85, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded ul.menu li.expanded:hover ul.menu {
+  display: block;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+/* line 93, ../sass/menu.scss */
+.navbar-default ul.menu li.expanded:hover ul.menu {
+  display: block;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+/* line 104, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu {
+  float: right;
+  line-height: 1.42857;
+}
+/* line 107, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li {
+  margin: 0;
+}
+/* line 109, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li > a {
+  display: block;
+}
+/* line 111, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li > a .sf-sub-indicator {
+  display: inline-block;
+  height: 12px;
+  top: 12px;
+}
+/* line 117, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li ul {
+  background: white;
+  border-top: 1px solid #dddddd;
+  font-family: 'ralewayregular';
+  margin-top: 5px;
+  padding: 10px 0;
+  text-align: left;
+  text-transform: none;
+  top: 80px;
+}
+/* line 111, ../sass/includes/_mixins.scss */
+.navbar-default .block-superfish ul.menu > li ul:after {
+  height: 0;
+  border-bottom: 6px solid #dddddd;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  left: 35px;
+  position: absolute;
+  top: -6px;
+  width: 0;
+}
+/* line 129, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li ul li {
+  display: block;
+  margin: 0;
+  padding: 5px 20px;
+}
+/* line 133, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li ul li a {
+  display: block;
+  padding: 0;
+}
+/* line 138, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li ul li ul {
+  margin-top: 0;
+  top: 0;
+}
+/* line 141, ../sass/menu.scss */
+.navbar-default .block-superfish ul.menu > li ul li ul:after {
+  border-bottom: none;
+}
+
+/* .tb-megamenu */
+/* line 155, ../sass/menu.scss */
+.tb-megamenu {
+  background-color: transparent;
+}
+/* line 158, ../sass/menu.scss */
+.tb-megamenu .nav-collapse.collapse {
+  display: block;
+}
+/* line 163, ../sass/menu.scss */
+.tb-megamenu .nav > li > a {
+  border-right: none;
+  color: #333333;
+  font-family: 'roboto_slabregular';
+  font-size: .857em;
+  font-weight: 100;
+  padding: 34px 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+/* line 174, ../sass/menu.scss */
+.tb-megamenu .nav > li > a:focus, .tb-megamenu .nav > li > a:hover {
+  background-color: transparent;
+  border-right-color: transparent;
+  color: #1abc9c;
+}
+/* line 111, ../sass/includes/_mixins.scss */
+.tb-megamenu .nav > li.open > a:after {
+  height: 0;
+  border-bottom: 6px solid #dddddd;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  left: 35px;
+  position: absolute;
+  top: -6px;
+  width: 0;
+}
+/* line 183, ../sass/menu.scss */
+.tb-megamenu .nav > li.open > a:after {
+  border-bottom-color: #333333;
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  top: auto;
+}
+/* line 194, ../sass/menu.scss */
+.tb-megamenu .nav > li.open a, .tb-megamenu .nav > li.open a:hover, .tb-megamenu .nav > li.open a:focus {
+  background-color: transparent;
+}
+/* line 199, ../sass/menu.scss */
+.tb-megamenu .nav > li.active > a, .tb-megamenu .nav > li.active > a:hover, .tb-megamenu .nav > li.active > a:focus {
+  background-color: transparent;
+  border-right-color: transparent;
+  color: #1abc9c;
+}
+/* line 207, ../sass/menu.scss */
+.tb-megamenu .nav > li.dropdown.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > a:hover {
+  background-color: transparent;
+  border-color: transparent;
+  border-right-color: transparent;
+  color: #1abc9c;
+}
+/* line 213, ../sass/menu.scss */
+.tb-megamenu .nav > li.dropdown > .dropdown-toggle .caret {
+  display: none;
+}
+/* line 218, ../sass/menu.scss */
+.tb-megamenu .dropdown-menu {
+  background-color: #181818;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  border: none;
+  font-size: .857em;
+  /* end li */
+}
+/* line 225, ../sass/menu.scss */
+.tb-megamenu .dropdown-menu li > a {
+  border-top: none;
+  color: white;
+}
+/* line 230, ../sass/menu.scss */
+.tb-megamenu .dropdown-menu li > a:hover, .tb-megamenu .dropdown-menu li > a:focus {
+  color: #1abc9c;
+}
+/* line 236, ../sass/menu.scss */
+.tb-megamenu .dropdown-menu li.active > a, .tb-megamenu .dropdown-menu li.active > a:hover {
+  background-color: transparent;
+  background-image: none;
+  color: #1abc9c;
+}
+/* line 244, ../sass/menu.scss */
+.tb-megamenu .dropdown-menu .views-field-title a {
+  color: white;
+  padding: 0;
+}
+/* line 247, ../sass/menu.scss */
+.tb-megamenu .dropdown-menu .views-field-title a:hover, .tb-megamenu .dropdown-menu .views-field-title a:focus {
+  color: #1abc9c;
+}
+/* line 253, ../sass/menu.scss */
+.tb-megamenu .mega-inner {
+  padding: 20px 10px;
+}
+/* line 257, ../sass/menu.scss */
+.tb-megamenu .span12.mega-col-nav .mega-inner {
+  padding: 20px;
+}
+/* line 261, ../sass/menu.scss */
+.tb-megamenu .mega-group-ct .span12.mega-col-nav .mega-inner {
+  padding: 10px 10px 0;
+}
+/* line 266, ../sass/menu.scss */
+.tb-megamenu .views-row,
+.tb-megamenu .col-inner {
+  margin-left: 0;
+}
+/* line 270, ../sass/menu.scss */
+.tb-megamenu .tb-block {
+  margin: 0 10px;
+}
+/* line 272, ../sass/menu.scss */
+.tb-megamenu .tb-block h2, .tb-megamenu .tb-block .views-field-name {
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* line 278, ../sass/menu.scss */
+.tb-megamenu .tb-block .views-field-type-image {
+  margin-bottom: 20px;
+}
+/* line 281, ../sass/menu.scss */
+.tb-megamenu .tb-block .views-field-name {
+  margin-bottom: 15px;
+}
+/* line 284, ../sass/menu.scss */
+.tb-megamenu .tb-block a {
+  clear: none;
+  color: white;
+  padding: 0;
+  white-space: normal;
+}
+/* line 292, ../sass/menu.scss */
+.tb-megamenu .row-fluid + .row-fluid {
+  border-top-color: #282828;
+  padding-top: 0;
+}
+/* line 297, ../sass/menu.scss */
+.tb-megamenu .row-fluid .tb-megamenu-column {
+  position: relative;
+}
+/* line 300, ../sass/menu.scss */
+.tb-megamenu .row-fluid .tb-megamenu-column:after {
+  background: #282828;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+/* line 309, ../sass/menu.scss */
+.tb-megamenu .row-fluid .tb-megamenu-column:first-child:after {
+  background: none;
+}
+/* line 314, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more {
+  font-size: .929em;
+  /* end tb-block */
+}
+/* line 316, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block {
+  /* wp-megaview-trends */
+}
+/* line 319, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .wp-megaview-trends .views-row {
+  overflow: hidden;
+  border-top: 1px dotted #666666;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+/* line 325, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .wp-megaview-trends .views-row-first {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+/* line 333, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-uc-product-image {
+  float: left;
+  margin-bottom: 0;
+  margin-right: 15px;
+  width: 60px;
+}
+/* line 341, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-title,
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-taxonomy-catalog,
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-sell-price {
+  margin-top: 5px;
+}
+/* line 344, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-taxonomy-catalog {
+  color: #999999;
+}
+/* line 346, ../sass/menu.scss */
+.tb-megamenu .mega-dropdown-menu-more .tb-block .views-field-taxonomy-catalog a {
+  color: #999999;
+}
+/* line 353, ../sass/menu.scss */
+.tb-megamenu .btn-navbar {
+  background-color: transparent;
+  border-color: transparent;
+  background-image: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: #1abc9c;
+  margin-top: 32px;
+  padding: 0;
+  text-shadow: none;
+}
+/* line 364, ../sass/menu.scss */
+.tb-megamenu .btn-navbar [class^="icon-"] {
+  color: #1abc9c;
+}
+/* line 372, ../sass/menu.scss */
+.tb-megamenu .btn-navbar:hover, .tb-megamenu .btn-navbar:focus, .tb-megamenu .btn-navbar:active, .tb-megamenu .btn-navbar.active, .tb-megamenu .btn-navbar.disabled, .tb-megamenu .btn-navbar[disabled] {
+  color: #333333;
+  background-color: transparent;
+  *background-color: transparent;
+}
+
+/* line 382, ../sass/menu.scss */
+#main-menu .tb-megamenu .mega-align-center.dropdown {
+  position: static;
+}
