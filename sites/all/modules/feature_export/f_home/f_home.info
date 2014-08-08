@@ -7,3 +7,4 @@ dependencies[] = quicktabs
 features[ctools][] = quicktabs:quicktabs:1
 features[fe_block_settings][] = quicktabs-products
 features[features_api][] = api:2
+features[quicktabs][] = products

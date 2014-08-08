@@ -13,43 +13,47 @@ function f_home_quicktabs_default_quicktabs() {
   $quicktabs = new stdClass();
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
-  $quicktabs->machine_name = 'print_search_tabbed_menu';
-  $quicktabs->ajax = 0;
+  $quicktabs->machine_name = 'products';
+  $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
-  $quicktabs->title = 'Print Search Tabbed Menu';
+  $quicktabs->title = 'Products';
   $quicktabs->tabs = array(
     0 => array(
-      'bid' => 'views_delta_-exp-print_search-business_card',
-      'hide_title' => 0,
+      'vid' => 'product_list',
+      'display' => 'block_1',
+      'args' => '',
       'title' => 'Business Card',
       'weight' => '-100',
-      'type' => 'block',
+      'type' => 'view',
     ),
     1 => array(
-      'bid' => 'views_delta_-exp-print_search-letterheads',
-      'hide_title' => 0,
+      'vid' => 'product_list',
+      'display' => 'block_2',
+      'args' => '',
       'title' => 'Letterheads',
       'weight' => '-99',
-      'type' => 'block',
+      'type' => 'view',
     ),
     2 => array(
-      'bid' => 'views_delta_ad1c50714daffed2afe0e726ac002891',
-      'hide_title' => 0,
+      'vid' => 'product_list',
+      'display' => 'block_3',
+      'args' => '',
       'title' => 'Complimentary Slips',
       'weight' => '-98',
-      'type' => 'block',
+      'type' => 'view',
     ),
     3 => array(
-      'bid' => 'views_delta_-exp-print_search-flyers',
-      'hide_title' => 1,
+      'vid' => 'product_list',
+      'display' => 'block_4',
+      'args' => '',
       'title' => 'Flyers',
       'weight' => '-97',
-      'type' => 'block',
+      'type' => 'view',
     ),
   );
   $quicktabs->renderer = 'quicktabs';
-  $quicktabs->style = 'Sky';
+  $quicktabs->style = 'default';
   $quicktabs->options = array();
 
   // Translatables
@@ -58,9 +62,9 @@ function f_home_quicktabs_default_quicktabs() {
   t('Complimentary Slips');
   t('Flyers');
   t('Letterheads');
-  t('Print Search Tabbed Menu');
+  t('Products');
 
-  $export['print_search_tabbed_menu'] = $quicktabs;
+  $export['products'] = $quicktabs;
 
   return $export;
 }
